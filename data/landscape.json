@@ -3,7 +3,7 @@
   "title": "Tech Landscape",
   "subtitle": "Software & AI infrastructure, mapped",
   "updated": "2026-11-21",
-  "note": "Statuses for major 2025–26 deals were checked in Nov 2026; verify others before relying on them."
+  "note": "Market caps from companiesmarketcap.com (Nov 21, 2026); private companies show last reported valuation with its date. Verify before relying on them."
  },
  "tree": {
   "name": "Software & AI Infrastructure",
@@ -34,7 +34,9 @@
           "domain": "nvidia.com",
           "status": "Public · NVDA",
           "desc": "Dominant AI chipmaker — GPUs (Hopper, Blackwell, Rubin) plus the CUDA software ecosystem that locks developers in. Also sells networking and full rack-scale systems.",
-          "id": "nvidia"
+          "id": "nvidia",
+          "cap": 3031,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "AMD",
@@ -42,7 +44,9 @@
           "domain": "amd.com",
           "status": "Public · AMD",
           "desc": "Main merchant-GPU rival to Nvidia with its Instinct MI-series accelerators and ROCm software; also makes server CPUs (EPYC).",
-          "id": "amd"
+          "id": "amd",
+          "cap": 702.39,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Broadcom",
@@ -50,7 +54,9 @@
           "domain": "broadcom.com",
           "status": "Public · AVGO",
           "desc": "Designs custom AI chips (ASICs) for hyperscalers like Google (TPU) and Meta, and sells Ethernet switch chips. Also owns VMware.",
-          "id": "broadcom"
+          "id": "broadcom",
+          "cap": 1453,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Marvell",
@@ -58,7 +64,9 @@
           "domain": "marvell.com",
           "status": "Public · MRVL",
           "desc": "Custom AI silicon and data-center networking/optical chips; designs custom accelerators for Amazon and others.",
-          "id": "marvell"
+          "id": "marvell",
+          "cap": 110.02,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Intel",
@@ -66,7 +74,9 @@
           "domain": "intel.com",
           "status": "Public · INTC",
           "desc": "Legacy CPU giant (Xeon) with Gaudi AI accelerators and a foundry business it is trying to rebuild.",
-          "id": "intel"
+          "id": "intel",
+          "cap": 272.55,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Arm",
@@ -74,7 +84,9 @@
           "domain": "arm.com",
           "status": "Public · ARM",
           "desc": "Licenses the CPU architecture used in nearly every phone and increasingly in data-center chips (Nvidia Grace, AWS Graviton). Majority-owned by SoftBank.",
-          "id": "arm"
+          "id": "arm",
+          "cap": 162.85,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Cerebras",
@@ -82,7 +94,9 @@
           "domain": "cerebras.ai",
           "status": "Public · CBRS",
           "desc": "Makes wafer-scale AI chips (one chip the size of a dinner plate) and sells very fast inference. IPO'd May 2026 — the largest AI IPO ever at the time.",
-          "id": "cerebras"
+          "id": "cerebras",
+          "cap": 20.08,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Groq",
@@ -90,7 +104,9 @@
           "domain": "groq.com",
           "status": "Private",
           "desc": "Built the LPU, a chip designed for ultra-fast inference. Nvidia struck a ~$20B licensing and talent deal with Groq in late 2025.",
-          "id": "groq"
+          "id": "groq",
+          "cap": 6.9,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "SambaNova",
@@ -106,7 +122,9 @@
           "domain": "tenstorrent.com",
           "status": "Private",
           "desc": "RISC-V-based AI chips and IP led by chip legend Jim Keller; sells hardware and licenses designs.",
-          "id": "tenstorrent"
+          "id": "tenstorrent",
+          "cap": 2.6,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "Etched",
@@ -138,7 +156,9 @@
           "domain": "tsmc.com",
           "status": "Public · TSM",
           "desc": "World's leading contract chip manufacturer; fabricates nearly every advanced AI chip, including Nvidia's and Apple's, plus advanced packaging (CoWoS).",
-          "id": "tsmc"
+          "id": "tsmc",
+          "cap": 1652,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "ASML",
@@ -146,7 +166,9 @@
           "domain": "asml.com",
           "status": "Public · ASML",
           "desc": "Monopoly maker of EUV lithography machines needed to print the most advanced chips.",
-          "id": "asml"
+          "id": "asml",
+          "cap": 488.02,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "SK hynix",
@@ -154,7 +176,9 @@
           "domain": "skhynix.com",
           "status": "Public · KRX 000660 / SKHY",
           "desc": "Leading supplier of HBM memory stacked next to AI GPUs. Added a US listing in 2026.",
-          "id": "sk-hynix"
+          "id": "sk-hynix",
+          "cap": 584.37,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Micron",
@@ -162,7 +186,9 @@
           "domain": "micron.com",
           "status": "Public · MU",
           "desc": "US memory maker (DRAM, HBM, NAND) — a key HBM supplier.",
-          "id": "micron"
+          "id": "micron",
+          "cap": 672.64,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Samsung Electronics",
@@ -170,7 +196,9 @@
           "domain": "samsung.com",
           "status": "Public · KRX 005930",
           "desc": "Memory giant and second-largest foundry; racing to catch up in HBM.",
-          "id": "samsung-electronics"
+          "id": "samsung-electronics",
+          "cap": 887.76,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Synopsys",
@@ -178,7 +206,9 @@
           "domain": "synopsys.com",
           "status": "Public · SNPS",
           "desc": "Electronic design automation (EDA) software used to design chips; acquired Ansys (simulation) in 2025.",
-          "id": "synopsys"
+          "id": "synopsys",
+          "cap": 75.92,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Cadence",
@@ -186,7 +216,9 @@
           "domain": "cadence.com",
           "status": "Public · CDNS",
           "desc": "The other big EDA vendor — chip design software and hardware emulation.",
-          "id": "cadence"
+          "id": "cadence",
+          "cap": 77.25,
+          "capNote": "Market cap · Nov 2026"
          }
         ],
         "id": "memory-foundry-chip-supply-chain"
@@ -202,7 +234,9 @@
           "domain": "arista.com",
           "status": "Public · ANET",
           "desc": "High-speed Ethernet switches for cloud and AI data centers.",
-          "id": "arista-networks"
+          "id": "arista-networks",
+          "cap": 211.77,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Astera Labs",
@@ -210,7 +244,9 @@
           "domain": "asteralabs.com",
           "status": "Public · ALAB",
           "desc": "Connectivity chips (PCIe/CXL retimers, switches) that link GPUs, CPUs and memory.",
-          "id": "astera-labs"
+          "id": "astera-labs",
+          "cap": 31.52,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Credo",
@@ -218,7 +254,9 @@
           "domain": "credosemi.com",
           "status": "Public · CRDO",
           "desc": "High-speed connectivity — active electrical cables and SerDes for AI clusters.",
-          "id": "credo"
+          "id": "credo",
+          "cap": 18.76,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Coherent",
@@ -226,7 +264,9 @@
           "domain": "coherent.com",
           "status": "Public · COHR",
           "desc": "Optical transceivers and lasers for data-center links.",
-          "id": "coherent"
+          "id": "coherent",
+          "cap": 36.87,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Lightmatter",
@@ -234,7 +274,9 @@
           "domain": "lightmatter.co",
           "status": "Private",
           "desc": "Photonic (light-based) interconnect for AI chips.",
-          "id": "lightmatter"
+          "id": "lightmatter",
+          "cap": 4.4,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "Ayar Labs",
@@ -258,7 +300,9 @@
           "domain": "equinix.com",
           "status": "Public · EQIX",
           "desc": "Largest colocation/interconnection data-center REIT globally.",
-          "id": "equinix"
+          "id": "equinix",
+          "cap": 95.84,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Digital Realty",
@@ -274,7 +318,9 @@
           "domain": "aligneddc.com",
           "status": "Private",
           "desc": "Hyperscale data-center developer; agreed to a ~$40B sale to a consortium including BlackRock/GIP, MGX and the AI Infrastructure Partnership.",
-          "id": "aligned-data-centers"
+          "id": "aligned-data-centers",
+          "cap": 40,
+          "capNote": "Deal value · 2025"
          },
          {
           "name": "Vantage Data Centers",
@@ -298,7 +344,9 @@
           "domain": "vertiv.com",
           "status": "Public · VRT",
           "desc": "Power and thermal management (UPS, liquid cooling) for data centers.",
-          "id": "vertiv"
+          "id": "vertiv",
+          "cap": 70.7,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Schneider Electric",
@@ -306,7 +354,9 @@
           "domain": "se.com",
           "status": "Public · EPA: SU",
           "desc": "Electrical distribution, power management and cooling for data centers.",
-          "id": "schneider-electric"
+          "id": "schneider-electric",
+          "cap": 146.07,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Eaton",
@@ -314,7 +364,9 @@
           "domain": "eaton.com",
           "status": "Public · ETN",
           "desc": "Power distribution and electrical equipment — switchgear, UPS — for data centers and grids.",
-          "id": "eaton"
+          "id": "eaton",
+          "cap": 138.7,
+          "capNote": "Market cap · Nov 2026 (approx.)"
          },
          {
           "name": "GE Vernova",
@@ -322,7 +374,9 @@
           "domain": "gevernova.com",
           "status": "Public · GEV",
           "desc": "Gas turbines, grid equipment and wind; benefiting from data-center power demand.",
-          "id": "ge-vernova"
+          "id": "ge-vernova",
+          "cap": 185.09,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Oklo",
@@ -346,7 +400,9 @@
           "domain": "coreweave.com",
           "status": "Public · CRWV",
           "desc": "Largest neocloud; rents Nvidia GPU capacity to OpenAI, Microsoft and others. IPO'd 2025; bought Weights & Biases.",
-          "id": "coreweave"
+          "id": "coreweave",
+          "cap": 29.5,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Nebius",
@@ -354,7 +410,9 @@
           "domain": "nebius.com",
           "status": "Public · NBIS",
           "desc": "Amsterdam-based AI cloud spun out of Yandex; large Microsoft capacity deal.",
-          "id": "nebius"
+          "id": "nebius",
+          "cap": 23.81,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Lambda",
@@ -370,7 +428,9 @@
           "domain": "crusoe.ai",
           "status": "Private",
           "desc": "AI cloud and data-center developer building campuses near cheap/stranded energy (e.g. the Abilene, TX Stargate site).",
-          "id": "crusoe"
+          "id": "crusoe",
+          "cap": 13,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Together AI",
@@ -378,7 +438,9 @@
           "domain": "together.ai",
           "status": "Private",
           "desc": "GPU cloud plus serverless inference and fine-tuning for open models.",
-          "id": "together-ai"
+          "id": "together-ai",
+          "cap": 3.3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Vultr",
@@ -386,7 +448,9 @@
           "domain": "vultr.com",
           "status": "Private",
           "desc": "Independent cloud provider with a growing GPU offering.",
-          "id": "vultr"
+          "id": "vultr",
+          "cap": 3.5,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "Fluidstack",
@@ -428,15 +492,19 @@
           "domain": "openai.com",
           "status": "Private",
           "desc": "Maker of GPT models and ChatGPT; restructured into a public benefit corporation; has said it will not IPO in 2026.",
-          "id": "openai"
+          "id": "openai",
+          "cap": 852,
+          "capNote": "Valuation · Mar 2026"
          },
          {
           "name": "Anthropic",
           "type": "company",
           "domain": "anthropic.com",
-          "status": "IPO in progress · Nasdaq: ANT",
-          "desc": "Maker of Claude models and Claude Code; set terms in Nov 2026 for an IPO targeting a ~$1.2T valuation.",
-          "id": "anthropic"
+          "status": "Public · ANT",
+          "desc": "Maker of Claude models and Claude Code; listed on Nasdaq (ANT) in Nov 2026 at a ~$1.2T valuation.",
+          "id": "anthropic",
+          "cap": 1175,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Google DeepMind",
@@ -444,7 +512,9 @@
           "domain": "deepmind.google",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "Google's AI lab; builds Gemini models.",
-          "id": "google-deepmind"
+          "id": "google-deepmind",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Meta AI",
@@ -452,7 +522,9 @@
           "domain": "ai.meta.com",
           "status": "Part of Meta (META)",
           "desc": "Meta's AI division — open-weight Llama models and Meta Superintelligence Labs.",
-          "id": "meta-ai"
+          "id": "meta-ai",
+          "cap": 1433,
+          "capNote": "Parent: Meta"
          },
          {
           "name": "xAI",
@@ -468,7 +540,9 @@
           "domain": "mistral.ai",
           "status": "Private",
           "desc": "Paris-based lab with open-weight and commercial models; Europe's AI champion.",
-          "id": "mistral-ai"
+          "id": "mistral-ai",
+          "cap": 13.7,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Cohere",
@@ -476,7 +550,9 @@
           "domain": "cohere.com",
           "status": "Private",
           "desc": "Toronto lab focused on enterprise models, search (embeddings/rerank) and private deployment.",
-          "id": "cohere"
+          "id": "cohere",
+          "cap": 6.8,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "DeepSeek",
@@ -492,7 +568,9 @@
           "domain": "thinkingmachines.ai",
           "status": "Private",
           "desc": "Lab founded by ex-OpenAI CTO Mira Murati.",
-          "id": "thinking-machines-lab"
+          "id": "thinking-machines-lab",
+          "cap": 12,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Safe Superintelligence",
@@ -500,7 +578,9 @@
           "domain": "ssi.inc",
           "status": "Private",
           "desc": "Ilya Sutskever's lab focused solely on safe superintelligence.",
-          "id": "safe-superintelligence"
+          "id": "safe-superintelligence",
+          "cap": 32,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Reflection AI",
@@ -508,7 +588,9 @@
           "domain": "reflection.ai",
           "status": "Private",
           "desc": "Building open frontier models in the US.",
-          "id": "reflection-ai"
+          "id": "reflection-ai",
+          "cap": 8,
+          "capNote": "Valuation · 2025"
          }
         ],
         "id": "foundation-model-labs"
@@ -524,7 +606,9 @@
           "domain": "runwayml.com",
           "status": "Private",
           "desc": "AI video generation and editing tools used in film and advertising.",
-          "id": "runway"
+          "id": "runway",
+          "cap": 3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Black Forest Labs",
@@ -548,7 +632,9 @@
           "domain": "elevenlabs.io",
           "status": "Private",
           "desc": "AI voice — text-to-speech, voice cloning, dubbing and voice agents.",
-          "id": "elevenlabs"
+          "id": "elevenlabs",
+          "cap": 6.6,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Suno",
@@ -556,7 +642,9 @@
           "domain": "suno.com",
           "status": "Private",
           "desc": "AI music generation.",
-          "id": "suno"
+          "id": "suno",
+          "cap": 2.45,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Luma AI",
@@ -572,7 +660,9 @@
           "domain": "worldlabs.ai",
           "status": "Pending acquisition by AMD",
           "desc": "Fei-Fei Li's company building 3D 'world models'; AMD agreed to buy it in late 2026.",
-          "id": "world-labs"
+          "id": "world-labs",
+          "cap": 8.2,
+          "capNote": "Deal value · AMD, 2026"
          }
         ],
         "id": "generative-media-models"
@@ -588,7 +678,9 @@
           "domain": "huggingface.co",
           "status": "Pending acquisition by Nvidia",
           "desc": "The 'GitHub of AI' — hosts millions of open models and datasets. Nvidia agreed to buy it for ~$12.9B in Sept 2026.",
-          "id": "hugging-face"
+          "id": "hugging-face",
+          "cap": 12.93,
+          "capNote": "Deal value · Nvidia, Sep 2026"
          },
          {
           "name": "PyTorch",
@@ -636,7 +728,9 @@
           "domain": "scale.com",
           "status": "Private",
           "desc": "Data labeling and evaluation for AI labs and the US government; Meta bought 49% in 2025 and hired its CEO.",
-          "id": "scale-ai"
+          "id": "scale-ai",
+          "cap": 29,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Surge AI",
@@ -652,7 +746,9 @@
           "domain": "mercor.com",
           "status": "Private",
           "desc": "Marketplace of domain experts (lawyers, doctors, bankers) hired to train AI models.",
-          "id": "mercor"
+          "id": "mercor",
+          "cap": 10,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Snorkel AI",
@@ -660,7 +756,9 @@
           "domain": "snorkel.ai",
           "status": "Private",
           "desc": "Programmatic data labeling and expert data for model evaluation.",
-          "id": "snorkel-ai"
+          "id": "snorkel-ai",
+          "cap": 1.3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Labelbox",
@@ -668,7 +766,9 @@
           "domain": "labelbox.com",
           "status": "Private",
           "desc": "Labeling platform and expert data network.",
-          "id": "labelbox"
+          "id": "labelbox",
+          "cap": 1,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Turing",
@@ -676,7 +776,9 @@
           "domain": "turing.com",
           "status": "Private",
           "desc": "Coding and reasoning data for frontier labs.",
-          "id": "turing"
+          "id": "turing",
+          "cap": 2.2,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Mostly AI",
@@ -708,7 +810,9 @@
           "domain": "modular.com",
           "status": "Private",
           "desc": "Mojo language and MAX engine to run AI across any hardware — a bet against CUDA lock-in.",
-          "id": "modular"
+          "id": "modular",
+          "cap": 1.6,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Anyscale",
@@ -716,7 +820,9 @@
           "domain": "anyscale.com",
           "status": "Private",
           "desc": "Company behind Ray, the open-source framework for distributed AI compute.",
-          "id": "anyscale"
+          "id": "anyscale",
+          "cap": 1,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Unsloth",
@@ -756,7 +862,9 @@
           "domain": "fireworks.ai",
           "status": "Private",
           "desc": "Fast inference platform for open models, from ex-PyTorch leads at Meta.",
-          "id": "fireworks-ai"
+          "id": "fireworks-ai",
+          "cap": 4,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Baseten",
@@ -764,7 +872,9 @@
           "domain": "baseten.co",
           "status": "Private",
           "desc": "Inference platform for deploying custom and open models.",
-          "id": "baseten"
+          "id": "baseten",
+          "cap": 2.15,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Modal",
@@ -772,7 +882,9 @@
           "domain": "modal.com",
           "status": "Private",
           "desc": "Serverless GPU compute — run Python functions on GPUs instantly.",
-          "id": "modal"
+          "id": "modal",
+          "cap": 1.1,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Replicate",
@@ -796,7 +908,9 @@
           "domain": "openrouter.ai",
           "status": "Pending acquisition by Stripe (reported)",
           "desc": "One API that routes requests across hundreds of models and providers.",
-          "id": "openrouter"
+          "id": "openrouter",
+          "cap": 7.5,
+          "capNote": "Deal value · Stripe (reported)"
          }
         ],
         "id": "inference-model-serving"
@@ -876,7 +990,9 @@
           "domain": "langchain.com",
           "status": "Private",
           "desc": "Most popular LLM app framework, plus LangGraph (agents) and LangSmith (observability).",
-          "id": "langchain"
+          "id": "langchain",
+          "cap": 1.25,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "LlamaIndex",
@@ -1101,7 +1217,9 @@
           "domain": "chatgpt.com",
           "status": "Part of OpenAI",
           "desc": "The most-used AI assistant.",
-          "id": "chatgpt"
+          "id": "chatgpt",
+          "cap": 852,
+          "capNote": "Parent: OpenAI"
          },
          {
           "name": "Claude",
@@ -1109,7 +1227,9 @@
           "domain": "claude.ai",
           "status": "Part of Anthropic",
           "desc": "Anthropic's assistant, strong in coding and work tasks.",
-          "id": "claude"
+          "id": "claude",
+          "cap": 1175,
+          "capNote": "Parent: Anthropic"
          },
          {
           "name": "Gemini",
@@ -1117,7 +1237,9 @@
           "domain": "gemini.google.com",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "Google's assistant, built into Android and Workspace.",
-          "id": "gemini"
+          "id": "gemini",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Perplexity",
@@ -1125,7 +1247,9 @@
           "domain": "perplexity.ai",
           "status": "Private",
           "desc": "AI answer engine and Comet browser.",
-          "id": "perplexity"
+          "id": "perplexity",
+          "cap": 20,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Character.AI",
@@ -1157,7 +1281,9 @@
           "domain": "github.com/features/copilot",
           "status": "Part of Microsoft (MSFT)",
           "desc": "The original mainstream AI coding assistant.",
-          "id": "github-copilot"
+          "id": "github-copilot",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "Claude Code",
@@ -1165,7 +1291,9 @@
           "domain": "claude.com/product/claude-code",
           "status": "Part of Anthropic",
           "desc": "Anthropic's agentic coding tool that runs in the terminal and IDE.",
-          "id": "claude-code"
+          "id": "claude-code",
+          "cap": 1175,
+          "capNote": "Parent: Anthropic"
          },
          {
           "name": "Cognition",
@@ -1173,7 +1301,9 @@
           "domain": "cognition.ai",
           "status": "Private",
           "desc": "Maker of Devin (autonomous AI engineer); also owns Windsurf's IDE business.",
-          "id": "cognition"
+          "id": "cognition",
+          "cap": 46,
+          "capNote": "Valuation · Nov 2026"
          },
          {
           "name": "Replit",
@@ -1181,7 +1311,9 @@
           "domain": "replit.com",
           "status": "Private",
           "desc": "Browser IDE with an agent that builds and deploys full apps.",
-          "id": "replit"
+          "id": "replit",
+          "cap": 3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Lovable",
@@ -1221,7 +1353,9 @@
           "domain": "sierra.ai",
           "status": "Private",
           "desc": "Conversational AI agents for customer experience, co-founded by Bret Taylor.",
-          "id": "sierra"
+          "id": "sierra",
+          "cap": 10,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Decagon",
@@ -1245,7 +1379,9 @@
           "domain": "ada.cx",
           "status": "Private",
           "desc": "AI customer service automation.",
-          "id": "ada"
+          "id": "ada",
+          "cap": 1.2,
+          "capNote": "Valuation · 2021"
          }
         ],
         "id": "customer-support-agents"
@@ -1261,7 +1397,9 @@
           "domain": "glean.com",
           "status": "Private",
           "desc": "Enterprise AI search and assistant across company apps.",
-          "id": "glean"
+          "id": "glean",
+          "cap": 7.2,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Writer",
@@ -1301,7 +1439,9 @@
           "domain": "gamma.app",
           "status": "Private",
           "desc": "AI presentations and documents.",
-          "id": "gamma"
+          "id": "gamma",
+          "cap": 2.1,
+          "capNote": "Valuation · 2025"
          }
         ],
         "id": "creative-content"
@@ -1335,7 +1475,9 @@
           "domain": "aws.amazon.com",
           "status": "Part of Amazon (AMZN)",
           "desc": "Largest cloud by revenue; also designs its own chips (Trainium, Graviton) and is a major Anthropic partner.",
-          "id": "amazon-web-services"
+          "id": "amazon-web-services",
+          "cap": 2668,
+          "capNote": "Parent: Amazon"
          },
          {
           "name": "Microsoft Azure",
@@ -1343,7 +1485,9 @@
           "domain": "azure.microsoft.com",
           "status": "Part of Microsoft (MSFT)",
           "desc": "#2 cloud; hosts OpenAI's models and sells them via Azure AI Foundry.",
-          "id": "microsoft-azure"
+          "id": "microsoft-azure",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "Google Cloud",
@@ -1351,7 +1495,9 @@
           "domain": "cloud.google.com",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "#3 cloud; strong in data (BigQuery) and AI with in-house TPUs and Gemini. Now owns Wiz.",
-          "id": "google-cloud"
+          "id": "google-cloud",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Oracle Cloud Infrastructure",
@@ -1359,7 +1505,9 @@
           "domain": "oracle.com/cloud",
           "status": "Part of Oracle (ORCL)",
           "desc": "Smaller but fast-growing cloud that has won huge AI capacity contracts (OpenAI/Stargate).",
-          "id": "oracle-cloud-infrastructure"
+          "id": "oracle-cloud-infrastructure",
+          "cap": 315.48,
+          "capNote": "Parent: Oracle"
          },
          {
           "name": "Alibaba Cloud",
@@ -1367,7 +1515,9 @@
           "domain": "alibabacloud.com",
           "status": "Part of Alibaba (BABA)",
           "desc": "Largest cloud in China; also develops the Qwen open models.",
-          "id": "alibaba-cloud"
+          "id": "alibaba-cloud",
+          "cap": 201.7,
+          "capNote": "Parent: Alibaba"
          }
         ],
         "id": "hyperscalers"
@@ -1383,7 +1533,9 @@
           "domain": "vercel.com",
           "status": "Private",
           "desc": "Frontend cloud and creator of Next.js; also makes v0, an AI app builder.",
-          "id": "vercel"
+          "id": "vercel",
+          "cap": 9.3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Netlify",
@@ -1423,7 +1575,9 @@
           "domain": "digitalocean.com",
           "status": "Public · DOCN",
           "desc": "Developer- and SMB-focused cloud, now adding GPU droplets.",
-          "id": "digitalocean"
+          "id": "digitalocean",
+          "cap": 7.87,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Heroku",
@@ -1431,7 +1585,9 @@
           "domain": "heroku.com",
           "status": "Part of Salesforce (CRM)",
           "desc": "Pioneering PaaS, owned by Salesforce.",
-          "id": "heroku"
+          "id": "heroku",
+          "cap": 148.65,
+          "capNote": "Parent: Salesforce"
          }
         ],
         "id": "developer-clouds-paas"
@@ -1447,7 +1603,9 @@
           "domain": "cloudflare.com",
           "status": "Public · NET",
           "desc": "Global network for CDN, security (DDoS, zero trust) and edge compute; bought Replicate (AI model hosting) in 2025.",
-          "id": "cloudflare"
+          "id": "cloudflare",
+          "cap": 98.54,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Akamai",
@@ -1455,7 +1613,9 @@
           "domain": "akamai.com",
           "status": "Public · AKAM",
           "desc": "Original CDN; now also security and cloud compute (Linode).",
-          "id": "akamai"
+          "id": "akamai",
+          "cap": 12.27,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Fastly",
@@ -1471,7 +1631,9 @@
           "domain": "konghq.com",
           "status": "Private",
           "desc": "API gateway and service connectivity platform, now with AI gateway features.",
-          "id": "kong"
+          "id": "kong",
+          "cap": 2,
+          "capNote": "Valuation · 2021"
          }
         ],
         "id": "edge-cdn-networking"
@@ -1487,7 +1649,9 @@
           "domain": "docker.com",
           "status": "Private",
           "desc": "Created the container standard; sells developer tools (Docker Desktop, Hub).",
-          "id": "docker"
+          "id": "docker",
+          "cap": 2.1,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Kubernetes",
@@ -1503,7 +1667,9 @@
           "domain": "redhat.com",
           "status": "Part of IBM",
           "desc": "Enterprise Linux and OpenShift (Kubernetes platform); acquired by IBM for $34B in 2019.",
-          "id": "red-hat"
+          "id": "red-hat",
+          "cap": 212.12,
+          "capNote": "Parent: IBM"
          },
          {
           "name": "SUSE",
@@ -1575,7 +1741,9 @@
           "domain": "vmware.com",
           "status": "Part of Broadcom (AVGO)",
           "desc": "Dominant server virtualization software; acquired by Broadcom for $69B in 2023, followed by big price increases.",
-          "id": "vmware"
+          "id": "vmware",
+          "cap": 1453,
+          "capNote": "Parent: Broadcom"
          },
          {
           "name": "Nutanix",
@@ -1583,7 +1751,9 @@
           "domain": "nutanix.com",
           "status": "Public · NTNX",
           "desc": "Hyperconverged infrastructure; a beneficiary of customers leaving VMware.",
-          "id": "nutanix"
+          "id": "nutanix",
+          "cap": 14.78,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "NetApp",
@@ -1591,7 +1761,9 @@
           "domain": "netapp.com",
           "status": "Public · NTAP",
           "desc": "Enterprise storage and data management across on-prem and cloud.",
-          "id": "netapp"
+          "id": "netapp",
+          "cap": 30.96,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Pure Storage",
@@ -1607,7 +1779,9 @@
           "domain": "vastdata.com",
           "status": "Private",
           "desc": "Storage and data platform built for AI training and inference at scale.",
-          "id": "vast-data"
+          "id": "vast-data",
+          "cap": 9.1,
+          "capNote": "Valuation · 2023"
          },
          {
           "name": "Rubrik",
@@ -1615,7 +1789,9 @@
           "domain": "rubrik.com",
           "status": "Public · RBRK",
           "desc": "Backup and cyber-recovery with data security posture management.",
-          "id": "rubrik"
+          "id": "rubrik",
+          "cap": 21.96,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Cohesity",
@@ -1656,7 +1832,9 @@
           "domain": "oracle.com/database",
           "status": "Part of Oracle (ORCL)",
           "desc": "The incumbent enterprise relational database, still running most big banks and ERPs.",
-          "id": "oracle-database"
+          "id": "oracle-database",
+          "cap": 315.48,
+          "capNote": "Parent: Oracle"
          },
          {
           "name": "MongoDB",
@@ -1664,7 +1842,9 @@
           "domain": "mongodb.com",
           "status": "Public · MDB",
           "desc": "Leading document (NoSQL) database; Atlas is its managed cloud service.",
-          "id": "mongodb"
+          "id": "mongodb",
+          "cap": 22.99,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "PostgreSQL",
@@ -1680,7 +1860,9 @@
           "domain": "microsoft.com/sql-server",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Microsoft's relational database, common in enterprises.",
-          "id": "microsoft-sql-server"
+          "id": "microsoft-sql-server",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "Amazon Aurora & DynamoDB",
@@ -1688,7 +1870,9 @@
           "domain": "aws.amazon.com/rds/aurora",
           "status": "Part of Amazon (AMZN)",
           "desc": "AWS's managed relational (Aurora) and key-value (DynamoDB) databases.",
-          "id": "amazon-aurora-dynamodb"
+          "id": "amazon-aurora-dynamodb",
+          "cap": 2668,
+          "capNote": "Parent: Amazon"
          },
          {
           "name": "Supabase",
@@ -1696,7 +1880,9 @@
           "domain": "supabase.com",
           "status": "Private",
           "desc": "Open-source backend built on Postgres (auth, storage, APIs) — popular with AI app builders.",
-          "id": "supabase"
+          "id": "supabase",
+          "cap": 5,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Neon",
@@ -1720,7 +1906,9 @@
           "domain": "cockroachlabs.com",
           "status": "Private",
           "desc": "Distributed SQL database that survives data-center failures.",
-          "id": "cockroachdb"
+          "id": "cockroachdb",
+          "cap": 5,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Redis",
@@ -1768,7 +1956,9 @@
           "domain": "snowflake.com",
           "status": "Public · SNOW",
           "desc": "Cloud data warehouse with usage-based pricing; expanding into AI (Cortex) and Postgres; acquired Observe in 2026.",
-          "id": "snowflake"
+          "id": "snowflake",
+          "cap": 89.9,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Databricks",
@@ -1776,7 +1966,9 @@
           "domain": "databricks.com",
           "status": "Private",
           "desc": "Lakehouse platform born from Apache Spark; Snowflake's main rival. Valued ~$134B in early 2026 and said it won't IPO in 2026.",
-          "id": "databricks"
+          "id": "databricks",
+          "cap": 134,
+          "capNote": "Valuation · Feb 2026"
          },
          {
           "name": "Google BigQuery",
@@ -1784,7 +1976,9 @@
           "domain": "cloud.google.com/bigquery",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "Google Cloud's serverless data warehouse.",
-          "id": "google-bigquery"
+          "id": "google-bigquery",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Amazon Redshift",
@@ -1792,7 +1986,9 @@
           "domain": "aws.amazon.com/redshift",
           "status": "Part of Amazon (AMZN)",
           "desc": "AWS's data warehouse.",
-          "id": "amazon-redshift"
+          "id": "amazon-redshift",
+          "cap": 2668,
+          "capNote": "Parent: Amazon"
          },
          {
           "name": "Microsoft Fabric",
@@ -1800,7 +1996,9 @@
           "domain": "microsoft.com/microsoft-fabric",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Microsoft's unified analytics platform combining warehouse, lake and Power BI.",
-          "id": "microsoft-fabric"
+          "id": "microsoft-fabric",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "ClickHouse",
@@ -1808,7 +2006,9 @@
           "domain": "clickhouse.com",
           "status": "Private",
           "desc": "Very fast open-source analytics database; acquired Langfuse (LLM observability).",
-          "id": "clickhouse"
+          "id": "clickhouse",
+          "cap": 6.35,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "MotherDuck",
@@ -1824,7 +2024,9 @@
           "domain": "starburst.io",
           "status": "Private",
           "desc": "Query engine (Trino) that queries data where it lives without moving it.",
-          "id": "starburst"
+          "id": "starburst",
+          "cap": 3.35,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Dremio",
@@ -1832,7 +2034,9 @@
           "domain": "dremio.com",
           "status": "Private",
           "desc": "Lakehouse query engine built around Apache Iceberg.",
-          "id": "dremio"
+          "id": "dremio",
+          "cap": 2,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Firebolt",
@@ -1888,7 +2092,9 @@
           "domain": "aws.amazon.com/s3",
           "status": "Part of Amazon (AMZN)",
           "desc": "The default object store where most data lakes live.",
-          "id": "amazon-s3"
+          "id": "amazon-s3",
+          "cap": 2668,
+          "capNote": "Parent: Amazon"
          },
          {
           "name": "MinIO",
@@ -1896,7 +2102,9 @@
           "domain": "min.io",
           "status": "Private",
           "desc": "S3-compatible object storage you can run anywhere.",
-          "id": "minio"
+          "id": "minio",
+          "cap": 1,
+          "capNote": "Valuation · 2022"
          }
         ],
         "id": "open-table-formats-object-storage"
@@ -1968,7 +2176,9 @@
           "domain": "fivetran.com",
           "status": "Private",
           "desc": "Fivetran (managed connectors that load data) merged with dbt Labs (SQL transformations) in June 2026 — together the core of the modern data stack.",
-          "id": "fivetran-dbt-labs"
+          "id": "fivetran-dbt-labs",
+          "cap": 5.6,
+          "capNote": "Valuation · 2021 (Fivetran, pre-merger)"
          },
          {
           "name": "dbt",
@@ -1984,7 +2194,9 @@
           "domain": "airbyte.com",
           "status": "Private",
           "desc": "Open-source data integration with hundreds of connectors.",
-          "id": "airbyte"
+          "id": "airbyte",
+          "cap": 1.5,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Informatica",
@@ -2000,7 +2212,9 @@
           "domain": "matillion.com",
           "status": "Private",
           "desc": "Cloud ETL built for Snowflake, Databricks and Redshift.",
-          "id": "matillion"
+          "id": "matillion",
+          "cap": 1.5,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Coalesce",
@@ -2032,7 +2246,9 @@
           "domain": "mulesoft.com",
           "status": "Part of Salesforce (CRM)",
           "desc": "API-led integration platform owned by Salesforce.",
-          "id": "mulesoft"
+          "id": "mulesoft",
+          "cap": 148.65,
+          "capNote": "Parent: Salesforce"
          }
         ],
         "id": "data-integration-etl-elt"
@@ -2088,7 +2304,9 @@
           "domain": "atlan.com",
           "status": "Private",
           "desc": "Active metadata and data catalog platform.",
-          "id": "atlan"
+          "id": "atlan",
+          "cap": 0.75,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "Alation",
@@ -2096,7 +2314,9 @@
           "domain": "alation.com",
           "status": "Private",
           "desc": "Enterprise data catalog.",
-          "id": "alation"
+          "id": "alation",
+          "cap": 1.7,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Collibra",
@@ -2104,7 +2324,9 @@
           "domain": "collibra.com",
           "status": "Private",
           "desc": "Data governance and catalog for large enterprises.",
-          "id": "collibra"
+          "id": "collibra",
+          "cap": 5.25,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "data.world",
@@ -2136,7 +2358,9 @@
           "domain": "montecarlodata.com",
           "status": "Private",
           "desc": "Pioneer of data observability — alerts when data breaks.",
-          "id": "monte-carlo"
+          "id": "monte-carlo",
+          "cap": 1.6,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Anomalo",
@@ -2184,7 +2408,9 @@
           "domain": "powerbi.microsoft.com",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Most widely used BI tool, bundled with Microsoft 365.",
-          "id": "microsoft-power-bi"
+          "id": "microsoft-power-bi",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "Tableau",
@@ -2192,7 +2418,9 @@
           "domain": "tableau.com",
           "status": "Part of Salesforce (CRM)",
           "desc": "Visual analytics leader, acquired by Salesforce in 2019.",
-          "id": "tableau"
+          "id": "tableau",
+          "cap": 148.65,
+          "capNote": "Parent: Salesforce"
          },
          {
           "name": "Looker",
@@ -2200,7 +2428,9 @@
           "domain": "looker.com",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "BI with a semantic modeling layer, owned by Google Cloud.",
-          "id": "looker"
+          "id": "looker",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Sigma Computing",
@@ -2224,7 +2454,9 @@
           "domain": "thoughtspot.com",
           "status": "Private",
           "desc": "Search- and AI-driven analytics.",
-          "id": "thoughtspot"
+          "id": "thoughtspot",
+          "cap": 4.2,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Omni",
@@ -2248,7 +2480,9 @@
           "domain": "posthog.com",
           "status": "Private",
           "desc": "Open-source product analytics, session replay and feature flags.",
-          "id": "posthog"
+          "id": "posthog",
+          "cap": 1.4,
+          "capNote": "Valuation · 2025"
          }
         ],
         "id": "bi-analytics"
@@ -2264,7 +2498,9 @@
           "domain": "palantir.com",
           "status": "Public · PLTR",
           "desc": "Data integration and AI platforms (Foundry, AIP) for governments and enterprises; one of the most valuable software companies.",
-          "id": "palantir"
+          "id": "palantir",
+          "cap": 345.73,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "C3.ai",
@@ -2280,7 +2516,9 @@
           "domain": "dataiku.com",
           "status": "Private",
           "desc": "Collaborative data science and AI platform.",
-          "id": "dataiku"
+          "id": "dataiku",
+          "cap": 3.7,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "DataRobot",
@@ -2288,7 +2526,9 @@
           "domain": "datarobot.com",
           "status": "Private",
           "desc": "Automated machine learning and AI platform.",
-          "id": "datarobot"
+          "id": "datarobot",
+          "cap": 6.3,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "H2O.ai",
@@ -2329,7 +2569,9 @@
           "domain": "github.com",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Largest code host; also GitHub Copilot and Actions (CI/CD).",
-          "id": "github"
+          "id": "github",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "GitLab",
@@ -2337,7 +2579,9 @@
           "domain": "gitlab.com",
           "status": "Public · GTLB",
           "desc": "All-in-one DevSecOps platform — code, CI/CD, security in one app.",
-          "id": "gitlab"
+          "id": "gitlab",
+          "cap": 7.19,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Atlassian",
@@ -2345,7 +2589,9 @@
           "domain": "atlassian.com",
           "status": "Public · TEAM",
           "desc": "Jira, Confluence and Bitbucket — the default for engineering planning and docs.",
-          "id": "atlassian"
+          "id": "atlassian",
+          "cap": 33.91,
+          "capNote": "Market cap · Nov 2026"
          }
         ],
         "id": "code-hosting-devsecops-platforms"
@@ -2361,7 +2607,9 @@
           "domain": "harness.io",
           "status": "Private",
           "desc": "AI-powered software delivery platform (CI/CD, feature flags, cost).",
-          "id": "harness"
+          "id": "harness",
+          "cap": 5.5,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "CircleCI",
@@ -2369,7 +2617,9 @@
           "domain": "circleci.com",
           "status": "Private",
           "desc": "Cloud continuous integration.",
-          "id": "circleci"
+          "id": "circleci",
+          "cap": 1.7,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Buildkite",
@@ -2385,7 +2635,9 @@
           "domain": "jfrog.com",
           "status": "Public · FROG",
           "desc": "Artifactory — manages software packages and binaries.",
-          "id": "jfrog"
+          "id": "jfrog",
+          "cap": 12.58,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "LaunchDarkly",
@@ -2393,7 +2645,9 @@
           "domain": "launchdarkly.com",
           "status": "Private",
           "desc": "Feature flags for gradual releases.",
-          "id": "launchdarkly"
+          "id": "launchdarkly",
+          "cap": 3,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Statsig",
@@ -2417,7 +2671,9 @@
           "domain": "datadoghq.com",
           "status": "Public · DDOG",
           "desc": "Leading cloud monitoring platform: infrastructure, APM, logs, security.",
-          "id": "datadog"
+          "id": "datadog",
+          "cap": 56.81,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Dynatrace",
@@ -2425,7 +2681,9 @@
           "domain": "dynatrace.com",
           "status": "Public · DT",
           "desc": "AI-driven observability for large enterprises; bought Arize in 2026.",
-          "id": "dynatrace"
+          "id": "dynatrace",
+          "cap": 12.46,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Splunk",
@@ -2433,7 +2691,9 @@
           "domain": "splunk.com",
           "status": "Part of Cisco (CSCO)",
           "desc": "Log analytics and SIEM; acquired by Cisco for $28B in 2024.",
-          "id": "splunk"
+          "id": "splunk",
+          "cap": 357.34,
+          "capNote": "Parent: Cisco"
          },
          {
           "name": "Grafana Labs",
@@ -2441,7 +2701,9 @@
           "domain": "grafana.com",
           "status": "Private",
           "desc": "Open-source dashboards plus Loki, Tempo and Mimir observability stack.",
-          "id": "grafana-labs"
+          "id": "grafana-labs",
+          "cap": 6,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "New Relic",
@@ -2457,7 +2719,9 @@
           "domain": "elastic.co",
           "status": "Public · ESTC",
           "desc": "Elasticsearch for search, observability and security.",
-          "id": "elastic"
+          "id": "elastic",
+          "cap": 7.92,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Chronosphere",
@@ -2481,7 +2745,9 @@
           "domain": "sentry.io",
           "status": "Private",
           "desc": "Error and performance monitoring for developers.",
-          "id": "sentry"
+          "id": "sentry",
+          "cap": 3,
+          "capNote": "Valuation · 2022"
          }
         ],
         "id": "observability-monitoring"
@@ -2521,7 +2787,9 @@
           "domain": "traversal.com",
           "status": "Private",
           "desc": "AI site-reliability engineer that diagnoses incidents.",
-          "id": "traversal"
+          "id": "traversal",
+          "cap": 1,
+          "capNote": "Valuation · Nov 2026"
          }
         ],
         "id": "incident-management"
@@ -2537,7 +2805,9 @@
           "domain": "postman.com",
           "status": "Private",
           "desc": "API development and testing platform.",
-          "id": "postman"
+          "id": "postman",
+          "cap": 5.6,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Twilio",
@@ -2545,7 +2815,9 @@
           "domain": "twilio.com",
           "status": "Public · TWLO",
           "desc": "APIs for SMS, voice and email.",
-          "id": "twilio"
+          "id": "twilio",
+          "cap": 26.62,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Temporal",
@@ -2561,7 +2833,9 @@
           "domain": "firebase.google.com",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "Google's backend-as-a-service for app developers.",
-          "id": "firebase"
+          "id": "firebase",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          }
         ],
         "id": "apis-backend-workflows"
@@ -2586,7 +2860,9 @@
           "domain": "okta.com",
           "status": "Public · OKTA",
           "desc": "Leading independent identity platform (single sign-on, MFA); owns Auth0.",
-          "id": "okta"
+          "id": "okta",
+          "cap": 33.47,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Microsoft Entra",
@@ -2594,7 +2870,9 @@
           "domain": "microsoft.com/security/business/microsoft-entra",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Microsoft's identity platform (formerly Azure AD).",
-          "id": "microsoft-entra"
+          "id": "microsoft-entra",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "CyberArk",
@@ -2610,7 +2888,9 @@
           "domain": "sailpoint.com",
           "status": "Public · SAIL",
           "desc": "Identity governance — who should have access to what. Re-IPO'd in 2025.",
-          "id": "sailpoint"
+          "id": "sailpoint",
+          "cap": 12.17,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Ping Identity",
@@ -2626,7 +2906,9 @@
           "domain": "1password.com",
           "status": "Private",
           "desc": "Password and secrets management for businesses.",
-          "id": "1password"
+          "id": "1password",
+          "cap": 6.8,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "WorkOS",
@@ -2650,7 +2932,9 @@
           "domain": "crowdstrike.com",
           "status": "Public · CRWD",
           "desc": "Cloud-native endpoint security leader (Falcon platform).",
-          "id": "crowdstrike"
+          "id": "crowdstrike",
+          "cap": 234.93,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "SentinelOne",
@@ -2658,7 +2942,9 @@
           "domain": "sentinelone.com",
           "status": "Public · S",
           "desc": "AI-driven endpoint and XDR security.",
-          "id": "sentinelone"
+          "id": "sentinelone",
+          "cap": 7.97,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Microsoft Defender",
@@ -2666,7 +2952,9 @@
           "domain": "microsoft.com/security",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Bundled endpoint and XDR security — the largest security business by revenue.",
-          "id": "microsoft-defender"
+          "id": "microsoft-defender",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "Sophos",
@@ -2690,7 +2978,9 @@
           "domain": "paloaltonetworks.com",
           "status": "Public · PANW",
           "desc": "Largest pure-play security company — firewalls, SASE, cloud, SecOps, and now identity via CyberArk.",
-          "id": "palo-alto-networks"
+          "id": "palo-alto-networks",
+          "cap": 281.86,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Fortinet",
@@ -2698,7 +2988,9 @@
           "domain": "fortinet.com",
           "status": "Public · FTNT",
           "desc": "Firewalls with in-house chips; strong in mid-market and OT security.",
-          "id": "fortinet"
+          "id": "fortinet",
+          "cap": 91.51,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Zscaler",
@@ -2706,7 +2998,9 @@
           "domain": "zscaler.com",
           "status": "Public · ZS",
           "desc": "Cloud-delivered zero-trust security proxy.",
-          "id": "zscaler"
+          "id": "zscaler",
+          "cap": 31.76,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Netskope",
@@ -2722,7 +3016,9 @@
           "domain": "checkpoint.com",
           "status": "Public · CHKP",
           "desc": "Veteran Israeli firewall and security vendor.",
-          "id": "check-point"
+          "id": "check-point",
+          "cap": 15.81,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Cato Networks",
@@ -2730,7 +3026,9 @@
           "domain": "catonetworks.com",
           "status": "Private",
           "desc": "SASE platform combining networking and security.",
-          "id": "cato-networks"
+          "id": "cato-networks",
+          "cap": 4.8,
+          "capNote": "Valuation · 2025"
          }
         ],
         "id": "network-security-sase"
@@ -2754,7 +3052,9 @@
           "domain": "orca.security",
           "status": "Private",
           "desc": "Agentless cloud security platform.",
-          "id": "orca-security"
+          "id": "orca-security",
+          "cap": 1.8,
+          "capNote": "Valuation · 2021"
          },
          {
           "name": "Upwind",
@@ -2770,7 +3070,9 @@
           "domain": "aquasec.com",
           "status": "Private",
           "desc": "Container and cloud-native security.",
-          "id": "aqua-security"
+          "id": "aqua-security",
+          "cap": 1,
+          "capNote": "Valuation · 2021"
          }
         ],
         "id": "cloud-security-cnapp"
@@ -2786,7 +3088,9 @@
           "domain": "cloud.google.com/security/products/security-operations",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "Google's SIEM/SOAR plus Mandiant threat intel.",
-          "id": "google-security-operations"
+          "id": "google-security-operations",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Rapid7",
@@ -2810,7 +3114,9 @@
           "domain": "arcticwolf.com",
           "status": "Private",
           "desc": "Managed security operations for mid-market.",
-          "id": "arctic-wolf"
+          "id": "arctic-wolf",
+          "cap": 4.3,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Cribl",
@@ -2818,7 +3124,9 @@
           "domain": "cribl.io",
           "status": "Private",
           "desc": "Telemetry pipeline that routes and reduces security/observability data.",
-          "id": "cribl"
+          "id": "cribl",
+          "cap": 3.5,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "Torq",
@@ -2842,7 +3150,9 @@
           "domain": "snyk.io",
           "status": "Private",
           "desc": "Developer-first security scanning for code and dependencies.",
-          "id": "snyk"
+          "id": "snyk",
+          "cap": 7.4,
+          "capNote": "Valuation · 2022"
          },
          {
           "name": "Semgrep",
@@ -2858,7 +3168,9 @@
           "domain": "chainguard.dev",
           "status": "Private",
           "desc": "Hardened, vulnerability-free container images.",
-          "id": "chainguard"
+          "id": "chainguard",
+          "cap": 3.5,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Socket",
@@ -2890,7 +3202,9 @@
           "domain": "cyera.com",
           "status": "Private",
           "desc": "AI-native data security posture management (DSPM).",
-          "id": "cyera"
+          "id": "cyera",
+          "cap": 6,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Varonis",
@@ -2946,7 +3260,9 @@
           "domain": "abnormal.ai",
           "status": "Private",
           "desc": "AI-based email security that models normal behavior.",
-          "id": "abnormal-ai"
+          "id": "abnormal-ai",
+          "cap": 5.1,
+          "capNote": "Valuation · 2024"
          },
          {
           "name": "KnowBe4",
@@ -2979,7 +3295,9 @@
           "domain": "salesforce.com",
           "status": "Public · CRM",
           "desc": "Largest CRM vendor; betting on Agentforce AI agents; bought Informatica and agreed to buy Fin.",
-          "id": "salesforce"
+          "id": "salesforce",
+          "cap": 148.65,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "HubSpot",
@@ -2987,7 +3305,9 @@
           "domain": "hubspot.com",
           "status": "Public · HUBS",
           "desc": "CRM and marketing for SMBs and mid-market.",
-          "id": "hubspot"
+          "id": "hubspot",
+          "cap": 9.46,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Fin (formerly Intercom)",
@@ -2995,7 +3315,9 @@
           "domain": "fin.ai",
           "status": "Pending acquisition by Salesforce",
           "desc": "AI customer-service agent; Salesforce agreed to buy it for ~$3.6B in June 2026.",
-          "id": "fin-formerly-intercom"
+          "id": "fin-formerly-intercom",
+          "cap": 3.6,
+          "capNote": "Deal value · Salesforce, Jun 2026"
          },
          {
           "name": "Zendesk",
@@ -3043,7 +3365,9 @@
           "domain": "sap.com",
           "status": "Public · SAP",
           "desc": "Largest ERP vendor, running core operations of most large companies.",
-          "id": "sap"
+          "id": "sap",
+          "cap": 229.6,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Oracle Fusion & NetSuite",
@@ -3051,7 +3375,9 @@
           "domain": "oracle.com/erp",
           "status": "Part of Oracle (ORCL)",
           "desc": "Oracle's cloud ERP for enterprise (Fusion) and mid-market (NetSuite).",
-          "id": "oracle-fusion-netsuite"
+          "id": "oracle-fusion-netsuite",
+          "cap": 315.48,
+          "capNote": "Parent: Oracle"
          },
          {
           "name": "Intuit",
@@ -3059,7 +3385,9 @@
           "domain": "intuit.com",
           "status": "Public · INTU",
           "desc": "QuickBooks, TurboTax, Credit Karma, Mailchimp.",
-          "id": "intuit"
+          "id": "intuit",
+          "cap": 72.27,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Bill.com",
@@ -3091,7 +3419,9 @@
           "domain": "onestream.com",
           "status": "Being acquired by Hg",
           "desc": "Corporate performance management; Hg agreed to take it private for ~$6.4B in 2026.",
-          "id": "onestream"
+          "id": "onestream",
+          "cap": 6.4,
+          "capNote": "Deal value · Hg, 2026"
          },
          {
           "name": "Rillet",
@@ -3115,7 +3445,9 @@
           "domain": "workday.com",
           "status": "Public · WDAY",
           "desc": "Leading cloud HR and finance suite for large enterprises.",
-          "id": "workday"
+          "id": "workday",
+          "cap": 42.05,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "ADP",
@@ -3123,7 +3455,9 @@
           "domain": "adp.com",
           "status": "Public · ADP",
           "desc": "Payroll giant.",
-          "id": "adp"
+          "id": "adp",
+          "cap": 119.1,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Rippling",
@@ -3131,7 +3465,9 @@
           "domain": "rippling.com",
           "status": "Private",
           "desc": "All-in-one HR, IT and finance platform.",
-          "id": "rippling"
+          "id": "rippling",
+          "cap": 16.8,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Deel",
@@ -3139,7 +3475,9 @@
           "domain": "deel.com",
           "status": "Private",
           "desc": "Global payroll and contractor management.",
-          "id": "deel"
+          "id": "deel",
+          "cap": 17.3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Gusto",
@@ -3155,7 +3493,9 @@
           "domain": "paycom.com",
           "status": "Public · PAYC",
           "desc": "Payroll and HCM software.",
-          "id": "paycom"
+          "id": "paycom",
+          "cap": 10.88,
+          "capNote": "Market cap · Nov 2026"
          }
         ],
         "id": "hr-payroll"
@@ -3171,7 +3511,9 @@
           "domain": "servicenow.com",
           "status": "Public · NOW",
           "desc": "IT service management and workflow automation platform for large enterprises.",
-          "id": "servicenow"
+          "id": "servicenow",
+          "cap": 90.93,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "UiPath",
@@ -3227,7 +3569,9 @@
           "domain": "microsoft.com/microsoft-365",
           "status": "Part of Microsoft (MSFT)",
           "desc": "Office, Teams, Outlook plus Copilot.",
-          "id": "microsoft-365"
+          "id": "microsoft-365",
+          "cap": 3598,
+          "capNote": "Parent: Microsoft"
          },
          {
           "name": "Google Workspace",
@@ -3235,7 +3579,9 @@
           "domain": "workspace.google.com",
           "status": "Part of Alphabet (GOOGL)",
           "desc": "Gmail, Docs, Meet plus Gemini.",
-          "id": "google-workspace"
+          "id": "google-workspace",
+          "cap": 3245,
+          "capNote": "Parent: Alphabet"
          },
          {
           "name": "Slack",
@@ -3243,7 +3589,9 @@
           "domain": "slack.com",
           "status": "Part of Salesforce (CRM)",
           "desc": "Team messaging, acquired by Salesforce in 2021.",
-          "id": "slack"
+          "id": "slack",
+          "cap": 148.65,
+          "capNote": "Parent: Salesforce"
          },
          {
           "name": "Zoom",
@@ -3251,7 +3599,9 @@
           "domain": "zoom.com",
           "status": "Public · ZM",
           "desc": "Video meetings and communications.",
-          "id": "zoom"
+          "id": "zoom",
+          "cap": 23.71,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Notion",
@@ -3267,7 +3617,9 @@
           "domain": "figma.com",
           "status": "Public · FIG",
           "desc": "Collaborative design platform; IPO'd July 2025 after Adobe's deal was blocked.",
-          "id": "figma"
+          "id": "figma",
+          "cap": 8.44,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Canva",
@@ -3275,7 +3627,9 @@
           "domain": "canva.com",
           "status": "Private",
           "desc": "Easy design tool for non-designers.",
-          "id": "canva"
+          "id": "canva",
+          "cap": 42,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Asana",
@@ -3307,7 +3661,9 @@
           "domain": "docusign.com",
           "status": "Public · DOCU",
           "desc": "E-signature and agreement management.",
-          "id": "docusign"
+          "id": "docusign",
+          "cap": 13.93,
+          "capNote": "Market cap · Nov 2026"
          }
         ],
         "id": "collaboration-productivity"
@@ -3332,7 +3688,9 @@
           "domain": "stripe.com",
           "status": "Private",
           "desc": "Payments infrastructure for internet businesses; reported deal for OpenRouter.",
-          "id": "stripe"
+          "id": "stripe",
+          "cap": 107,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Adyen",
@@ -3348,7 +3706,9 @@
           "domain": "plaid.com",
           "status": "Private",
           "desc": "Connects apps to bank accounts.",
-          "id": "plaid"
+          "id": "plaid",
+          "cap": 6.1,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Ramp",
@@ -3356,7 +3716,9 @@
           "domain": "ramp.com",
           "status": "Private",
           "desc": "Corporate cards and AI spend management.",
-          "id": "ramp"
+          "id": "ramp",
+          "cap": 32,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Brex",
@@ -3372,7 +3734,9 @@
           "domain": "toasttab.com",
           "status": "Public · TOST",
           "desc": "Restaurant POS and payments.",
-          "id": "toast"
+          "id": "toast",
+          "cap": 18.25,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Shopify",
@@ -3380,7 +3744,9 @@
           "domain": "shopify.com",
           "status": "Public · SHOP",
           "desc": "Commerce platform for merchants of all sizes.",
-          "id": "shopify"
+          "id": "shopify",
+          "cap": 159.16,
+          "capNote": "Market cap · Nov 2026"
          }
         ],
         "id": "fintech-payments-infrastructure"
@@ -3396,7 +3762,9 @@
           "domain": "aveva.com",
           "status": "Part of Schneider Electric",
           "desc": "Industrial software for design and operations of plants.",
-          "id": "aveva"
+          "id": "aveva",
+          "cap": 146.07,
+          "capNote": "Parent: Schneider Electric"
          },
          {
           "name": "AspenTech",
@@ -3412,7 +3780,9 @@
           "domain": "samsara.com",
           "status": "Public · IOT",
           "desc": "Connected operations — IoT sensors and software for fleets and equipment.",
-          "id": "samsara"
+          "id": "samsara",
+          "cap": 21.95,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Autodesk",
@@ -3420,7 +3790,9 @@
           "domain": "autodesk.com",
           "status": "Public · ADSK",
           "desc": "Design software (AutoCAD, Revit) for architecture and manufacturing.",
-          "id": "autodesk"
+          "id": "autodesk",
+          "cap": 51.09,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Bentley Systems",
@@ -3428,7 +3800,9 @@
           "domain": "bentley.com",
           "status": "Public · BSY",
           "desc": "Infrastructure engineering software (roads, grids, utilities).",
-          "id": "bentley-systems"
+          "id": "bentley-systems",
+          "cap": 12.48,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "PTC",
@@ -3436,7 +3810,9 @@
           "domain": "ptc.com",
           "status": "Public · PTC",
           "desc": "CAD and product lifecycle management for manufacturers.",
-          "id": "ptc"
+          "id": "ptc",
+          "cap": 21.19,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Procore",
@@ -3444,7 +3820,9 @@
           "domain": "procore.com",
           "status": "Public · PCOR",
           "desc": "Construction management software.",
-          "id": "procore"
+          "id": "procore",
+          "cap": 10.73,
+          "capNote": "Market cap · Nov 2026"
          }
         ],
         "id": "energy-industrial-software"
@@ -3468,7 +3846,9 @@
           "domain": "veeva.com",
           "status": "Public · VEEV",
           "desc": "Cloud software for pharma and life sciences.",
-          "id": "veeva-systems"
+          "id": "veeva-systems",
+          "cap": 43.1,
+          "capNote": "Market cap · Nov 2026"
          },
          {
           "name": "Abridge",
@@ -3476,7 +3856,9 @@
           "domain": "abridge.com",
           "status": "Private",
           "desc": "AI scribe that writes clinical notes from doctor-patient conversations.",
-          "id": "abridge"
+          "id": "abridge",
+          "cap": 5.3,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Doximity",
@@ -3500,7 +3882,9 @@
           "domain": "harvey.ai",
           "status": "Private",
           "desc": "Generative AI platform for law firms.",
-          "id": "harvey"
+          "id": "harvey",
+          "cap": 8,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Clio",
@@ -3508,7 +3892,9 @@
           "domain": "clio.com",
           "status": "Private",
           "desc": "Practice management for law firms.",
-          "id": "clio"
+          "id": "clio",
+          "cap": 5,
+          "capNote": "Valuation · 2025"
          },
          {
           "name": "Hebbia",

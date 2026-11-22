@@ -20,6 +20,10 @@
   let dirty = false;
   let changes = [];
   let matchIds = new Set();
+  const LS_VIEW = "tl-view-v1";
+  const LS_ZOOM = "tl-zoom-v1";
+  let view = (() => { try { return localStorage.getItem(LS_VIEW) || "map"; } catch { return "map"; } })();
+  let mapZoom = (() => { try { return +localStorage.getItem(LS_ZOOM) || 1; } catch { return 1; } })();
 
   const $ = (s) => document.querySelector(s);
   const svg = d3.select("#canvas");
@@ -72,6 +76,26 @@
     if (t.startsWith("open source")) return "oss";
     if (t.startsWith("part of")) return "part";
     return "private";
+  }
+  function money(b) {
+    if (b == null || b === "" || isNaN(b)) return "";
+    b = +b;
+    if (b >= 1000) return `$${(b / 1000).toFixed(b >= 10000 ? 1 : 2).replace(/\.?0+$/, "")}T`;
+    if (b >= 1) return `$${b >= 100 ? Math.round(b) : b.toFixed(1).replace(/\.0$/, "")}B`;
+    return `$${Math.round(b * 1000)}M`;
+  }
+  function companiesIn(n) {
+    if (n.type === "company") return [n];
+    return (n.children || []).flatMap(companiesIn);
+  }
+  // Top players by market cap / valuation. Independent companies rank first; products owned by a
+  // bigger company (cap = parent's) only fill in when there aren't 3 independent ones.
+  function topPlayers(n, k = 3) {
+    const all = companiesIn(n).filter((c) => c.cap != null && c.cap !== "" && !isNaN(c.cap) && !["acquired"].includes(statusKind(c.status)));
+    const viaParent = (c) => /^parent/i.test(c.capNote || "");
+    const own = all.filter((c) => !viaParent(c)).sort((a, b) => b.cap - a.cap);
+    const par = all.filter(viaParent).sort((a, b) => b.cap - a.cap);
+    return own.concat(par).slice(0, k);
   }
   const STATUS_COLOR = { public: "#16a34a", private: "#6366f1", acquired: "#dc2626", pending: "#d97706", oss: "#9333ea", part: "#64748b" };
 
@@ -260,9 +284,13 @@
     pathTo(id).forEach((n) => { if (n.type !== "company" && n.type !== "root") expanded.add(n.id); });
     saveExpanded();
   }
+  function refresh(focusId) {
+    if (view === "tree") render(focusId); else renderMap();
+    updateStats();
+  }
   function select(id) {
     selectedId = id;
-    render(id);
+    if (view === "tree") render(id); else { renderMap(); focusTile(id); }
     renderPanel();
   }
 
@@ -290,6 +318,7 @@
         <div><h2>${esc(n.name)}</h2>${n.domain ? `<a class="site" href="${esc(href(n.domain))}" target="_blank" rel="noopener">${esc(n.domain)} ↗</a>` : ""}</div>
       </div>`;
       if (n.status) html += `<span class="badge ${kind}">${esc(n.status)}</span>`;
+      if (n.cap != null && n.cap !== "") html += `<div class="capline"><b>${money(n.cap)}</b> <span class="muted">${esc(n.capNote || "")}</span></div>`;
       html += `<p class="desc">${esc(n.desc || "No description yet.")}</p>`;
       if (n.notes) html += `<div class="section-title">My notes</div><div class="notes">${esc(n.notes)}</div>`;
       const parent = parentOf.get(n.id);
@@ -299,6 +328,13 @@
       html += `<div class="p-head"><div class="p-swatch" style="background:${color}"></div><div><h2>${esc(n.name)}</h2>
         <span class="muted" style="font-size:13px">${countCompanies(n)} companies</span></div></div>`;
       html += `<p class="desc">${esc(n.desc || "")}</p>`;
+      const top = topPlayers(n);
+      if (top.length) {
+        html += `<div class="section-title">Top ${top.length} by market cap</div><ol class="top">${top.map((c, i) => {
+          const l = logoUrl(c, 64);
+          return `<li data-go="${esc(c.id)}"><span class="rank">${i + 1}</span>${l ? `<img src="${esc(l)}" alt="">` : ""}<span class="t-name">${esc(c.name)}</span><span class="t-cap"><b>${money(c.cap)}</b><small>${esc(c.capNote || "")}</small></span></li>`;
+        }).join("")}</ol>`;
+      }
       if (n.notes) html += `<div class="section-title">My notes</div><div class="notes">${esc(n.notes)}</div>`;
       const cats = (n.children || []).filter((c) => c.type !== "company");
       const cos = (n.children || []).filter((c) => c.type === "company");
@@ -335,6 +371,8 @@
       <label>Name <input data-f="name" value="${esc(n.name)}"></label>
       <label>Website <span class="hint">Used for the logo, e.g. coreweave.com</span><input data-f="domain" value="${esc(n.domain || "")}"></label>
       <label>Status <span class="hint">e.g. "Public · NVDA", "Private", "Acquired by IBM (2026)", "Open source"</span><input data-f="status" value="${esc(n.status || "")}"></label>
+      <label>Market cap / valuation ($B) <span class="hint">Number in billions, e.g. 89.9 — used for the "top 3" ranking</span><input data-f="cap" type="number" step="any" value="${esc(n.cap ?? "")}"></label>
+      <label>Cap source <span class="hint">e.g. "Market cap · Nov 2026" or "Valuation · 2025"</span><input data-f="capNote" value="${esc(n.capNote || "")}"></label>
       <label>What they do <textarea data-f="desc">${esc(n.desc || "")}</textarea></label>
       <label>My notes <span class="hint">Deals, interview angles, people you've met…</span><textarea data-f="notes">${esc(n.notes || "")}</textarea></label>
       <label>Custom logo URL <span class="hint">Optional — only if the automatic logo is wrong</span><input data-f="logo" value="${esc(n.logo || "")}"></label>
@@ -361,33 +399,42 @@
 
   function wirePanel(n) {
     const panel = $("#panel");
-    panel.querySelector(".close").onclick = () => { selectedId = null; panel.hidden = true; render(); };
+    panel.querySelector(".close").onclick = () => { selectedId = null; panel.hidden = true; refresh(); };
     panel.querySelectorAll("[data-go]").forEach((el) => (el.onclick = () => { const id = el.dataset.go; reveal(id); const t = byId.get(id); if (t.type !== "company" && t.type !== "root") expanded.add(id); select(id); }));
     panel.querySelectorAll("img.p-logo").forEach((img) => (img.onerror = () => {
       const div = document.createElement("div"); div.className = "p-logo fallback"; div.style.background = img.dataset.color; div.textContent = img.dataset.fallback; img.replaceWith(div);
     }));
-    panel.querySelectorAll(".kids img").forEach((img) => (img.onerror = () => (img.style.visibility = "hidden")));
+    panel.querySelectorAll(".kids img, .top img").forEach((img) => (img.onerror = () => (img.style.visibility = "hidden")));
 
     let renderTimer;
     panel.querySelectorAll("[data-f]").forEach((el) => {
       el.addEventListener("input", () => {
         const f = el.dataset.f; const v = el.value;
-        if (v) n[f] = v; else delete n[f];
+        if (v) n[f] = f === "cap" ? +v : v; else delete n[f];
         if (!changes.includes(`Edit ${n.name}`)) markDirty(`Edit ${n.name}`); else saveDraft();
         clearTimeout(renderTimer);
-        if (["name", "domain", "status", "logo", "color"].includes(f)) renderTimer = setTimeout(() => render(), 300);
+        if (["name", "domain", "status", "logo", "color"].includes(f)) renderTimer = setTimeout(() => refresh(), 300);
       });
     });
     const mv = panel.querySelector("[data-move]");
-    if (mv) mv.onchange = () => {
-      const dest = byId.get(mv.value); if (!dest) return;
-      const from = parentOf.get(n.id);
-      from.children = from.children.filter((c) => c !== n);
-      (dest.children = dest.children || []).push(n);
-      index(); reveal(n.id); markDirty(`Move ${n.name} to ${dest.name}`);
-      select(n.id); toast(`Moved to ${dest.name}`);
-    };
+    if (mv) mv.onchange = () => { if (moveNode(n.id, mv.value)) select(n.id); };
     panel.querySelectorAll("[data-act]").forEach((b) => (b.onclick = () => act(b.dataset.act, n)));
+  }
+
+  // Move a node into a category (optionally before a sibling). Returns true if moved.
+  function moveNode(id, destId, beforeId) {
+    const n = byId.get(id), dest = byId.get(destId);
+    if (!n || !dest || dest.type === "company" || n === dest || n.type === "root") return false;
+    if (pathTo(dest.id).includes(n)) { toast("Can't move a category inside itself", true); return false; }
+    const from = parentOf.get(n.id);
+    from.children = from.children.filter((c) => c !== n);
+    dest.children = dest.children || [];
+    const at = beforeId ? dest.children.findIndex((c) => c.id === beforeId) : -1;
+    if (at >= 0) dest.children.splice(at, 0, n); else dest.children.push(n);
+    index(); reveal(n.id);
+    markDirty(from === dest ? `Reorder ${dest.name}` : `Move ${n.name} to ${dest.name}`);
+    if (from !== dest) toast(`Moved ${n.name} to ${dest.name}`);
+    return true;
   }
 
   function act(action, n) {
@@ -421,7 +468,7 @@
   searchEl.addEventListener("input", () => {
     const q = searchEl.value.trim().toLowerCase();
     matchIds = new Set(); resultIds = []; activeIdx = -1;
-    if (!q) { resultsEl.hidden = true; render(); return; }
+    if (!q) { resultsEl.hidden = true; refresh(); return; }
     const scored = [];
     byId.forEach((n) => {
       if (n.type === "root") return;
@@ -464,6 +511,129 @@
     select(id);
   }
 
+
+  // ───────── map (poster) view ─────────
+  const mapEl = $("#map");
+  function tileHTML(c) {
+    const l = logoUrl(c, 64);
+    const kind = statusKind(c.status);
+    const cls = `tile${c.id === selectedId ? " selected" : ""}${matchIds.has(c.id) ? " match" : ""}`;
+    return `<div class="${cls}" data-id="${esc(c.id)}" data-kind="company" ${editMode ? 'draggable="true"' : ""} title="${esc(c.name)}${c.status ? " — " + esc(c.status) : ""}">
+      <div class="t-logo">${l ? `<img src="${esc(l)}" alt="" loading="lazy" data-ini="${esc(initials(c.name))}">` : `<span class="ini">${esc(initials(c.name))}</span>`}<i class="dot" style="background:${STATUS_COLOR[kind]}"></i></div>
+      <span class="t-label">${esc(c.name)}</span></div>`;
+  }
+  function catHTML(n, level) {
+    const color = colorOf(n.id);
+    const cos = (n.children || []).filter((c) => c.type === "company");
+    const cats = (n.children || []).filter((c) => c.type !== "company");
+    const sel = n.id === selectedId ? " selected" : "";
+    const match = matchIds.has(n.id) ? " match" : "";
+    const lvl = Math.min(level, 3);
+    const head = `<div class="c-head" data-id="${esc(n.id)}" data-kind="category" ${editMode && level >= 2 ? 'draggable="true"' : ""}>
+        <span class="c-sw"></span><span class="c-name">${esc(n.name)}</span><span class="c-count">${countCompanies(n)}</span></div>`;
+    const tiles = (cos.length || (editMode && !cats.length)) ? `<div class="tiles">${cos.map(tileHTML).join("")}${editMode ? `<button class="tile add" data-add="${esc(n.id)}" title="Add a company here">＋<span class="t-label">Add</span></button>` : ""}</div>` : "";
+    const kids = cats.length ? `<div class="c-kids lvl${lvl}-kids">${cats.map((c) => catHTML(c, level + 1)).join("")}</div>` : "";
+    return `<section class="cat lvl${lvl}${sel}${match}" data-drop="${esc(n.id)}" style="--c:${color}">${head}${tiles}${kids}</section>`;
+  }
+  function renderMap() {
+    if (!doc) return;
+    const root = doc.tree;
+    const loose = (root.children || []).filter((c) => c.type === "company");
+    const groups = (root.children || []).filter((c) => c.type !== "company");
+    let html = groups.map((g) => catHTML(g, 1)).join("");
+    if (loose.length || editMode) {
+      html += `<section class="cat lvl1" data-drop="${esc(root.id)}" style="--c:#57534e"><div class="c-head" data-id="${esc(root.id)}" data-kind="category"><span class="c-sw"></span><span class="c-name">Unsorted</span><span class="c-count">${loose.length}</span></div>
+        <div class="tiles">${loose.map(tileHTML).join("")}${editMode ? `<button class="tile add" data-add="${esc(root.id)}">＋<span class="t-label">Add</span></button>` : ""}</div></section>`;
+      if (editMode && groups.length) html += `<button class="add-group" data-addcat="${esc(root.id)}">＋ Add a top-level branch</button>`;
+    }
+    $("#map-inner").innerHTML = html;
+    applyZoom();
+    $("#zoom-level").textContent = Math.round(mapZoom * 100) + "%";
+  }
+  function focusTile(id) {
+    const el = mapEl.querySelector(`[data-id="${CSS.escape(id)}"]`);
+    if (!el) return;
+    const target = el.classList.contains("c-head") ? el.parentElement : el;
+    target.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    target.classList.remove("flash"); void target.offsetWidth; target.classList.add("flash");
+  }
+  // clicks
+  mapEl.addEventListener("click", (e) => {
+    const add = e.target.closest("[data-add]");
+    if (add) { act("add-company", byId.get(add.dataset.add)); return; }
+    const addc = e.target.closest("[data-addcat]");
+    if (addc) { act("add-category", byId.get(addc.dataset.addcat)); return; }
+    const hit = e.target.closest("[data-id]");
+    if (hit) select(hit.dataset.id);
+  });
+  // broken logos -> initials
+  mapEl.addEventListener("error", (e) => {
+    const img = e.target;
+    if (img.tagName === "IMG" && img.dataset.ini) { const s = document.createElement("span"); s.className = "ini"; s.textContent = img.dataset.ini; img.replaceWith(s); }
+  }, true);
+  // drag & drop (edit mode)
+  let dragId = null;
+  mapEl.addEventListener("dragstart", (e) => {
+    const el = e.target.closest("[draggable=true][data-id]"); if (!el) return;
+    dragId = el.dataset.id; e.dataTransfer.effectAllowed = "move"; e.dataTransfer.setData("text/plain", dragId);
+    (el.classList.contains("c-head") ? el.parentElement : el).classList.add("dragging");
+  });
+  mapEl.addEventListener("dragend", () => { dragId = null; mapEl.querySelectorAll(".dragging,.drop-over,.drop-before").forEach((x) => x.classList.remove("dragging", "drop-over", "drop-before")); });
+  function dropTarget(e) {
+    const zone = e.target.closest("[data-drop]"); if (!zone || !dragId) return null;
+    const dragged = byId.get(dragId);
+    // categories can only be dropped into categories at the same nesting or above; companies anywhere
+    return { zone, destId: zone.dataset.drop, dragged };
+  }
+  mapEl.addEventListener("dragover", (e) => {
+    const t = dropTarget(e); if (!t) return;
+    e.preventDefault(); e.dataTransfer.dropEffect = "move";
+    mapEl.querySelectorAll(".drop-over,.drop-before").forEach((x) => x.classList.remove("drop-over", "drop-before"));
+    t.zone.classList.add("drop-over");
+    const before = e.target.closest(".tile[data-id]");
+    if (before && t.dragged.type === "company" && before.dataset.id !== dragId) before.classList.add("drop-before");
+  });
+  mapEl.addEventListener("drop", (e) => {
+    const t = dropTarget(e); if (!t) return;
+    e.preventDefault();
+    const before = e.target.closest(".tile[data-id]");
+    const beforeId = before && t.dragged.type === "company" && before.dataset.id !== dragId && parentOf.get(before.dataset.id)?.id === t.destId ? before.dataset.id : null;
+    const id = dragId; dragId = null;
+    if (moveNode(id, t.destId, beforeId)) { selectedId = id; renderMap(); renderPanel(); }
+  });
+  // zoom
+  function setZoom(z) {
+    mapZoom = Math.max(0.25, Math.min(1.6, Math.round(z * 100) / 100));
+    try { localStorage.setItem(LS_ZOOM, String(mapZoom)); } catch {}
+    applyZoom(); $("#zoom-level").textContent = Math.round(mapZoom * 100) + "%";
+  }
+  // CSS zoom shrinks the layout too, so widen the inner box by 1/zoom to keep filling the screen
+  function applyZoom() { const i = $("#map-inner"); i.style.zoom = mapZoom; i.style.width = `${100 / mapZoom}%`; }
+  $("#zoom-in").onclick = () => setZoom(mapZoom + 0.1);
+  $("#zoom-out").onclick = () => setZoom(mapZoom - 0.1);
+  $("#zoom-fit").onclick = () => {
+    // the layout reflows as zoom changes, so step down until the whole map fits the screen height
+    const inner = $("#map-inner"), avail = mapEl.clientHeight - 60;
+    let z = 1;
+    for (; z > 0.25; z = Math.round((z - 0.05) * 100) / 100) {
+      mapZoom = z; applyZoom();
+      if (inner.getBoundingClientRect().height <= avail) break;
+    }
+    setZoom(z); mapEl.scrollTo(0, 0);
+  };
+  mapEl.addEventListener("wheel", (e) => { if (e.ctrlKey || e.metaKey) { e.preventDefault(); setZoom(mapZoom * (e.deltaY < 0 ? 1.08 : 0.93)); } }, { passive: false });
+
+  function setView(v, initial) {
+    view = v === "tree" ? "tree" : "map";
+    try { localStorage.setItem(LS_VIEW, view); } catch {}
+    document.body.dataset.view = view;
+    $("#btn-view").textContent = view === "map" ? "Tree view" : "Map view";
+    if (view === "tree") { if (initial) fitStart(); render(selectedId); if (!initial && !selectedId) fitStart(); }
+    else { renderMap(); if (selectedId) focusTile(selectedId); }
+    updateStats();
+  }
+  $("#btn-view").onclick = () => setView(view === "map" ? "tree" : "map");
+
   // ───────── toolbar ─────────
   function openTopLevel() { (doc.tree.children || []).forEach((g) => g.type !== "company" && expanded.add(g.id)); }
   $("#btn-collapse").onclick = () => { expanded.clear(); openTopLevel(); saveExpanded(); selectedId = null; $("#panel").hidden = true; render(); fitStart(); };
@@ -472,7 +642,8 @@
     $("#btn-edit").classList.toggle("on", editMode);
     $("#btn-edit").textContent = editMode ? "Done editing" : "Edit";
     if (editMode && !selectedId) selectedId = doc.tree.id;
-    renderPanel(); render();
+    document.body.classList.toggle("editing", editMode);
+    renderPanel(); refresh();
   };
   $("#btn-settings").onclick = openSettings;
   $("#btn-save").onclick = saveToGitHub;
@@ -527,7 +698,7 @@
   }
 
   window.addEventListener("beforeunload", (e) => { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
-  window.addEventListener("resize", () => { if (selectedId) centerOn(selectedId); });
+  window.addEventListener("resize", () => { if (view === "tree" && selectedId) centerOn(selectedId); });
 
   // ───────── boot ─────────
   function showDraftBanner(draft) {
@@ -537,7 +708,7 @@
       <button class="primary" data-b="restore">Restore them</button><button data-b="discard">Discard</button>`;
     b.hidden = false;
     b.querySelector('[data-b="restore"]').onclick = () => {
-      doc = draft.doc; changes = draft.changes || []; index(); markDirty(); b.hidden = true; render(); renderPanel(); toast("Edits restored — click Save to GitHub to publish them.");
+      doc = draft.doc; changes = draft.changes || []; index(); markDirty(); b.hidden = true; refresh(); renderPanel(); toast("Edits restored — click Save to GitHub to publish them.");
     };
     b.querySelector('[data-b="discard"]').onclick = () => { clearDraft(); b.hidden = true; };
   }
@@ -561,10 +732,9 @@
     if (Array.isArray(stored) && stored.length) stored.forEach((id) => byId.has(id) && expanded.add(id));
     else openTopLevel();
     try { const d = JSON.parse(localStorage.getItem(LS_DRAFT) || "null"); if (d && d.doc) showDraftBanner(d); } catch {}
-    fitStart();
-    render();
-    // re-measure once web fonts arrive so pills fit their labels
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measureCache.clear(); render(); });
+    setView(view, true);
+    // re-measure once web fonts arrive so tree pills fit their labels
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measureCache.clear(); if (view === "tree") render(); });
   }
   boot();
 })();

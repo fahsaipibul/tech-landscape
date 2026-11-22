@@ -21,7 +21,8 @@
     <ul id="results" class="results" hidden></ul>
   </div>
   <div class="actions">
-    <button id="btn-collapse" class="ghost" title="Collapse everything">Collapse all</button>
+    <button id="btn-view" class="ghost" title="Switch between the full map and the expandable tree">Tree view</button>
+    <button id="btn-collapse" class="ghost tree-only" title="Collapse everything">Collapse all</button>
     <button id="btn-edit" class="ghost" title="Turn editing on or off">Edit</button>
     <button id="btn-save" class="primary" hidden>Save to GitHub</button>
     <button id="btn-settings" class="icon ghost" title="GitHub settings" aria-label="Settings">⚙</button>
@@ -31,7 +32,17 @@
 <div id="banner" class="banner" hidden></div>
 
 <main>
-  <svg id="canvas" aria-label="Landscape map"></svg>
+  <svg id="canvas" class="tree-only" aria-label="Landscape tree"></svg>
+  <div id="map" class="map map-only">
+    <div class="map-tools">
+      <button id="zoom-out" title="Zoom out">−</button>
+      <span id="zoom-level">100%</span>
+      <button id="zoom-in" title="Zoom in">+</button>
+      <button id="zoom-fit" title="Fit everything on screen">Fit</button>
+      <span class="legend"><i style="background:#16a34a"></i>Public <i style="background:#6366f1"></i>Private <i style="background:#dc2626"></i>Acquired <i style="background:#d97706"></i>Pending <i style="background:#9333ea"></i>Open source <i style="background:#64748b"></i>Part of a bigger co.</span>
+    </div>
+    <div id="map-inner"></div>
+  </div>
   <aside id="panel" class="panel" hidden></aside>
 </main>
 
