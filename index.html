@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Landscape — Software & AI Infrastructure</title>
+<meta name="description" content="An interactive map of the software and AI infrastructure landscape: verticals, subverticals and the companies in each.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <h1 id="title">Tech Landscape</h1>
+    <span id="subtitle" class="subtitle"></span>
+  </div>
+  <div class="search">
+    <input id="search" type="search" placeholder="Search companies or categories…" autocomplete="off">
+    <ul id="results" class="results" hidden></ul>
+  </div>
+  <div class="actions">
+    <button id="btn-collapse" class="ghost" title="Collapse everything">Collapse all</button>
+    <button id="btn-edit" class="ghost" title="Turn editing on or off">Edit</button>
+    <button id="btn-save" class="primary" hidden>Save to GitHub</button>
+    <button id="btn-settings" class="icon ghost" title="GitHub settings" aria-label="Settings">⚙</button>
+  </div>
+</header>
+
+<div id="banner" class="banner" hidden></div>
+
+<main>
+  <svg id="canvas" aria-label="Landscape map"></svg>
+  <aside id="panel" class="panel" hidden></aside>
+</main>
+
+<footer class="statusbar">
+  <span id="stats"></span>
+  <span id="note" class="muted"></span>
+</footer>
+
+<dialog id="settings">
+  <form method="dialog" class="settings-form">
+    <h2>Save to GitHub</h2>
+    <p class="muted">Edits are saved by committing <code>data/landscape.json</code> to your repo. You only set this up once per browser. Your token stays in this browser and is only sent to GitHub.</p>
+    <label>Owner <input name="owner" required></label>
+    <label>Repository <input name="repo" required></label>
+    <label>Branch <input name="branch" value="main" required></label>
+    <label>Fine-grained token <input name="token" type="password" placeholder="github_pat_…" autocomplete="off"></label>
+    <details>
+      <summary>How do I get a token?</summary>
+      <ol>
+        <li>Go to <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token</a>.</li>
+        <li>Name it "tech-landscape", set an expiration you're comfortable with.</li>
+        <li>Repository access: <b>Only select repositories</b> → pick this repo.</li>
+        <li>Permissions → Repository → <b>Contents: Read and write</b>. Nothing else.</li>
+        <li>Generate, copy, and paste it above.</li>
+      </ol>
+    </details>
+    <div class="row">
+      <button value="cancel" class="ghost">Cancel</button>
+      <button id="settings-save" value="save" class="primary">Save settings</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

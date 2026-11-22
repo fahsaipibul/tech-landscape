@@ -1,0 +1,3513 @@
+{
+ "meta": {
+  "title": "Tech Landscape",
+  "subtitle": "Software & AI infrastructure, mapped",
+  "updated": "2026-11-21",
+  "note": "Statuses for major 2025–26 deals were checked in Nov 2026; verify others before relying on them."
+ },
+ "tree": {
+  "name": "Software & AI Infrastructure",
+  "type": "root",
+  "desc": "The whole stack, bottom to top: chips and data centers → cloud → data → developer tools and security → applications and AI agents. Click any branch to expand it.",
+  "children": [
+   {
+    "name": "AI Compute & Hardware",
+    "type": "category",
+    "color": "#c2410c",
+    "desc": "The physical layer of AI: the chips that do the math, the memory and networking that feed them, and the data centers and power that house them. Most AI spending ultimately lands here.",
+    "children": [
+     {
+      "name": "GPUs & AI Accelerators",
+      "type": "category",
+      "desc": "Chips that run the matrix math behind training and inference. Nvidia dominates with GPUs + CUDA software; everyone else is trying to beat it on cost, speed or power.",
+      "children": [
+       {
+        "name": "Nvidia",
+        "type": "company",
+        "domain": "nvidia.com",
+        "status": "Public · NVDA",
+        "desc": "Dominant AI chipmaker — GPUs (Hopper, Blackwell, Rubin) plus the CUDA software ecosystem that locks developers in. Also sells networking and full rack-scale systems.",
+        "id": "nvidia"
+       },
+       {
+        "name": "AMD",
+        "type": "company",
+        "domain": "amd.com",
+        "status": "Public · AMD",
+        "desc": "Main merchant-GPU rival to Nvidia with its Instinct MI-series accelerators and ROCm software; also makes server CPUs (EPYC).",
+        "id": "amd"
+       },
+       {
+        "name": "Broadcom",
+        "type": "company",
+        "domain": "broadcom.com",
+        "status": "Public · AVGO",
+        "desc": "Designs custom AI chips (ASICs) for hyperscalers like Google (TPU) and Meta, and sells Ethernet switch chips. Also owns VMware.",
+        "id": "broadcom"
+       },
+       {
+        "name": "Marvell",
+        "type": "company",
+        "domain": "marvell.com",
+        "status": "Public · MRVL",
+        "desc": "Custom AI silicon and data-center networking/optical chips; designs custom accelerators for Amazon and others.",
+        "id": "marvell"
+       },
+       {
+        "name": "Intel",
+        "type": "company",
+        "domain": "intel.com",
+        "status": "Public · INTC",
+        "desc": "Legacy CPU giant (Xeon) with Gaudi AI accelerators and a foundry business it is trying to rebuild.",
+        "id": "intel"
+       },
+       {
+        "name": "Arm",
+        "type": "company",
+        "domain": "arm.com",
+        "status": "Public · ARM",
+        "desc": "Licenses the CPU architecture used in nearly every phone and increasingly in data-center chips (Nvidia Grace, AWS Graviton). Majority-owned by SoftBank.",
+        "id": "arm"
+       },
+       {
+        "name": "Cerebras",
+        "type": "company",
+        "domain": "cerebras.ai",
+        "status": "Public · CBRS",
+        "desc": "Makes wafer-scale AI chips (one chip the size of a dinner plate) and sells very fast inference. IPO'd May 2026 — the largest AI IPO ever at the time.",
+        "id": "cerebras"
+       },
+       {
+        "name": "Groq",
+        "type": "company",
+        "domain": "groq.com",
+        "status": "Private",
+        "desc": "Built the LPU, a chip designed for ultra-fast inference. Nvidia struck a ~$20B licensing and talent deal with Groq in late 2025.",
+        "id": "groq"
+       },
+       {
+        "name": "SambaNova",
+        "type": "company",
+        "domain": "sambanova.ai",
+        "status": "Private",
+        "desc": "AI chips and full-stack systems aimed at enterprise inference.",
+        "id": "sambanova"
+       },
+       {
+        "name": "Tenstorrent",
+        "type": "company",
+        "domain": "tenstorrent.com",
+        "status": "Private",
+        "desc": "RISC-V-based AI chips and IP led by chip legend Jim Keller; sells hardware and licenses designs.",
+        "id": "tenstorrent"
+       },
+       {
+        "name": "Etched",
+        "type": "company",
+        "domain": "etched.com",
+        "status": "Private",
+        "desc": "Building Sohu, a chip hard-wired for transformer models — a bet that one architecture wins.",
+        "id": "etched"
+       },
+       {
+        "name": "d-Matrix",
+        "type": "company",
+        "domain": "d-matrix.ai",
+        "status": "Private",
+        "desc": "In-memory compute chips for low-cost, low-latency inference.",
+        "id": "d-matrix"
+       }
+      ],
+      "id": "gpus-ai-accelerators"
+     },
+     {
+      "name": "Memory, Foundry & Chip Supply Chain",
+      "type": "category",
+      "desc": "Who actually manufactures the chips. AI chips need cutting-edge fabs (TSMC), lithography machines (ASML) and stacked high-bandwidth memory (HBM) — all serious bottlenecks.",
+      "children": [
+       {
+        "name": "TSMC",
+        "type": "company",
+        "domain": "tsmc.com",
+        "status": "Public · TSM",
+        "desc": "World's leading contract chip manufacturer; fabricates nearly every advanced AI chip, including Nvidia's and Apple's, plus advanced packaging (CoWoS).",
+        "id": "tsmc"
+       },
+       {
+        "name": "ASML",
+        "type": "company",
+        "domain": "asml.com",
+        "status": "Public · ASML",
+        "desc": "Monopoly maker of EUV lithography machines needed to print the most advanced chips.",
+        "id": "asml"
+       },
+       {
+        "name": "SK hynix",
+        "type": "company",
+        "domain": "skhynix.com",
+        "status": "Public · KRX 000660 / SKHY",
+        "desc": "Leading supplier of HBM memory stacked next to AI GPUs. Added a US listing in 2026.",
+        "id": "sk-hynix"
+       },
+       {
+        "name": "Micron",
+        "type": "company",
+        "domain": "micron.com",
+        "status": "Public · MU",
+        "desc": "US memory maker (DRAM, HBM, NAND) — a key HBM supplier.",
+        "id": "micron"
+       },
+       {
+        "name": "Samsung Electronics",
+        "type": "company",
+        "domain": "samsung.com",
+        "status": "Public · KRX 005930",
+        "desc": "Memory giant and second-largest foundry; racing to catch up in HBM.",
+        "id": "samsung-electronics"
+       },
+       {
+        "name": "Synopsys",
+        "type": "company",
+        "domain": "synopsys.com",
+        "status": "Public · SNPS",
+        "desc": "Electronic design automation (EDA) software used to design chips; acquired Ansys (simulation) in 2025.",
+        "id": "synopsys"
+       },
+       {
+        "name": "Cadence",
+        "type": "company",
+        "domain": "cadence.com",
+        "status": "Public · CDNS",
+        "desc": "The other big EDA vendor — chip design software and hardware emulation.",
+        "id": "cadence"
+       }
+      ],
+      "id": "memory-foundry-chip-supply-chain"
+     },
+     {
+      "name": "Networking & Interconnect",
+      "type": "category",
+      "desc": "Training runs span tens of thousands of chips that must talk constantly. Switches, optics and interconnect chips are a fast-growing piece of AI capex.",
+      "children": [
+       {
+        "name": "Arista Networks",
+        "type": "company",
+        "domain": "arista.com",
+        "status": "Public · ANET",
+        "desc": "High-speed Ethernet switches for cloud and AI data centers.",
+        "id": "arista-networks"
+       },
+       {
+        "name": "Astera Labs",
+        "type": "company",
+        "domain": "asteralabs.com",
+        "status": "Public · ALAB",
+        "desc": "Connectivity chips (PCIe/CXL retimers, switches) that link GPUs, CPUs and memory.",
+        "id": "astera-labs"
+       },
+       {
+        "name": "Credo",
+        "type": "company",
+        "domain": "credosemi.com",
+        "status": "Public · CRDO",
+        "desc": "High-speed connectivity — active electrical cables and SerDes for AI clusters.",
+        "id": "credo"
+       },
+       {
+        "name": "Coherent",
+        "type": "company",
+        "domain": "coherent.com",
+        "status": "Public · COHR",
+        "desc": "Optical transceivers and lasers for data-center links.",
+        "id": "coherent"
+       },
+       {
+        "name": "Lightmatter",
+        "type": "company",
+        "domain": "lightmatter.co",
+        "status": "Private",
+        "desc": "Photonic (light-based) interconnect for AI chips.",
+        "id": "lightmatter"
+       },
+       {
+        "name": "Ayar Labs",
+        "type": "company",
+        "domain": "ayarlabs.com",
+        "status": "Private",
+        "desc": "Optical I/O chiplets to move data between chips with light instead of copper.",
+        "id": "ayar-labs"
+       }
+      ],
+      "id": "networking-interconnect"
+     },
+     {
+      "name": "Data Centers, Power & Cooling",
+      "type": "category",
+      "desc": "AI is now power-constrained. Data-center developers, power equipment makers and cooling vendors sit where tech meets energy and industrials.",
+      "children": [
+       {
+        "name": "Equinix",
+        "type": "company",
+        "domain": "equinix.com",
+        "status": "Public · EQIX",
+        "desc": "Largest colocation/interconnection data-center REIT globally.",
+        "id": "equinix"
+       },
+       {
+        "name": "Digital Realty",
+        "type": "company",
+        "domain": "digitalrealty.com",
+        "status": "Public · DLR",
+        "desc": "Large data-center REIT leasing wholesale capacity to hyperscalers.",
+        "id": "digital-realty"
+       },
+       {
+        "name": "Aligned Data Centers",
+        "type": "company",
+        "domain": "aligneddc.com",
+        "status": "Private",
+        "desc": "Hyperscale data-center developer; agreed to a ~$40B sale to a consortium including BlackRock/GIP, MGX and the AI Infrastructure Partnership.",
+        "id": "aligned-data-centers"
+       },
+       {
+        "name": "Vantage Data Centers",
+        "type": "company",
+        "domain": "vantage-dc.com",
+        "status": "Private",
+        "desc": "Hyperscale campus developer (backed by DigitalBridge).",
+        "id": "vantage-data-centers"
+       },
+       {
+        "name": "QTS",
+        "type": "company",
+        "domain": "qtsdatacenters.com",
+        "status": "Owned by Blackstone",
+        "desc": "Hyperscale data-center operator taken private by Blackstone in 2021.",
+        "id": "qts"
+       },
+       {
+        "name": "Vertiv",
+        "type": "company",
+        "domain": "vertiv.com",
+        "status": "Public · VRT",
+        "desc": "Power and thermal management (UPS, liquid cooling) for data centers.",
+        "id": "vertiv"
+       },
+       {
+        "name": "Schneider Electric",
+        "type": "company",
+        "domain": "se.com",
+        "status": "Public · EPA: SU",
+        "desc": "Electrical distribution, power management and cooling for data centers.",
+        "id": "schneider-electric"
+       },
+       {
+        "name": "Eaton",
+        "type": "company",
+        "domain": "eaton.com",
+        "status": "Public · ETN",
+        "desc": "Power distribution and electrical equipment — switchgear, UPS — for data centers and grids.",
+        "id": "eaton"
+       },
+       {
+        "name": "GE Vernova",
+        "type": "company",
+        "domain": "gevernova.com",
+        "status": "Public · GEV",
+        "desc": "Gas turbines, grid equipment and wind; benefiting from data-center power demand.",
+        "id": "ge-vernova"
+       },
+       {
+        "name": "Oklo",
+        "type": "company",
+        "domain": "oklo.com",
+        "status": "Public · OKLO",
+        "desc": "Developing small fast-fission nuclear reactors pitched as power for data centers.",
+        "id": "oklo"
+       }
+      ],
+      "id": "data-centers-power-cooling"
+     },
+     {
+      "name": "GPU Clouds (Neoclouds)",
+      "type": "category",
+      "desc": "Specialist clouds that rent GPUs by the hour, usually cheaper or faster to get than AWS/Azure. Heavily debt-financed, with big contracts from AI labs.",
+      "children": [
+       {
+        "name": "CoreWeave",
+        "type": "company",
+        "domain": "coreweave.com",
+        "status": "Public · CRWV",
+        "desc": "Largest neocloud; rents Nvidia GPU capacity to OpenAI, Microsoft and others. IPO'd 2025; bought Weights & Biases.",
+        "id": "coreweave"
+       },
+       {
+        "name": "Nebius",
+        "type": "company",
+        "domain": "nebius.com",
+        "status": "Public · NBIS",
+        "desc": "Amsterdam-based AI cloud spun out of Yandex; large Microsoft capacity deal.",
+        "id": "nebius"
+       },
+       {
+        "name": "Lambda",
+        "type": "company",
+        "domain": "lambda.ai",
+        "status": "Private",
+        "desc": "GPU cloud and on-prem GPU servers popular with AI researchers.",
+        "id": "lambda"
+       },
+       {
+        "name": "Crusoe",
+        "type": "company",
+        "domain": "crusoe.ai",
+        "status": "Private",
+        "desc": "AI cloud and data-center developer building campuses near cheap/stranded energy (e.g. the Abilene, TX Stargate site).",
+        "id": "crusoe"
+       },
+       {
+        "name": "Together AI",
+        "type": "company",
+        "domain": "together.ai",
+        "status": "Private",
+        "desc": "GPU cloud plus serverless inference and fine-tuning for open models.",
+        "id": "together-ai"
+       },
+       {
+        "name": "Vultr",
+        "type": "company",
+        "domain": "vultr.com",
+        "status": "Private",
+        "desc": "Independent cloud provider with a growing GPU offering.",
+        "id": "vultr"
+       },
+       {
+        "name": "Fluidstack",
+        "type": "company",
+        "domain": "fluidstack.io",
+        "status": "Private",
+        "desc": "GPU cloud building large clusters for AI labs.",
+        "id": "fluidstack"
+       },
+       {
+        "name": "RunPod",
+        "type": "company",
+        "domain": "runpod.io",
+        "status": "Private",
+        "desc": "Developer-friendly GPU cloud with serverless GPU endpoints.",
+        "id": "runpod"
+       }
+      ],
+      "id": "gpu-clouds-neoclouds"
+     }
+    ],
+    "id": "ai-compute-hardware"
+   },
+   {
+    "name": "Cloud & Infrastructure Software",
+    "type": "category",
+    "color": "#2563eb",
+    "desc": "Renting compute, storage and networking instead of owning servers, plus the software used to run and automate that infrastructure.",
+    "children": [
+     {
+      "name": "Hyperscalers",
+      "type": "category",
+      "desc": "The giant public clouds. They sell everything from raw VMs to AI models, and are the biggest buyers of AI chips.",
+      "children": [
+       {
+        "name": "Amazon Web Services",
+        "type": "company",
+        "domain": "aws.amazon.com",
+        "status": "Part of Amazon (AMZN)",
+        "desc": "Largest cloud by revenue; also designs its own chips (Trainium, Graviton) and is a major Anthropic partner.",
+        "id": "amazon-web-services"
+       },
+       {
+        "name": "Microsoft Azure",
+        "type": "company",
+        "domain": "azure.microsoft.com",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "#2 cloud; hosts OpenAI's models and sells them via Azure AI Foundry.",
+        "id": "microsoft-azure"
+       },
+       {
+        "name": "Google Cloud",
+        "type": "company",
+        "domain": "cloud.google.com",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "#3 cloud; strong in data (BigQuery) and AI with in-house TPUs and Gemini. Now owns Wiz.",
+        "id": "google-cloud"
+       },
+       {
+        "name": "Oracle Cloud Infrastructure",
+        "type": "company",
+        "domain": "oracle.com/cloud",
+        "status": "Part of Oracle (ORCL)",
+        "desc": "Smaller but fast-growing cloud that has won huge AI capacity contracts (OpenAI/Stargate).",
+        "id": "oracle-cloud-infrastructure"
+       },
+       {
+        "name": "Alibaba Cloud",
+        "type": "company",
+        "domain": "alibabacloud.com",
+        "status": "Part of Alibaba (BABA)",
+        "desc": "Largest cloud in China; also develops the Qwen open models.",
+        "id": "alibaba-cloud"
+       }
+      ],
+      "id": "hyperscalers"
+     },
+     {
+      "name": "Developer Clouds & PaaS",
+      "type": "category",
+      "desc": "Simpler platforms where developers deploy apps without managing servers. Lots of AI-native apps start here.",
+      "children": [
+       {
+        "name": "Vercel",
+        "type": "company",
+        "domain": "vercel.com",
+        "status": "Private",
+        "desc": "Frontend cloud and creator of Next.js; also makes v0, an AI app builder.",
+        "id": "vercel"
+       },
+       {
+        "name": "Netlify",
+        "type": "company",
+        "domain": "netlify.com",
+        "status": "Private",
+        "desc": "Platform for deploying web frontends and serverless functions.",
+        "id": "netlify"
+       },
+       {
+        "name": "Render",
+        "type": "company",
+        "domain": "render.com",
+        "status": "Private",
+        "desc": "Simple cloud for web services, databases and background jobs.",
+        "id": "render"
+       },
+       {
+        "name": "Railway",
+        "type": "company",
+        "domain": "railway.com",
+        "status": "Private",
+        "desc": "Instant-deploy app hosting popular with indie developers.",
+        "id": "railway"
+       },
+       {
+        "name": "Fly.io",
+        "type": "company",
+        "domain": "fly.io",
+        "status": "Private",
+        "desc": "Runs apps close to users on servers worldwide.",
+        "id": "fly-io"
+       },
+       {
+        "name": "DigitalOcean",
+        "type": "company",
+        "domain": "digitalocean.com",
+        "status": "Public · DOCN",
+        "desc": "Developer- and SMB-focused cloud, now adding GPU droplets.",
+        "id": "digitalocean"
+       },
+       {
+        "name": "Heroku",
+        "type": "company",
+        "domain": "heroku.com",
+        "status": "Part of Salesforce (CRM)",
+        "desc": "Pioneering PaaS, owned by Salesforce.",
+        "id": "heroku"
+       }
+      ],
+      "id": "developer-clouds-paas"
+     },
+     {
+      "name": "Edge, CDN & Networking",
+      "type": "category",
+      "desc": "Networks that sit between users and apps — caching content, blocking attacks and running code close to users.",
+      "children": [
+       {
+        "name": "Cloudflare",
+        "type": "company",
+        "domain": "cloudflare.com",
+        "status": "Public · NET",
+        "desc": "Global network for CDN, security (DDoS, zero trust) and edge compute; bought Replicate (AI model hosting) in 2025.",
+        "id": "cloudflare"
+       },
+       {
+        "name": "Akamai",
+        "type": "company",
+        "domain": "akamai.com",
+        "status": "Public · AKAM",
+        "desc": "Original CDN; now also security and cloud compute (Linode).",
+        "id": "akamai"
+       },
+       {
+        "name": "Fastly",
+        "type": "company",
+        "domain": "fastly.com",
+        "status": "Public · FSLY",
+        "desc": "Edge cloud/CDN with programmable edge compute.",
+        "id": "fastly"
+       },
+       {
+        "name": "Kong",
+        "type": "company",
+        "domain": "konghq.com",
+        "status": "Private",
+        "desc": "API gateway and service connectivity platform, now with AI gateway features.",
+        "id": "kong"
+       }
+      ],
+      "id": "edge-cdn-networking"
+     },
+     {
+      "name": "Containers & Kubernetes",
+      "type": "category",
+      "desc": "Containers package an app with everything it needs; Kubernetes runs thousands of them across machines. The default way to run modern software.",
+      "children": [
+       {
+        "name": "Docker",
+        "type": "company",
+        "domain": "docker.com",
+        "status": "Private",
+        "desc": "Created the container standard; sells developer tools (Docker Desktop, Hub).",
+        "id": "docker"
+       },
+       {
+        "name": "Kubernetes",
+        "type": "company",
+        "domain": "kubernetes.io",
+        "status": "Open source",
+        "desc": "Open-source container orchestrator originally from Google; managed by every cloud.",
+        "id": "kubernetes"
+       },
+       {
+        "name": "Red Hat",
+        "type": "company",
+        "domain": "redhat.com",
+        "status": "Part of IBM",
+        "desc": "Enterprise Linux and OpenShift (Kubernetes platform); acquired by IBM for $34B in 2019.",
+        "id": "red-hat"
+       },
+       {
+        "name": "SUSE",
+        "type": "company",
+        "domain": "suse.com",
+        "status": "Private",
+        "desc": "Enterprise Linux and Rancher (Kubernetes management); taken private by EQT.",
+        "id": "suse"
+       }
+      ],
+      "id": "containers-kubernetes"
+     },
+     {
+      "name": "Infrastructure as Code & Platform Engineering",
+      "type": "category",
+      "desc": "Defining cloud infrastructure in code files so it can be versioned and automated, plus internal portals that let developers self-serve.",
+      "children": [
+       {
+        "name": "HashiCorp",
+        "type": "company",
+        "domain": "hashicorp.com",
+        "status": "Acquired by IBM (2025)",
+        "desc": "Terraform (infrastructure as code) and Vault (secrets management).",
+        "id": "hashicorp"
+       },
+       {
+        "name": "OpenTofu",
+        "type": "company",
+        "domain": "opentofu.org",
+        "status": "Open source",
+        "desc": "Community fork of Terraform after HashiCorp changed its license.",
+        "id": "opentofu"
+       },
+       {
+        "name": "Pulumi",
+        "type": "company",
+        "domain": "pulumi.com",
+        "status": "Private",
+        "desc": "Infrastructure as code using real programming languages.",
+        "id": "pulumi"
+       },
+       {
+        "name": "Spacelift",
+        "type": "company",
+        "domain": "spacelift.io",
+        "status": "Private",
+        "desc": "Orchestration and governance for Terraform/OpenTofu workflows.",
+        "id": "spacelift"
+       },
+       {
+        "name": "Port",
+        "type": "company",
+        "domain": "port.io",
+        "status": "Private",
+        "desc": "Internal developer portal for platform engineering teams.",
+        "id": "port"
+       }
+      ],
+      "id": "infrastructure-as-code-platform-engineering"
+     },
+     {
+      "name": "Virtualization, Storage & Backup",
+      "type": "category",
+      "desc": "The traditional enterprise data-center stack — virtual machines, storage arrays and backup — still huge, and being reshaped by AI data needs.",
+      "children": [
+       {
+        "name": "VMware",
+        "type": "company",
+        "domain": "vmware.com",
+        "status": "Part of Broadcom (AVGO)",
+        "desc": "Dominant server virtualization software; acquired by Broadcom for $69B in 2023, followed by big price increases.",
+        "id": "vmware"
+       },
+       {
+        "name": "Nutanix",
+        "type": "company",
+        "domain": "nutanix.com",
+        "status": "Public · NTNX",
+        "desc": "Hyperconverged infrastructure; a beneficiary of customers leaving VMware.",
+        "id": "nutanix"
+       },
+       {
+        "name": "NetApp",
+        "type": "company",
+        "domain": "netapp.com",
+        "status": "Public · NTAP",
+        "desc": "Enterprise storage and data management across on-prem and cloud.",
+        "id": "netapp"
+       },
+       {
+        "name": "Pure Storage",
+        "type": "company",
+        "domain": "purestorage.com",
+        "status": "Public · PSTG",
+        "desc": "All-flash storage arrays, sold increasingly as a subscription.",
+        "id": "pure-storage"
+       },
+       {
+        "name": "VAST Data",
+        "type": "company",
+        "domain": "vastdata.com",
+        "status": "Private",
+        "desc": "Storage and data platform built for AI training and inference at scale.",
+        "id": "vast-data"
+       },
+       {
+        "name": "Rubrik",
+        "type": "company",
+        "domain": "rubrik.com",
+        "status": "Public · RBRK",
+        "desc": "Backup and cyber-recovery with data security posture management.",
+        "id": "rubrik"
+       },
+       {
+        "name": "Cohesity",
+        "type": "company",
+        "domain": "cohesity.com",
+        "status": "Private",
+        "desc": "Backup and data security; merged with Veritas' data protection business in 2024.",
+        "id": "cohesity"
+       },
+       {
+        "name": "Veeam",
+        "type": "company",
+        "domain": "veeam.com",
+        "status": "Private",
+        "desc": "Backup and recovery software; acquired Securiti AI (data security) for $1.7B in 2025.",
+        "id": "veeam"
+       }
+      ],
+      "id": "virtualization-storage-backup"
+     }
+    ],
+    "id": "cloud-infrastructure-software"
+   },
+   {
+    "name": "Data Infrastructure",
+    "type": "category",
+    "color": "#0891b2",
+    "desc": "How companies collect, move, store, clean and analyze data. This was the 'modern data stack' — now being rebuilt as the foundation for AI.",
+    "children": [
+     {
+      "name": "Operational Databases (OLTP)",
+      "type": "category",
+      "desc": "Databases behind live apps — every login, order or payment writes here. OLTP = online transaction processing: many small, fast reads and writes.",
+      "children": [
+       {
+        "name": "Oracle Database",
+        "type": "company",
+        "domain": "oracle.com/database",
+        "status": "Part of Oracle (ORCL)",
+        "desc": "The incumbent enterprise relational database, still running most big banks and ERPs.",
+        "id": "oracle-database"
+       },
+       {
+        "name": "MongoDB",
+        "type": "company",
+        "domain": "mongodb.com",
+        "status": "Public · MDB",
+        "desc": "Leading document (NoSQL) database; Atlas is its managed cloud service.",
+        "id": "mongodb"
+       },
+       {
+        "name": "PostgreSQL",
+        "type": "company",
+        "domain": "postgresql.org",
+        "status": "Open source",
+        "desc": "The most popular open-source relational database; many startups sell hosted Postgres.",
+        "id": "postgresql"
+       },
+       {
+        "name": "Microsoft SQL Server",
+        "type": "company",
+        "domain": "microsoft.com/sql-server",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Microsoft's relational database, common in enterprises.",
+        "id": "microsoft-sql-server"
+       },
+       {
+        "name": "Amazon Aurora & DynamoDB",
+        "type": "company",
+        "domain": "aws.amazon.com/rds/aurora",
+        "status": "Part of Amazon (AMZN)",
+        "desc": "AWS's managed relational (Aurora) and key-value (DynamoDB) databases.",
+        "id": "amazon-aurora-dynamodb"
+       },
+       {
+        "name": "Supabase",
+        "type": "company",
+        "domain": "supabase.com",
+        "status": "Private",
+        "desc": "Open-source backend built on Postgres (auth, storage, APIs) — popular with AI app builders.",
+        "id": "supabase"
+       },
+       {
+        "name": "Neon",
+        "type": "company",
+        "domain": "neon.com",
+        "status": "Acquired by Databricks (2025)",
+        "desc": "Serverless Postgres that spins up instantly; bought by Databricks for ~$1B.",
+        "id": "neon"
+       },
+       {
+        "name": "PlanetScale",
+        "type": "company",
+        "domain": "planetscale.com",
+        "status": "Private",
+        "desc": "Managed MySQL (Vitess) and Postgres built for scale.",
+        "id": "planetscale"
+       },
+       {
+        "name": "CockroachDB",
+        "type": "company",
+        "domain": "cockroachlabs.com",
+        "status": "Private",
+        "desc": "Distributed SQL database that survives data-center failures.",
+        "id": "cockroachdb"
+       },
+       {
+        "name": "Redis",
+        "type": "company",
+        "domain": "redis.io",
+        "status": "Private",
+        "desc": "In-memory data store used for caching and real-time apps.",
+        "id": "redis"
+       },
+       {
+        "name": "Couchbase",
+        "type": "company",
+        "domain": "couchbase.com",
+        "status": "Taken private by Haveli (2025)",
+        "desc": "NoSQL document database for enterprise apps.",
+        "id": "couchbase"
+       },
+       {
+        "name": "DataStax",
+        "type": "company",
+        "domain": "datastax.com",
+        "status": "Acquired by IBM (2025)",
+        "desc": "Commercial Apache Cassandra and vector search.",
+        "id": "datastax"
+       },
+       {
+        "name": "SingleStore",
+        "type": "company",
+        "domain": "singlestore.com",
+        "status": "Private",
+        "desc": "Database that handles both transactions and analytics in real time.",
+        "id": "singlestore"
+       }
+      ],
+      "id": "operational-databases-oltp"
+     },
+     {
+      "name": "Warehouses & Lakehouses (OLAP)",
+      "type": "category",
+      "desc": "Where companies store data for analytics and AI. A warehouse is structured and SQL-first; a lakehouse adds cheap open files on object storage. Snowflake vs. Databricks is the defining rivalry.",
+      "children": [
+       {
+        "name": "Snowflake",
+        "type": "company",
+        "domain": "snowflake.com",
+        "status": "Public · SNOW",
+        "desc": "Cloud data warehouse with usage-based pricing; expanding into AI (Cortex) and Postgres; acquired Observe in 2026.",
+        "id": "snowflake"
+       },
+       {
+        "name": "Databricks",
+        "type": "company",
+        "domain": "databricks.com",
+        "status": "Private",
+        "desc": "Lakehouse platform born from Apache Spark; Snowflake's main rival. Valued ~$134B in early 2026 and said it won't IPO in 2026.",
+        "id": "databricks"
+       },
+       {
+        "name": "Google BigQuery",
+        "type": "company",
+        "domain": "cloud.google.com/bigquery",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "Google Cloud's serverless data warehouse.",
+        "id": "google-bigquery"
+       },
+       {
+        "name": "Amazon Redshift",
+        "type": "company",
+        "domain": "aws.amazon.com/redshift",
+        "status": "Part of Amazon (AMZN)",
+        "desc": "AWS's data warehouse.",
+        "id": "amazon-redshift"
+       },
+       {
+        "name": "Microsoft Fabric",
+        "type": "company",
+        "domain": "microsoft.com/microsoft-fabric",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Microsoft's unified analytics platform combining warehouse, lake and Power BI.",
+        "id": "microsoft-fabric"
+       },
+       {
+        "name": "ClickHouse",
+        "type": "company",
+        "domain": "clickhouse.com",
+        "status": "Private",
+        "desc": "Very fast open-source analytics database; acquired Langfuse (LLM observability).",
+        "id": "clickhouse"
+       },
+       {
+        "name": "MotherDuck",
+        "type": "company",
+        "domain": "motherduck.com",
+        "status": "Private",
+        "desc": "Cloud service built on DuckDB, the lightweight in-process analytics database.",
+        "id": "motherduck"
+       },
+       {
+        "name": "Starburst",
+        "type": "company",
+        "domain": "starburst.io",
+        "status": "Private",
+        "desc": "Query engine (Trino) that queries data where it lives without moving it.",
+        "id": "starburst"
+       },
+       {
+        "name": "Dremio",
+        "type": "company",
+        "domain": "dremio.com",
+        "status": "Private",
+        "desc": "Lakehouse query engine built around Apache Iceberg.",
+        "id": "dremio"
+       },
+       {
+        "name": "Firebolt",
+        "type": "company",
+        "domain": "firebolt.io",
+        "status": "Private",
+        "desc": "Cloud warehouse tuned for low-latency analytics.",
+        "id": "firebolt"
+       }
+      ],
+      "id": "warehouses-lakehouses-olap"
+     },
+     {
+      "name": "Open Table Formats & Object Storage",
+      "type": "category",
+      "desc": "Lakehouses keep data as open files on cheap object storage. Table formats like Iceberg add database features (updates, versions) on top, so any engine can read the same data.",
+      "children": [
+       {
+        "name": "Apache Iceberg",
+        "type": "company",
+        "domain": "iceberg.apache.org",
+        "status": "Open source",
+        "desc": "Open table format created at Netflix; the industry is converging on it.",
+        "id": "apache-iceberg"
+       },
+       {
+        "name": "Delta Lake",
+        "type": "company",
+        "domain": "delta.io",
+        "status": "Open source (Databricks)",
+        "desc": "Databricks' open table format.",
+        "id": "delta-lake"
+       },
+       {
+        "name": "Tabular",
+        "type": "company",
+        "domain": "tabular.io",
+        "status": "Acquired by Databricks (2024)",
+        "desc": "Founded by Iceberg's creators; bought by Databricks for ~$1–2B.",
+        "id": "tabular"
+       },
+       {
+        "name": "Onehouse",
+        "type": "company",
+        "domain": "onehouse.ai",
+        "status": "Private",
+        "desc": "Managed lakehouse built on Apache Hudi, compatible with Iceberg and Delta.",
+        "id": "onehouse"
+       },
+       {
+        "name": "Amazon S3",
+        "type": "company",
+        "domain": "aws.amazon.com/s3",
+        "status": "Part of Amazon (AMZN)",
+        "desc": "The default object store where most data lakes live.",
+        "id": "amazon-s3"
+       },
+       {
+        "name": "MinIO",
+        "type": "company",
+        "domain": "min.io",
+        "status": "Private",
+        "desc": "S3-compatible object storage you can run anywhere.",
+        "id": "minio"
+       }
+      ],
+      "id": "open-table-formats-object-storage"
+     },
+     {
+      "name": "Streaming & Real-Time Data",
+      "type": "category",
+      "desc": "Moving data continuously as events happen (a click, a trade, a sensor reading) instead of in nightly batches. Kafka is the standard.",
+      "children": [
+       {
+        "name": "Confluent",
+        "type": "company",
+        "domain": "confluent.io",
+        "status": "Acquired by IBM (2026)",
+        "desc": "Commercial company behind Apache Kafka; IBM closed its ~$11B acquisition in March 2026.",
+        "id": "confluent"
+       },
+       {
+        "name": "Apache Kafka",
+        "type": "company",
+        "domain": "kafka.apache.org",
+        "status": "Open source",
+        "desc": "The standard open-source event streaming platform, created at LinkedIn.",
+        "id": "apache-kafka"
+       },
+       {
+        "name": "Apache Flink",
+        "type": "company",
+        "domain": "flink.apache.org",
+        "status": "Open source",
+        "desc": "Open-source engine for processing streams (joins, aggregations) in real time.",
+        "id": "apache-flink"
+       },
+       {
+        "name": "Redpanda",
+        "type": "company",
+        "domain": "redpanda.com",
+        "status": "Private",
+        "desc": "Kafka-compatible streaming platform rewritten in C++ for speed.",
+        "id": "redpanda"
+       },
+       {
+        "name": "StreamNative",
+        "type": "company",
+        "domain": "streamnative.io",
+        "status": "Private",
+        "desc": "Managed Apache Pulsar and Kafka-compatible streaming.",
+        "id": "streamnative"
+       },
+       {
+        "name": "Materialize",
+        "type": "company",
+        "domain": "materialize.com",
+        "status": "Private",
+        "desc": "Streaming database that keeps SQL query results always up to date.",
+        "id": "materialize"
+       }
+      ],
+      "id": "streaming-real-time-data"
+     },
+     {
+      "name": "Data Integration (ETL/ELT)",
+      "type": "category",
+      "desc": "Pipelines that extract data from apps (Salesforce, databases) and load it into the warehouse, then transform it into clean tables.",
+      "children": [
+       {
+        "name": "Fivetran + dbt Labs",
+        "type": "company",
+        "domain": "fivetran.com",
+        "status": "Private",
+        "desc": "Fivetran (managed connectors that load data) merged with dbt Labs (SQL transformations) in June 2026 — together the core of the modern data stack.",
+        "id": "fivetran-dbt-labs"
+       },
+       {
+        "name": "dbt",
+        "type": "company",
+        "domain": "getdbt.com",
+        "status": "Part of Fivetran + dbt Labs",
+        "desc": "The standard tool for transforming warehouse data with version-controlled SQL.",
+        "id": "dbt"
+       },
+       {
+        "name": "Airbyte",
+        "type": "company",
+        "domain": "airbyte.com",
+        "status": "Private",
+        "desc": "Open-source data integration with hundreds of connectors.",
+        "id": "airbyte"
+       },
+       {
+        "name": "Informatica",
+        "type": "company",
+        "domain": "informatica.com",
+        "status": "Acquired by Salesforce",
+        "desc": "Legacy enterprise data integration and management leader; acquired by Salesforce for ~$8B.",
+        "id": "informatica"
+       },
+       {
+        "name": "Matillion",
+        "type": "company",
+        "domain": "matillion.com",
+        "status": "Private",
+        "desc": "Cloud ETL built for Snowflake, Databricks and Redshift.",
+        "id": "matillion"
+       },
+       {
+        "name": "Coalesce",
+        "type": "company",
+        "domain": "coalesce.io",
+        "status": "Private",
+        "desc": "Visual, column-aware data transformation for Snowflake and Databricks.",
+        "id": "coalesce"
+       },
+       {
+        "name": "Hightouch",
+        "type": "company",
+        "domain": "hightouch.com",
+        "status": "Private",
+        "desc": "Reverse ETL — pushes warehouse data back into marketing and sales tools.",
+        "id": "hightouch"
+       },
+       {
+        "name": "Boomi",
+        "type": "company",
+        "domain": "boomi.com",
+        "status": "Private",
+        "desc": "Integration platform as a service (iPaaS) connecting enterprise apps.",
+        "id": "boomi"
+       },
+       {
+        "name": "MuleSoft",
+        "type": "company",
+        "domain": "mulesoft.com",
+        "status": "Part of Salesforce (CRM)",
+        "desc": "API-led integration platform owned by Salesforce.",
+        "id": "mulesoft"
+       }
+      ],
+      "id": "data-integration-etl-elt"
+     },
+     {
+      "name": "Orchestration",
+      "type": "category",
+      "desc": "Schedulers that run data pipelines in the right order and retry failures — the 'conductor' of the data stack.",
+      "children": [
+       {
+        "name": "Apache Airflow",
+        "type": "company",
+        "domain": "airflow.apache.org",
+        "status": "Open source",
+        "desc": "The most widely used open-source pipeline orchestrator, created at Airbnb.",
+        "id": "apache-airflow"
+       },
+       {
+        "name": "Astronomer",
+        "type": "company",
+        "domain": "astronomer.io",
+        "status": "Private",
+        "desc": "Managed Airflow platform.",
+        "id": "astronomer"
+       },
+       {
+        "name": "Dagster",
+        "type": "company",
+        "domain": "dagster.io",
+        "status": "Private",
+        "desc": "Orchestrator built around data assets rather than tasks.",
+        "id": "dagster"
+       },
+       {
+        "name": "Prefect",
+        "type": "company",
+        "domain": "prefect.io",
+        "status": "Private",
+        "desc": "Python-native workflow orchestration.",
+        "id": "prefect"
+       }
+      ],
+      "id": "orchestration"
+     },
+     {
+      "name": "Data Catalog & Governance",
+      "type": "category",
+      "desc": "Search and governance for data — what tables exist, who owns them, where data came from (lineage) and who can access it.",
+      "children": [
+       {
+        "name": "Atlan",
+        "type": "company",
+        "domain": "atlan.com",
+        "status": "Private",
+        "desc": "Active metadata and data catalog platform.",
+        "id": "atlan"
+       },
+       {
+        "name": "Alation",
+        "type": "company",
+        "domain": "alation.com",
+        "status": "Private",
+        "desc": "Enterprise data catalog.",
+        "id": "alation"
+       },
+       {
+        "name": "Collibra",
+        "type": "company",
+        "domain": "collibra.com",
+        "status": "Private",
+        "desc": "Data governance and catalog for large enterprises.",
+        "id": "collibra"
+       },
+       {
+        "name": "data.world",
+        "type": "company",
+        "domain": "data.world",
+        "status": "Acquired by ServiceNow (2025)",
+        "desc": "Knowledge-graph-based data catalog.",
+        "id": "data-world"
+       },
+       {
+        "name": "Unity Catalog",
+        "type": "company",
+        "domain": "unitycatalog.io",
+        "status": "Open source (Databricks)",
+        "desc": "Databricks' governance layer for data and AI assets.",
+        "id": "unity-catalog"
+       }
+      ],
+      "id": "data-catalog-governance"
+     },
+     {
+      "name": "Data Quality & Observability",
+      "type": "category",
+      "desc": "Monitoring that catches broken or stale data before it reaches dashboards or AI models.",
+      "children": [
+       {
+        "name": "Monte Carlo",
+        "type": "company",
+        "domain": "montecarlodata.com",
+        "status": "Private",
+        "desc": "Pioneer of data observability — alerts when data breaks.",
+        "id": "monte-carlo"
+       },
+       {
+        "name": "Anomalo",
+        "type": "company",
+        "domain": "anomalo.com",
+        "status": "Private",
+        "desc": "ML-based data quality monitoring.",
+        "id": "anomalo"
+       },
+       {
+        "name": "Metaplane",
+        "type": "company",
+        "domain": "metaplane.dev",
+        "status": "Acquired by Datadog (2025)",
+        "desc": "Data observability for the modern data stack.",
+        "id": "metaplane"
+       },
+       {
+        "name": "Great Expectations",
+        "type": "company",
+        "domain": "greatexpectations.io",
+        "status": "Private",
+        "desc": "Open-source data testing framework and cloud product.",
+        "id": "great-expectations"
+       },
+       {
+        "name": "Soda",
+        "type": "company",
+        "domain": "soda.io",
+        "status": "Private",
+        "desc": "Data quality checks and data contracts.",
+        "id": "soda"
+       }
+      ],
+      "id": "data-quality-observability"
+     },
+     {
+      "name": "BI & Analytics",
+      "type": "category",
+      "desc": "Dashboards and analysis tools business users look at — the top of the classic data stack.",
+      "children": [
+       {
+        "name": "Microsoft Power BI",
+        "type": "company",
+        "domain": "powerbi.microsoft.com",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Most widely used BI tool, bundled with Microsoft 365.",
+        "id": "microsoft-power-bi"
+       },
+       {
+        "name": "Tableau",
+        "type": "company",
+        "domain": "tableau.com",
+        "status": "Part of Salesforce (CRM)",
+        "desc": "Visual analytics leader, acquired by Salesforce in 2019.",
+        "id": "tableau"
+       },
+       {
+        "name": "Looker",
+        "type": "company",
+        "domain": "looker.com",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "BI with a semantic modeling layer, owned by Google Cloud.",
+        "id": "looker"
+       },
+       {
+        "name": "Sigma Computing",
+        "type": "company",
+        "domain": "sigmacomputing.com",
+        "status": "Private",
+        "desc": "Spreadsheet-style BI that runs directly on the warehouse.",
+        "id": "sigma-computing"
+       },
+       {
+        "name": "Hex",
+        "type": "company",
+        "domain": "hex.tech",
+        "status": "Private",
+        "desc": "Collaborative notebooks combining SQL, Python and AI for data teams.",
+        "id": "hex"
+       },
+       {
+        "name": "ThoughtSpot",
+        "type": "company",
+        "domain": "thoughtspot.com",
+        "status": "Private",
+        "desc": "Search- and AI-driven analytics.",
+        "id": "thoughtspot"
+       },
+       {
+        "name": "Omni",
+        "type": "company",
+        "domain": "omni.co",
+        "status": "Private",
+        "desc": "BI platform from ex-Looker founders.",
+        "id": "omni"
+       },
+       {
+        "name": "Amplitude",
+        "type": "company",
+        "domain": "amplitude.com",
+        "status": "Public · AMPL",
+        "desc": "Product analytics — how users behave inside apps.",
+        "id": "amplitude"
+       },
+       {
+        "name": "PostHog",
+        "type": "company",
+        "domain": "posthog.com",
+        "status": "Private",
+        "desc": "Open-source product analytics, session replay and feature flags.",
+        "id": "posthog"
+       }
+      ],
+      "id": "bi-analytics"
+     },
+     {
+      "name": "AI & Data Platforms",
+      "type": "category",
+      "desc": "Platforms that sit on top of company data to build analytics, ML models and operational AI apps.",
+      "children": [
+       {
+        "name": "Palantir",
+        "type": "company",
+        "domain": "palantir.com",
+        "status": "Public · PLTR",
+        "desc": "Data integration and AI platforms (Foundry, AIP) for governments and enterprises; one of the most valuable software companies.",
+        "id": "palantir"
+       },
+       {
+        "name": "C3.ai",
+        "type": "company",
+        "domain": "c3.ai",
+        "status": "Public · AI",
+        "desc": "Enterprise AI applications for industries like energy, manufacturing and defense.",
+        "id": "c3-ai"
+       },
+       {
+        "name": "Dataiku",
+        "type": "company",
+        "domain": "dataiku.com",
+        "status": "Private",
+        "desc": "Collaborative data science and AI platform.",
+        "id": "dataiku"
+       },
+       {
+        "name": "DataRobot",
+        "type": "company",
+        "domain": "datarobot.com",
+        "status": "Private",
+        "desc": "Automated machine learning and AI platform.",
+        "id": "datarobot"
+       },
+       {
+        "name": "H2O.ai",
+        "type": "company",
+        "domain": "h2o.ai",
+        "status": "Private",
+        "desc": "Open-source and enterprise ML/AutoML.",
+        "id": "h2o-ai"
+       },
+       {
+        "name": "Domino Data Lab",
+        "type": "company",
+        "domain": "domino.ai",
+        "status": "Private",
+        "desc": "Enterprise MLOps platform for data science teams.",
+        "id": "domino-data-lab"
+       }
+      ],
+      "id": "ai-data-platforms"
+     }
+    ],
+    "id": "data-infrastructure"
+   },
+   {
+    "name": "AI Models & AI Infrastructure",
+    "type": "category",
+    "color": "#7c3aed",
+    "desc": "Everything between the chips and the AI apps: the labs training foundation models, the data used to train them, and the software to train, serve, evaluate and secure them.",
+    "children": [
+     {
+      "name": "Foundation Model Labs",
+      "type": "category",
+      "desc": "Companies training frontier large language and multimodal models — the most capital-intensive part of software.",
+      "children": [
+       {
+        "name": "OpenAI",
+        "type": "company",
+        "domain": "openai.com",
+        "status": "Private",
+        "desc": "Maker of GPT models and ChatGPT; restructured into a public benefit corporation; has said it will not IPO in 2026.",
+        "id": "openai"
+       },
+       {
+        "name": "Anthropic",
+        "type": "company",
+        "domain": "anthropic.com",
+        "status": "IPO in progress · Nasdaq: ANT",
+        "desc": "Maker of Claude models and Claude Code; set terms in Nov 2026 for an IPO targeting a ~$1.2T valuation.",
+        "id": "anthropic"
+       },
+       {
+        "name": "Google DeepMind",
+        "type": "company",
+        "domain": "deepmind.google",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "Google's AI lab; builds Gemini models.",
+        "id": "google-deepmind"
+       },
+       {
+        "name": "Meta AI",
+        "type": "company",
+        "domain": "ai.meta.com",
+        "status": "Part of Meta (META)",
+        "desc": "Meta's AI division — open-weight Llama models and Meta Superintelligence Labs.",
+        "id": "meta-ai"
+       },
+       {
+        "name": "xAI",
+        "type": "company",
+        "domain": "x.ai",
+        "status": "Acquired by SpaceX (2026)",
+        "desc": "Elon Musk's lab behind Grok; merged into SpaceX in 2026.",
+        "id": "xai"
+       },
+       {
+        "name": "Mistral AI",
+        "type": "company",
+        "domain": "mistral.ai",
+        "status": "Private",
+        "desc": "Paris-based lab with open-weight and commercial models; Europe's AI champion.",
+        "id": "mistral-ai"
+       },
+       {
+        "name": "Cohere",
+        "type": "company",
+        "domain": "cohere.com",
+        "status": "Private",
+        "desc": "Toronto lab focused on enterprise models, search (embeddings/rerank) and private deployment.",
+        "id": "cohere"
+       },
+       {
+        "name": "DeepSeek",
+        "type": "company",
+        "domain": "deepseek.com",
+        "status": "Private",
+        "desc": "Chinese lab whose cheap, strong open-weight models (R1) shocked markets in early 2025.",
+        "id": "deepseek"
+       },
+       {
+        "name": "Thinking Machines Lab",
+        "type": "company",
+        "domain": "thinkingmachines.ai",
+        "status": "Private",
+        "desc": "Lab founded by ex-OpenAI CTO Mira Murati.",
+        "id": "thinking-machines-lab"
+       },
+       {
+        "name": "Safe Superintelligence",
+        "type": "company",
+        "domain": "ssi.inc",
+        "status": "Private",
+        "desc": "Ilya Sutskever's lab focused solely on safe superintelligence.",
+        "id": "safe-superintelligence"
+       },
+       {
+        "name": "Reflection AI",
+        "type": "company",
+        "domain": "reflection.ai",
+        "status": "Private",
+        "desc": "Building open frontier models in the US.",
+        "id": "reflection-ai"
+       }
+      ],
+      "id": "foundation-model-labs"
+     },
+     {
+      "name": "Generative Media Models",
+      "type": "category",
+      "desc": "Models that generate images, video, voice and music.",
+      "children": [
+       {
+        "name": "Runway",
+        "type": "company",
+        "domain": "runwayml.com",
+        "status": "Private",
+        "desc": "AI video generation and editing tools used in film and advertising.",
+        "id": "runway"
+       },
+       {
+        "name": "Black Forest Labs",
+        "type": "company",
+        "domain": "bfl.ai",
+        "status": "Private",
+        "desc": "German lab behind the FLUX image models.",
+        "id": "black-forest-labs"
+       },
+       {
+        "name": "Midjourney",
+        "type": "company",
+        "domain": "midjourney.com",
+        "status": "Private",
+        "desc": "Popular image (and video) generator; famously bootstrapped.",
+        "id": "midjourney"
+       },
+       {
+        "name": "ElevenLabs",
+        "type": "company",
+        "domain": "elevenlabs.io",
+        "status": "Private",
+        "desc": "AI voice — text-to-speech, voice cloning, dubbing and voice agents.",
+        "id": "elevenlabs"
+       },
+       {
+        "name": "Suno",
+        "type": "company",
+        "domain": "suno.com",
+        "status": "Private",
+        "desc": "AI music generation.",
+        "id": "suno"
+       },
+       {
+        "name": "Luma AI",
+        "type": "company",
+        "domain": "lumalabs.ai",
+        "status": "Private",
+        "desc": "Video and 3D generation models.",
+        "id": "luma-ai"
+       },
+       {
+        "name": "World Labs",
+        "type": "company",
+        "domain": "worldlabs.ai",
+        "status": "Pending acquisition by AMD",
+        "desc": "Fei-Fei Li's company building 3D 'world models'; AMD agreed to buy it in late 2026.",
+        "id": "world-labs"
+       }
+      ],
+      "id": "generative-media-models"
+     },
+     {
+      "name": "Model Hubs & Open-Source Tooling",
+      "type": "category",
+      "desc": "Where open models are shared and the frameworks used to build them.",
+      "children": [
+       {
+        "name": "Hugging Face",
+        "type": "company",
+        "domain": "huggingface.co",
+        "status": "Pending acquisition by Nvidia",
+        "desc": "The 'GitHub of AI' — hosts millions of open models and datasets. Nvidia agreed to buy it for ~$12.9B in Sept 2026.",
+        "id": "hugging-face"
+       },
+       {
+        "name": "PyTorch",
+        "type": "company",
+        "domain": "pytorch.org",
+        "status": "Open source",
+        "desc": "Dominant deep learning framework, created at Meta; now under the Linux Foundation.",
+        "id": "pytorch"
+       },
+       {
+        "name": "vLLM",
+        "type": "company",
+        "domain": "vllm.ai",
+        "status": "Open source",
+        "desc": "Leading open-source LLM inference engine.",
+        "id": "vllm"
+       },
+       {
+        "name": "Ollama",
+        "type": "company",
+        "domain": "ollama.com",
+        "status": "Private",
+        "desc": "Run open models locally on your laptop.",
+        "id": "ollama"
+       }
+      ],
+      "id": "model-hubs-open-source-tooling"
+     },
+     {
+      "name": "Training Data & Labeling",
+      "type": "category",
+      "desc": "Human experts and synthetic data that teach models. Post-training (RLHF, reasoning data) made expert labelers a big business.",
+      "children": [
+       {
+        "name": "Scale AI",
+        "type": "company",
+        "domain": "scale.com",
+        "status": "Private",
+        "desc": "Data labeling and evaluation for AI labs and the US government; Meta bought 49% in 2025 and hired its CEO.",
+        "id": "scale-ai"
+       },
+       {
+        "name": "Surge AI",
+        "type": "company",
+        "domain": "surgehq.ai",
+        "status": "Private",
+        "desc": "High-skill human data for RLHF; profitable and bootstrapped.",
+        "id": "surge-ai"
+       },
+       {
+        "name": "Mercor",
+        "type": "company",
+        "domain": "mercor.com",
+        "status": "Private",
+        "desc": "Marketplace of domain experts (lawyers, doctors, bankers) hired to train AI models.",
+        "id": "mercor"
+       },
+       {
+        "name": "Snorkel AI",
+        "type": "company",
+        "domain": "snorkel.ai",
+        "status": "Private",
+        "desc": "Programmatic data labeling and expert data for model evaluation.",
+        "id": "snorkel-ai"
+       },
+       {
+        "name": "Labelbox",
+        "type": "company",
+        "domain": "labelbox.com",
+        "status": "Private",
+        "desc": "Labeling platform and expert data network.",
+        "id": "labelbox"
+       },
+       {
+        "name": "Turing",
+        "type": "company",
+        "domain": "turing.com",
+        "status": "Private",
+        "desc": "Coding and reasoning data for frontier labs.",
+        "id": "turing"
+       },
+       {
+        "name": "Mostly AI",
+        "type": "company",
+        "domain": "mostly.ai",
+        "status": "Private",
+        "desc": "Synthetic tabular data generation.",
+        "id": "mostly-ai"
+       }
+      ],
+      "id": "training-data-labeling"
+     },
+     {
+      "name": "Training, Fine-Tuning & MLOps",
+      "type": "category",
+      "desc": "Software to train and fine-tune models, track experiments and manage the ML lifecycle.",
+      "children": [
+       {
+        "name": "Weights & Biases",
+        "type": "company",
+        "domain": "wandb.ai",
+        "status": "Acquired by CoreWeave (2025)",
+        "desc": "Experiment tracking and model management used by most AI labs.",
+        "id": "weights-biases"
+       },
+       {
+        "name": "Modular",
+        "type": "company",
+        "domain": "modular.com",
+        "status": "Private",
+        "desc": "Mojo language and MAX engine to run AI across any hardware — a bet against CUDA lock-in.",
+        "id": "modular"
+       },
+       {
+        "name": "Anyscale",
+        "type": "company",
+        "domain": "anyscale.com",
+        "status": "Private",
+        "desc": "Company behind Ray, the open-source framework for distributed AI compute.",
+        "id": "anyscale"
+       },
+       {
+        "name": "Unsloth",
+        "type": "company",
+        "domain": "unsloth.ai",
+        "status": "Private",
+        "desc": "Fast, memory-efficient open-source fine-tuning.",
+        "id": "unsloth"
+       },
+       {
+        "name": "Comet",
+        "type": "company",
+        "domain": "comet.com",
+        "status": "Private",
+        "desc": "Experiment tracking and LLM evaluation (Opik).",
+        "id": "comet"
+       },
+       {
+        "name": "MLflow",
+        "type": "company",
+        "domain": "mlflow.org",
+        "status": "Open source (Databricks)",
+        "desc": "Open-source ML lifecycle platform.",
+        "id": "mlflow"
+       }
+      ],
+      "id": "training-fine-tuning-mlops"
+     },
+     {
+      "name": "Inference & Model Serving",
+      "type": "category",
+      "desc": "Running models in production — fast, cheap and reliable. As usage explodes, inference is becoming the biggest AI compute bill.",
+      "children": [
+       {
+        "name": "Fireworks AI",
+        "type": "company",
+        "domain": "fireworks.ai",
+        "status": "Private",
+        "desc": "Fast inference platform for open models, from ex-PyTorch leads at Meta.",
+        "id": "fireworks-ai"
+       },
+       {
+        "name": "Baseten",
+        "type": "company",
+        "domain": "baseten.co",
+        "status": "Private",
+        "desc": "Inference platform for deploying custom and open models.",
+        "id": "baseten"
+       },
+       {
+        "name": "Modal",
+        "type": "company",
+        "domain": "modal.com",
+        "status": "Private",
+        "desc": "Serverless GPU compute — run Python functions on GPUs instantly.",
+        "id": "modal"
+       },
+       {
+        "name": "Replicate",
+        "type": "company",
+        "domain": "replicate.com",
+        "status": "Acquired by Cloudflare (2025)",
+        "desc": "Run open models through a simple API.",
+        "id": "replicate"
+       },
+       {
+        "name": "fal",
+        "type": "company",
+        "domain": "fal.ai",
+        "status": "Private",
+        "desc": "Generative media inference platform (image, video, audio).",
+        "id": "fal"
+       },
+       {
+        "name": "OpenRouter",
+        "type": "company",
+        "domain": "openrouter.ai",
+        "status": "Pending acquisition by Stripe (reported)",
+        "desc": "One API that routes requests across hundreds of models and providers.",
+        "id": "openrouter"
+       }
+      ],
+      "id": "inference-model-serving"
+     },
+     {
+      "name": "Vector Databases & Retrieval",
+      "type": "category",
+      "desc": "Stores 'embeddings' (numeric meaning of text/images) so AI apps can find relevant context — the core of RAG (retrieval-augmented generation).",
+      "children": [
+       {
+        "name": "Pinecone",
+        "type": "company",
+        "domain": "pinecone.io",
+        "status": "Private",
+        "desc": "Managed, serverless vector database.",
+        "id": "pinecone"
+       },
+       {
+        "name": "Weaviate",
+        "type": "company",
+        "domain": "weaviate.io",
+        "status": "Private",
+        "desc": "Open-source vector database.",
+        "id": "weaviate"
+       },
+       {
+        "name": "Zilliz (Milvus)",
+        "type": "company",
+        "domain": "zilliz.com",
+        "status": "Private",
+        "desc": "Company behind Milvus, a widely used open-source vector database.",
+        "id": "zilliz-milvus"
+       },
+       {
+        "name": "Chroma",
+        "type": "company",
+        "domain": "trychroma.com",
+        "status": "Private",
+        "desc": "Open-source embedding database popular with developers.",
+        "id": "chroma"
+       },
+       {
+        "name": "Qdrant",
+        "type": "company",
+        "domain": "qdrant.tech",
+        "status": "Private",
+        "desc": "Open-source vector search engine written in Rust.",
+        "id": "qdrant"
+       },
+       {
+        "name": "turbopuffer",
+        "type": "company",
+        "domain": "turbopuffer.com",
+        "status": "Private",
+        "desc": "Cheap vector + full-text search built on object storage (used by Cursor, Notion).",
+        "id": "turbopuffer"
+       },
+       {
+        "name": "LanceDB",
+        "type": "company",
+        "domain": "lancedb.com",
+        "status": "Private",
+        "desc": "Multimodal AI database built on the Lance file format.",
+        "id": "lancedb"
+       }
+      ],
+      "id": "vector-databases-retrieval"
+     },
+     {
+      "name": "LLM Frameworks & RAG",
+      "type": "category",
+      "desc": "Developer frameworks for chaining models, tools and data into apps and agents.",
+      "children": [
+       {
+        "name": "LangChain",
+        "type": "company",
+        "domain": "langchain.com",
+        "status": "Private",
+        "desc": "Most popular LLM app framework, plus LangGraph (agents) and LangSmith (observability).",
+        "id": "langchain"
+       },
+       {
+        "name": "LlamaIndex",
+        "type": "company",
+        "domain": "llamaindex.ai",
+        "status": "Private",
+        "desc": "Framework and cloud for document parsing and RAG over enterprise data.",
+        "id": "llamaindex"
+       },
+       {
+        "name": "Contextual AI",
+        "type": "company",
+        "domain": "contextual.ai",
+        "status": "Private",
+        "desc": "Enterprise RAG platform from the researchers who coined RAG.",
+        "id": "contextual-ai"
+       },
+       {
+        "name": "Unstructured",
+        "type": "company",
+        "domain": "unstructured.io",
+        "status": "Private",
+        "desc": "Turns messy documents (PDFs, slides) into AI-ready data.",
+        "id": "unstructured"
+       },
+       {
+        "name": "deepset",
+        "type": "company",
+        "domain": "deepset.ai",
+        "status": "Private",
+        "desc": "Company behind Haystack, an open-source RAG framework.",
+        "id": "deepset"
+       }
+      ],
+      "id": "llm-frameworks-rag"
+     },
+     {
+      "name": "Agent Infrastructure",
+      "type": "category",
+      "desc": "The plumbing AI agents need to act: sandboxes to run code, browsers to use websites, memory, tool connections and web search.",
+      "children": [
+       {
+        "name": "E2B",
+        "type": "company",
+        "domain": "e2b.dev",
+        "status": "Private",
+        "desc": "Secure cloud sandboxes where AI agents run code.",
+        "id": "e2b"
+       },
+       {
+        "name": "Browserbase",
+        "type": "company",
+        "domain": "browserbase.com",
+        "status": "Private",
+        "desc": "Headless browsers in the cloud for AI agents.",
+        "id": "browserbase"
+       },
+       {
+        "name": "Composio",
+        "type": "company",
+        "domain": "composio.dev",
+        "status": "Private",
+        "desc": "Connects agents to hundreds of apps and APIs.",
+        "id": "composio"
+       },
+       {
+        "name": "Letta",
+        "type": "company",
+        "domain": "letta.com",
+        "status": "Private",
+        "desc": "Stateful agents with long-term memory (from the MemGPT research).",
+        "id": "letta"
+       },
+       {
+        "name": "Mem0",
+        "type": "company",
+        "domain": "mem0.ai",
+        "status": "Private",
+        "desc": "Memory layer for AI apps and agents.",
+        "id": "mem0"
+       },
+       {
+        "name": "Exa",
+        "type": "company",
+        "domain": "exa.ai",
+        "status": "Private",
+        "desc": "Web search API built for AI.",
+        "id": "exa"
+       },
+       {
+        "name": "Firecrawl",
+        "type": "company",
+        "domain": "firecrawl.dev",
+        "status": "Private",
+        "desc": "Turns websites into clean data for LLMs.",
+        "id": "firecrawl"
+       },
+       {
+        "name": "Daytona",
+        "type": "company",
+        "domain": "daytona.io",
+        "status": "Private",
+        "desc": "Infrastructure for running AI-generated code.",
+        "id": "daytona"
+       }
+      ],
+      "id": "agent-infrastructure"
+     },
+     {
+      "name": "LLM Evaluation & Observability",
+      "type": "category",
+      "desc": "Testing and monitoring AI apps — catching hallucinations, regressions and cost spikes. Hot M&A area in 2026 as incumbents bought in.",
+      "children": [
+       {
+        "name": "Braintrust",
+        "type": "company",
+        "domain": "braintrust.dev",
+        "status": "Private",
+        "desc": "Evals and observability platform for AI products.",
+        "id": "braintrust"
+       },
+       {
+        "name": "Arize AI",
+        "type": "company",
+        "domain": "arize.com",
+        "status": "Acquired by Dynatrace (2026)",
+        "desc": "ML and LLM observability; Dynatrace closed the ~$915M deal in Oct 2026.",
+        "id": "arize-ai"
+       },
+       {
+        "name": "Galileo",
+        "type": "company",
+        "domain": "galileo.ai",
+        "status": "Acquired by Cisco/Splunk (2026)",
+        "desc": "AI agent evaluation and observability; now Splunk Agent Observability.",
+        "id": "galileo"
+       },
+       {
+        "name": "Langfuse",
+        "type": "company",
+        "domain": "langfuse.com",
+        "status": "Acquired by ClickHouse",
+        "desc": "Open-source LLM tracing and evals.",
+        "id": "langfuse"
+       },
+       {
+        "name": "Patronus AI",
+        "type": "company",
+        "domain": "patronus.ai",
+        "status": "Private",
+        "desc": "Automated evaluation of LLM outputs.",
+        "id": "patronus-ai"
+       },
+       {
+        "name": "Helicone",
+        "type": "company",
+        "domain": "helicone.ai",
+        "status": "Private",
+        "desc": "Open-source LLM observability and gateway.",
+        "id": "helicone"
+       }
+      ],
+      "id": "llm-evaluation-observability"
+     },
+     {
+      "name": "AI Security & Governance",
+      "type": "category",
+      "desc": "Protecting models and agents from prompt injection, data leaks and misuse, and documenting compliance.",
+      "children": [
+       {
+        "name": "Protect AI",
+        "type": "company",
+        "domain": "protectai.com",
+        "status": "Acquired by Palo Alto Networks (2025)",
+        "desc": "Security for the ML supply chain and LLM apps.",
+        "id": "protect-ai"
+       },
+       {
+        "name": "Lakera",
+        "type": "company",
+        "domain": "lakera.ai",
+        "status": "Acquired by Check Point (2025)",
+        "desc": "Defends LLM apps against prompt injection.",
+        "id": "lakera"
+       },
+       {
+        "name": "HiddenLayer",
+        "type": "company",
+        "domain": "hiddenlayer.com",
+        "status": "Private",
+        "desc": "Security platform for AI models.",
+        "id": "hiddenlayer"
+       },
+       {
+        "name": "Credo AI",
+        "type": "company",
+        "domain": "credo.ai",
+        "status": "Private",
+        "desc": "AI governance and risk management.",
+        "id": "credo-ai"
+       }
+      ],
+      "id": "ai-security-governance"
+     }
+    ],
+    "id": "ai-models-ai-infrastructure"
+   },
+   {
+    "name": "Developer Tools & DevOps",
+    "type": "category",
+    "color": "#059669",
+    "desc": "Tools engineers use to write, ship and run software — code hosting, CI/CD, monitoring and incident response. AI coding is reshaping this whole layer.",
+    "children": [
+     {
+      "name": "Code Hosting & DevSecOps Platforms",
+      "type": "category",
+      "desc": "Where code lives and is reviewed, plus the pipelines around it.",
+      "children": [
+       {
+        "name": "GitHub",
+        "type": "company",
+        "domain": "github.com",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Largest code host; also GitHub Copilot and Actions (CI/CD).",
+        "id": "github"
+       },
+       {
+        "name": "GitLab",
+        "type": "company",
+        "domain": "gitlab.com",
+        "status": "Public · GTLB",
+        "desc": "All-in-one DevSecOps platform — code, CI/CD, security in one app.",
+        "id": "gitlab"
+       },
+       {
+        "name": "Atlassian",
+        "type": "company",
+        "domain": "atlassian.com",
+        "status": "Public · TEAM",
+        "desc": "Jira, Confluence and Bitbucket — the default for engineering planning and docs.",
+        "id": "atlassian"
+       }
+      ],
+      "id": "code-hosting-devsecops-platforms"
+     },
+     {
+      "name": "AI Coding Tools",
+      "type": "category",
+      "desc": "AI that writes, reviews and ships code — the fastest-growing software category of 2025–26.",
+      "children": [
+       {
+        "name": "Cursor",
+        "type": "company",
+        "domain": "cursor.com",
+        "status": "Acquired by SpaceX (2026)",
+        "desc": "AI-first code editor from Anysphere; SpaceX bought it for $60B in stock, closing Aug 2026.",
+        "id": "cursor"
+       },
+       {
+        "name": "GitHub Copilot",
+        "type": "company",
+        "domain": "github.com/features/copilot",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "The original mainstream AI coding assistant.",
+        "id": "github-copilot"
+       },
+       {
+        "name": "Claude Code",
+        "type": "company",
+        "domain": "claude.com/product/claude-code",
+        "status": "Part of Anthropic",
+        "desc": "Anthropic's agentic coding tool that runs in the terminal and IDE.",
+        "id": "claude-code"
+       },
+       {
+        "name": "Cognition",
+        "type": "company",
+        "domain": "cognition.ai",
+        "status": "Private",
+        "desc": "Maker of Devin (autonomous AI engineer); also owns Windsurf's IDE business.",
+        "id": "cognition"
+       },
+       {
+        "name": "Replit",
+        "type": "company",
+        "domain": "replit.com",
+        "status": "Private",
+        "desc": "Browser IDE with an agent that builds and deploys full apps.",
+        "id": "replit"
+       },
+       {
+        "name": "Lovable",
+        "type": "company",
+        "domain": "lovable.dev",
+        "status": "Private",
+        "desc": "Stockholm-based 'vibe coding' app builder — describe an app, get it built.",
+        "id": "lovable"
+       },
+       {
+        "name": "Bolt (StackBlitz)",
+        "type": "company",
+        "domain": "bolt.new",
+        "status": "Private",
+        "desc": "In-browser AI app builder.",
+        "id": "bolt-stackblitz"
+       },
+       {
+        "name": "JetBrains",
+        "type": "company",
+        "domain": "jetbrains.com",
+        "status": "Private",
+        "desc": "IntelliJ and other professional IDEs, plus AI assistants.",
+        "id": "jetbrains"
+       }
+      ],
+      "id": "ai-coding-tools"
+     },
+     {
+      "name": "CI/CD & Release",
+      "type": "category",
+      "desc": "Automatically testing and deploying code, and safely rolling out features.",
+      "children": [
+       {
+        "name": "Harness",
+        "type": "company",
+        "domain": "harness.io",
+        "status": "Private",
+        "desc": "AI-powered software delivery platform (CI/CD, feature flags, cost).",
+        "id": "harness"
+       },
+       {
+        "name": "CircleCI",
+        "type": "company",
+        "domain": "circleci.com",
+        "status": "Private",
+        "desc": "Cloud continuous integration.",
+        "id": "circleci"
+       },
+       {
+        "name": "Buildkite",
+        "type": "company",
+        "domain": "buildkite.com",
+        "status": "Private",
+        "desc": "CI/CD for large engineering teams.",
+        "id": "buildkite"
+       },
+       {
+        "name": "JFrog",
+        "type": "company",
+        "domain": "jfrog.com",
+        "status": "Public · FROG",
+        "desc": "Artifactory — manages software packages and binaries.",
+        "id": "jfrog"
+       },
+       {
+        "name": "LaunchDarkly",
+        "type": "company",
+        "domain": "launchdarkly.com",
+        "status": "Private",
+        "desc": "Feature flags for gradual releases.",
+        "id": "launchdarkly"
+       },
+       {
+        "name": "Statsig",
+        "type": "company",
+        "domain": "statsig.com",
+        "status": "Acquired by OpenAI (2025)",
+        "desc": "Experimentation and feature flags.",
+        "id": "statsig"
+       }
+      ],
+      "id": "ci-cd-release"
+     },
+     {
+      "name": "Observability & Monitoring",
+      "type": "category",
+      "desc": "Metrics, logs and traces that show whether software is healthy — and why it broke. Big, sticky budgets.",
+      "children": [
+       {
+        "name": "Datadog",
+        "type": "company",
+        "domain": "datadoghq.com",
+        "status": "Public · DDOG",
+        "desc": "Leading cloud monitoring platform: infrastructure, APM, logs, security.",
+        "id": "datadog"
+       },
+       {
+        "name": "Dynatrace",
+        "type": "company",
+        "domain": "dynatrace.com",
+        "status": "Public · DT",
+        "desc": "AI-driven observability for large enterprises; bought Arize in 2026.",
+        "id": "dynatrace"
+       },
+       {
+        "name": "Splunk",
+        "type": "company",
+        "domain": "splunk.com",
+        "status": "Part of Cisco (CSCO)",
+        "desc": "Log analytics and SIEM; acquired by Cisco for $28B in 2024.",
+        "id": "splunk"
+       },
+       {
+        "name": "Grafana Labs",
+        "type": "company",
+        "domain": "grafana.com",
+        "status": "Private",
+        "desc": "Open-source dashboards plus Loki, Tempo and Mimir observability stack.",
+        "id": "grafana-labs"
+       },
+       {
+        "name": "New Relic",
+        "type": "company",
+        "domain": "newrelic.com",
+        "status": "Owned by Francisco Partners & TPG",
+        "desc": "Application performance monitoring, taken private in 2023.",
+        "id": "new-relic"
+       },
+       {
+        "name": "Elastic",
+        "type": "company",
+        "domain": "elastic.co",
+        "status": "Public · ESTC",
+        "desc": "Elasticsearch for search, observability and security.",
+        "id": "elastic"
+       },
+       {
+        "name": "Chronosphere",
+        "type": "company",
+        "domain": "chronosphere.io",
+        "status": "Acquired by Palo Alto Networks (2026)",
+        "desc": "Cloud-native observability built to control data volume and cost; bought by Palo Alto for $3.35B.",
+        "id": "chronosphere"
+       },
+       {
+        "name": "Honeycomb",
+        "type": "company",
+        "domain": "honeycomb.io",
+        "status": "Private",
+        "desc": "Observability for debugging complex distributed systems.",
+        "id": "honeycomb"
+       },
+       {
+        "name": "Sentry",
+        "type": "company",
+        "domain": "sentry.io",
+        "status": "Private",
+        "desc": "Error and performance monitoring for developers.",
+        "id": "sentry"
+       }
+      ],
+      "id": "observability-monitoring"
+     },
+     {
+      "name": "Incident Management",
+      "type": "category",
+      "desc": "Alerting the right engineer and coordinating the response when things break.",
+      "children": [
+       {
+        "name": "PagerDuty",
+        "type": "company",
+        "domain": "pagerduty.com",
+        "status": "Public · PD",
+        "desc": "On-call alerting and incident response.",
+        "id": "pagerduty"
+       },
+       {
+        "name": "incident.io",
+        "type": "company",
+        "domain": "incident.io",
+        "status": "Private",
+        "desc": "Incident management that runs inside Slack.",
+        "id": "incident-io"
+       },
+       {
+        "name": "Rootly",
+        "type": "company",
+        "domain": "rootly.com",
+        "status": "Private",
+        "desc": "AI-native incident management.",
+        "id": "rootly"
+       },
+       {
+        "name": "Traversal",
+        "type": "company",
+        "domain": "traversal.com",
+        "status": "Private",
+        "desc": "AI site-reliability engineer that diagnoses incidents.",
+        "id": "traversal"
+       }
+      ],
+      "id": "incident-management"
+     },
+     {
+      "name": "APIs, Backend & Workflows",
+      "type": "category",
+      "desc": "Building blocks developers call instead of building themselves.",
+      "children": [
+       {
+        "name": "Postman",
+        "type": "company",
+        "domain": "postman.com",
+        "status": "Private",
+        "desc": "API development and testing platform.",
+        "id": "postman"
+       },
+       {
+        "name": "Twilio",
+        "type": "company",
+        "domain": "twilio.com",
+        "status": "Public · TWLO",
+        "desc": "APIs for SMS, voice and email.",
+        "id": "twilio"
+       },
+       {
+        "name": "Temporal",
+        "type": "company",
+        "domain": "temporal.io",
+        "status": "Private",
+        "desc": "Durable execution — keeps long-running workflows and agents reliable.",
+        "id": "temporal"
+       },
+       {
+        "name": "Firebase",
+        "type": "company",
+        "domain": "firebase.google.com",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "Google's backend-as-a-service for app developers.",
+        "id": "firebase"
+       }
+      ],
+      "id": "apis-backend-workflows"
+     }
+    ],
+    "id": "developer-tools-devops"
+   },
+   {
+    "name": "Cybersecurity",
+    "type": "category",
+    "color": "#dc2626",
+    "desc": "Protecting users, devices, networks, clouds, code and data. Consolidating fast around 'platforms' (Palo Alto, CrowdStrike, Microsoft) — lots of M&A.",
+    "children": [
+     {
+      "name": "Identity & Access",
+      "type": "category",
+      "desc": "Who you are and what you can access — now extending to non-human identities like AI agents.",
+      "children": [
+       {
+        "name": "Okta",
+        "type": "company",
+        "domain": "okta.com",
+        "status": "Public · OKTA",
+        "desc": "Leading independent identity platform (single sign-on, MFA); owns Auth0.",
+        "id": "okta"
+       },
+       {
+        "name": "Microsoft Entra",
+        "type": "company",
+        "domain": "microsoft.com/security/business/microsoft-entra",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Microsoft's identity platform (formerly Azure AD).",
+        "id": "microsoft-entra"
+       },
+       {
+        "name": "CyberArk",
+        "type": "company",
+        "domain": "cyberark.com",
+        "status": "Acquired by Palo Alto Networks (2026)",
+        "desc": "Privileged access management; Palo Alto closed the ~$25B deal in Feb 2026.",
+        "id": "cyberark"
+       },
+       {
+        "name": "SailPoint",
+        "type": "company",
+        "domain": "sailpoint.com",
+        "status": "Public · SAIL",
+        "desc": "Identity governance — who should have access to what. Re-IPO'd in 2025.",
+        "id": "sailpoint"
+       },
+       {
+        "name": "Ping Identity",
+        "type": "company",
+        "domain": "pingidentity.com",
+        "status": "Owned by Thoma Bravo",
+        "desc": "Enterprise identity, merged with ForgeRock.",
+        "id": "ping-identity"
+       },
+       {
+        "name": "1Password",
+        "type": "company",
+        "domain": "1password.com",
+        "status": "Private",
+        "desc": "Password and secrets management for businesses.",
+        "id": "1password"
+       },
+       {
+        "name": "WorkOS",
+        "type": "company",
+        "domain": "workos.com",
+        "status": "Private",
+        "desc": "Enterprise SSO and auth APIs for developers.",
+        "id": "workos"
+       }
+      ],
+      "id": "identity-access"
+     },
+     {
+      "name": "Endpoint & XDR",
+      "type": "category",
+      "desc": "Protecting laptops and servers, and detecting attacks across them.",
+      "children": [
+       {
+        "name": "CrowdStrike",
+        "type": "company",
+        "domain": "crowdstrike.com",
+        "status": "Public · CRWD",
+        "desc": "Cloud-native endpoint security leader (Falcon platform).",
+        "id": "crowdstrike"
+       },
+       {
+        "name": "SentinelOne",
+        "type": "company",
+        "domain": "sentinelone.com",
+        "status": "Public · S",
+        "desc": "AI-driven endpoint and XDR security.",
+        "id": "sentinelone"
+       },
+       {
+        "name": "Microsoft Defender",
+        "type": "company",
+        "domain": "microsoft.com/security",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Bundled endpoint and XDR security — the largest security business by revenue.",
+        "id": "microsoft-defender"
+       },
+       {
+        "name": "Sophos",
+        "type": "company",
+        "domain": "sophos.com",
+        "status": "Owned by Thoma Bravo",
+        "desc": "Endpoint and firewall security for mid-market; acquired Secureworks.",
+        "id": "sophos"
+       }
+      ],
+      "id": "endpoint-xdr"
+     },
+     {
+      "name": "Network Security & SASE",
+      "type": "category",
+      "desc": "Firewalls and cloud-delivered security that inspect traffic wherever users work (SASE = secure access service edge).",
+      "children": [
+       {
+        "name": "Palo Alto Networks",
+        "type": "company",
+        "domain": "paloaltonetworks.com",
+        "status": "Public · PANW",
+        "desc": "Largest pure-play security company — firewalls, SASE, cloud, SecOps, and now identity via CyberArk.",
+        "id": "palo-alto-networks"
+       },
+       {
+        "name": "Fortinet",
+        "type": "company",
+        "domain": "fortinet.com",
+        "status": "Public · FTNT",
+        "desc": "Firewalls with in-house chips; strong in mid-market and OT security.",
+        "id": "fortinet"
+       },
+       {
+        "name": "Zscaler",
+        "type": "company",
+        "domain": "zscaler.com",
+        "status": "Public · ZS",
+        "desc": "Cloud-delivered zero-trust security proxy.",
+        "id": "zscaler"
+       },
+       {
+        "name": "Netskope",
+        "type": "company",
+        "domain": "netskope.com",
+        "status": "Public · NTSK",
+        "desc": "SASE and data protection; IPO'd 2025.",
+        "id": "netskope"
+       },
+       {
+        "name": "Check Point",
+        "type": "company",
+        "domain": "checkpoint.com",
+        "status": "Public · CHKP",
+        "desc": "Veteran Israeli firewall and security vendor.",
+        "id": "check-point"
+       },
+       {
+        "name": "Cato Networks",
+        "type": "company",
+        "domain": "catonetworks.com",
+        "status": "Private",
+        "desc": "SASE platform combining networking and security.",
+        "id": "cato-networks"
+       }
+      ],
+      "id": "network-security-sase"
+     },
+     {
+      "name": "Cloud Security (CNAPP)",
+      "type": "category",
+      "desc": "Finding risks across cloud accounts, workloads and code — misconfigurations, vulnerabilities, exposed data.",
+      "children": [
+       {
+        "name": "Wiz",
+        "type": "company",
+        "domain": "wiz.io",
+        "status": "Acquired by Google (2026)",
+        "desc": "Fastest-growing cloud security platform; Google closed the $32B deal in March 2026 — its largest ever.",
+        "id": "wiz"
+       },
+       {
+        "name": "Orca Security",
+        "type": "company",
+        "domain": "orca.security",
+        "status": "Private",
+        "desc": "Agentless cloud security platform.",
+        "id": "orca-security"
+       },
+       {
+        "name": "Upwind",
+        "type": "company",
+        "domain": "upwind.io",
+        "status": "Private",
+        "desc": "Runtime-first cloud security.",
+        "id": "upwind"
+       },
+       {
+        "name": "Aqua Security",
+        "type": "company",
+        "domain": "aquasec.com",
+        "status": "Private",
+        "desc": "Container and cloud-native security.",
+        "id": "aqua-security"
+       }
+      ],
+      "id": "cloud-security-cnapp"
+     },
+     {
+      "name": "Security Operations (SIEM/SOC)",
+      "type": "category",
+      "desc": "Collecting security logs and investigating threats — increasingly with AI 'SOC analysts'.",
+      "children": [
+       {
+        "name": "Google Security Operations",
+        "type": "company",
+        "domain": "cloud.google.com/security/products/security-operations",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "Google's SIEM/SOAR plus Mandiant threat intel.",
+        "id": "google-security-operations"
+       },
+       {
+        "name": "Rapid7",
+        "type": "company",
+        "domain": "rapid7.com",
+        "status": "Public · RPD",
+        "desc": "Vulnerability management and managed detection.",
+        "id": "rapid7"
+       },
+       {
+        "name": "Tenable",
+        "type": "company",
+        "domain": "tenable.com",
+        "status": "Public · TENB",
+        "desc": "Vulnerability and exposure management.",
+        "id": "tenable"
+       },
+       {
+        "name": "Arctic Wolf",
+        "type": "company",
+        "domain": "arcticwolf.com",
+        "status": "Private",
+        "desc": "Managed security operations for mid-market.",
+        "id": "arctic-wolf"
+       },
+       {
+        "name": "Cribl",
+        "type": "company",
+        "domain": "cribl.io",
+        "status": "Private",
+        "desc": "Telemetry pipeline that routes and reduces security/observability data.",
+        "id": "cribl"
+       },
+       {
+        "name": "Torq",
+        "type": "company",
+        "domain": "torq.io",
+        "status": "Private",
+        "desc": "AI-driven security automation.",
+        "id": "torq"
+       }
+      ],
+      "id": "security-operations-siem-soc"
+     },
+     {
+      "name": "Application & Supply-Chain Security",
+      "type": "category",
+      "desc": "Finding vulnerabilities in code and open-source dependencies before they ship.",
+      "children": [
+       {
+        "name": "Snyk",
+        "type": "company",
+        "domain": "snyk.io",
+        "status": "Private",
+        "desc": "Developer-first security scanning for code and dependencies.",
+        "id": "snyk"
+       },
+       {
+        "name": "Semgrep",
+        "type": "company",
+        "domain": "semgrep.dev",
+        "status": "Private",
+        "desc": "Fast static code analysis.",
+        "id": "semgrep"
+       },
+       {
+        "name": "Chainguard",
+        "type": "company",
+        "domain": "chainguard.dev",
+        "status": "Private",
+        "desc": "Hardened, vulnerability-free container images.",
+        "id": "chainguard"
+       },
+       {
+        "name": "Socket",
+        "type": "company",
+        "domain": "socket.dev",
+        "status": "Private",
+        "desc": "Detects malicious open-source packages.",
+        "id": "socket"
+       },
+       {
+        "name": "Checkmarx",
+        "type": "company",
+        "domain": "checkmarx.com",
+        "status": "Owned by Hellman & Friedman",
+        "desc": "Enterprise application security testing.",
+        "id": "checkmarx"
+       }
+      ],
+      "id": "application-supply-chain-security"
+     },
+     {
+      "name": "Data Security",
+      "type": "category",
+      "desc": "Finding sensitive data and controlling who can see it — critical as companies feed data into AI.",
+      "children": [
+       {
+        "name": "Cyera",
+        "type": "company",
+        "domain": "cyera.com",
+        "status": "Private",
+        "desc": "AI-native data security posture management (DSPM).",
+        "id": "cyera"
+       },
+       {
+        "name": "Varonis",
+        "type": "company",
+        "domain": "varonis.com",
+        "status": "Public · VRNS",
+        "desc": "Data security and access governance.",
+        "id": "varonis"
+       },
+       {
+        "name": "BigID",
+        "type": "company",
+        "domain": "bigid.com",
+        "status": "Private",
+        "desc": "Data discovery, privacy and security.",
+        "id": "bigid"
+       },
+       {
+        "name": "Sentra",
+        "type": "company",
+        "domain": "sentra.io",
+        "status": "Private",
+        "desc": "Cloud data security; raised $150M in late 2026.",
+        "id": "sentra"
+       },
+       {
+        "name": "Imperva",
+        "type": "company",
+        "domain": "imperva.com",
+        "status": "Part of Thales",
+        "desc": "Data and application security.",
+        "id": "imperva"
+       }
+      ],
+      "id": "data-security"
+     },
+     {
+      "name": "Email & Human Risk",
+      "type": "category",
+      "desc": "Stopping phishing and training employees.",
+      "children": [
+       {
+        "name": "Proofpoint",
+        "type": "company",
+        "domain": "proofpoint.com",
+        "status": "Owned by Thoma Bravo",
+        "desc": "Email security leader.",
+        "id": "proofpoint"
+       },
+       {
+        "name": "Abnormal AI",
+        "type": "company",
+        "domain": "abnormal.ai",
+        "status": "Private",
+        "desc": "AI-based email security that models normal behavior.",
+        "id": "abnormal-ai"
+       },
+       {
+        "name": "KnowBe4",
+        "type": "company",
+        "domain": "knowbe4.com",
+        "status": "Owned by Vista Equity",
+        "desc": "Security awareness training.",
+        "id": "knowbe4"
+       }
+      ],
+      "id": "email-human-risk"
+     }
+    ],
+    "id": "cybersecurity"
+   },
+   {
+    "name": "Enterprise Applications",
+    "type": "category",
+    "color": "#ca8a04",
+    "desc": "Horizontal business software every company buys — CRM, ERP, HR, IT, collaboration. The SaaS incumbents now racing to add AI agents before agents replace them.",
+    "children": [
+     {
+      "name": "CRM & Customer Engagement",
+      "type": "category",
+      "desc": "Managing sales, marketing and customer service.",
+      "children": [
+       {
+        "name": "Salesforce",
+        "type": "company",
+        "domain": "salesforce.com",
+        "status": "Public · CRM",
+        "desc": "Largest CRM vendor; betting on Agentforce AI agents; bought Informatica and agreed to buy Fin.",
+        "id": "salesforce"
+       },
+       {
+        "name": "HubSpot",
+        "type": "company",
+        "domain": "hubspot.com",
+        "status": "Public · HUBS",
+        "desc": "CRM and marketing for SMBs and mid-market.",
+        "id": "hubspot"
+       },
+       {
+        "name": "Fin (formerly Intercom)",
+        "type": "company",
+        "domain": "fin.ai",
+        "status": "Pending acquisition by Salesforce",
+        "desc": "AI customer-service agent; Salesforce agreed to buy it for ~$3.6B in June 2026.",
+        "id": "fin-formerly-intercom"
+       },
+       {
+        "name": "Zendesk",
+        "type": "company",
+        "domain": "zendesk.com",
+        "status": "Owned by Hellman & Friedman & Permira",
+        "desc": "Customer service software.",
+        "id": "zendesk"
+       },
+       {
+        "name": "Braze",
+        "type": "company",
+        "domain": "braze.com",
+        "status": "Public · BRZE",
+        "desc": "Customer engagement — push, email, in-app messaging.",
+        "id": "braze"
+       },
+       {
+        "name": "Klaviyo",
+        "type": "company",
+        "domain": "klaviyo.com",
+        "status": "Public · KVYO",
+        "desc": "Marketing automation for e-commerce.",
+        "id": "klaviyo"
+       },
+       {
+        "name": "Attio",
+        "type": "company",
+        "domain": "attio.com",
+        "status": "Private",
+        "desc": "AI-native, flexible CRM.",
+        "id": "attio"
+       }
+      ],
+      "id": "crm-customer-engagement"
+     },
+     {
+      "name": "ERP, Finance & Procurement",
+      "type": "category",
+      "desc": "Systems of record for accounting, spend and planning.",
+      "children": [
+       {
+        "name": "SAP",
+        "type": "company",
+        "domain": "sap.com",
+        "status": "Public · SAP",
+        "desc": "Largest ERP vendor, running core operations of most large companies.",
+        "id": "sap"
+       },
+       {
+        "name": "Oracle Fusion & NetSuite",
+        "type": "company",
+        "domain": "oracle.com/erp",
+        "status": "Part of Oracle (ORCL)",
+        "desc": "Oracle's cloud ERP for enterprise (Fusion) and mid-market (NetSuite).",
+        "id": "oracle-fusion-netsuite"
+       },
+       {
+        "name": "Intuit",
+        "type": "company",
+        "domain": "intuit.com",
+        "status": "Public · INTU",
+        "desc": "QuickBooks, TurboTax, Credit Karma, Mailchimp.",
+        "id": "intuit"
+       },
+       {
+        "name": "Bill.com",
+        "type": "company",
+        "domain": "bill.com",
+        "status": "Public · BILL",
+        "desc": "AP/AR automation for SMBs.",
+        "id": "bill-com"
+       },
+       {
+        "name": "Coupa",
+        "type": "company",
+        "domain": "coupa.com",
+        "status": "Owned by Thoma Bravo",
+        "desc": "Procurement and spend management.",
+        "id": "coupa"
+       },
+       {
+        "name": "Anaplan",
+        "type": "company",
+        "domain": "anaplan.com",
+        "status": "Owned by Thoma Bravo",
+        "desc": "Enterprise financial planning (FP&A).",
+        "id": "anaplan"
+       },
+       {
+        "name": "OneStream",
+        "type": "company",
+        "domain": "onestream.com",
+        "status": "Being acquired by Hg",
+        "desc": "Corporate performance management; Hg agreed to take it private for ~$6.4B in 2026.",
+        "id": "onestream"
+       },
+       {
+        "name": "Rillet",
+        "type": "company",
+        "domain": "rillet.com",
+        "status": "Private",
+        "desc": "AI-native general ledger / ERP for startups.",
+        "id": "rillet"
+       }
+      ],
+      "id": "erp-finance-procurement"
+     },
+     {
+      "name": "HR & Payroll",
+      "type": "category",
+      "desc": "Hiring, paying and managing employees.",
+      "children": [
+       {
+        "name": "Workday",
+        "type": "company",
+        "domain": "workday.com",
+        "status": "Public · WDAY",
+        "desc": "Leading cloud HR and finance suite for large enterprises.",
+        "id": "workday"
+       },
+       {
+        "name": "ADP",
+        "type": "company",
+        "domain": "adp.com",
+        "status": "Public · ADP",
+        "desc": "Payroll giant.",
+        "id": "adp"
+       },
+       {
+        "name": "Rippling",
+        "type": "company",
+        "domain": "rippling.com",
+        "status": "Private",
+        "desc": "All-in-one HR, IT and finance platform.",
+        "id": "rippling"
+       },
+       {
+        "name": "Deel",
+        "type": "company",
+        "domain": "deel.com",
+        "status": "Private",
+        "desc": "Global payroll and contractor management.",
+        "id": "deel"
+       },
+       {
+        "name": "Gusto",
+        "type": "company",
+        "domain": "gusto.com",
+        "status": "Private",
+        "desc": "Payroll and HR for small businesses.",
+        "id": "gusto"
+       },
+       {
+        "name": "Paycom",
+        "type": "company",
+        "domain": "paycom.com",
+        "status": "Public · PAYC",
+        "desc": "Payroll and HCM software.",
+        "id": "paycom"
+       }
+      ],
+      "id": "hr-payroll"
+     },
+     {
+      "name": "IT Service & Automation",
+      "type": "category",
+      "desc": "Running IT and automating work across systems.",
+      "children": [
+       {
+        "name": "ServiceNow",
+        "type": "company",
+        "domain": "servicenow.com",
+        "status": "Public · NOW",
+        "desc": "IT service management and workflow automation platform for large enterprises.",
+        "id": "servicenow"
+       },
+       {
+        "name": "UiPath",
+        "type": "company",
+        "domain": "uipath.com",
+        "status": "Public · PATH",
+        "desc": "Robotic process automation, moving to agentic automation.",
+        "id": "uipath"
+       },
+       {
+        "name": "Workato",
+        "type": "company",
+        "domain": "workato.com",
+        "status": "Private",
+        "desc": "Enterprise integration and automation.",
+        "id": "workato"
+       },
+       {
+        "name": "Zapier",
+        "type": "company",
+        "domain": "zapier.com",
+        "status": "Private",
+        "desc": "No-code automation connecting thousands of apps.",
+        "id": "zapier"
+       },
+       {
+        "name": "n8n",
+        "type": "company",
+        "domain": "n8n.io",
+        "status": "Private",
+        "desc": "Open, developer-friendly workflow automation, popular for AI agents.",
+        "id": "n8n"
+       },
+       {
+        "name": "Freshworks",
+        "type": "company",
+        "domain": "freshworks.com",
+        "status": "Public · FRSH",
+        "desc": "IT and customer service software for mid-market.",
+        "id": "freshworks"
+       }
+      ],
+      "id": "it-service-automation"
+     },
+     {
+      "name": "Collaboration & Productivity",
+      "type": "category",
+      "desc": "Where knowledge work happens — docs, chat, meetings, design and project management.",
+      "children": [
+       {
+        "name": "Microsoft 365",
+        "type": "company",
+        "domain": "microsoft.com/microsoft-365",
+        "status": "Part of Microsoft (MSFT)",
+        "desc": "Office, Teams, Outlook plus Copilot.",
+        "id": "microsoft-365"
+       },
+       {
+        "name": "Google Workspace",
+        "type": "company",
+        "domain": "workspace.google.com",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "Gmail, Docs, Meet plus Gemini.",
+        "id": "google-workspace"
+       },
+       {
+        "name": "Slack",
+        "type": "company",
+        "domain": "slack.com",
+        "status": "Part of Salesforce (CRM)",
+        "desc": "Team messaging, acquired by Salesforce in 2021.",
+        "id": "slack"
+       },
+       {
+        "name": "Zoom",
+        "type": "company",
+        "domain": "zoom.com",
+        "status": "Public · ZM",
+        "desc": "Video meetings and communications.",
+        "id": "zoom"
+       },
+       {
+        "name": "Notion",
+        "type": "company",
+        "domain": "notion.com",
+        "status": "Private",
+        "desc": "Docs, wikis and projects in one workspace with AI.",
+        "id": "notion"
+       },
+       {
+        "name": "Figma",
+        "type": "company",
+        "domain": "figma.com",
+        "status": "Public · FIG",
+        "desc": "Collaborative design platform; IPO'd July 2025 after Adobe's deal was blocked.",
+        "id": "figma"
+       },
+       {
+        "name": "Canva",
+        "type": "company",
+        "domain": "canva.com",
+        "status": "Private",
+        "desc": "Easy design tool for non-designers.",
+        "id": "canva"
+       },
+       {
+        "name": "Asana",
+        "type": "company",
+        "domain": "asana.com",
+        "status": "Public · ASAN",
+        "desc": "Work and project management.",
+        "id": "asana"
+       },
+       {
+        "name": "monday.com",
+        "type": "company",
+        "domain": "monday.com",
+        "status": "Public · MNDY",
+        "desc": "Work management platform.",
+        "id": "monday-com"
+       },
+       {
+        "name": "Box",
+        "type": "company",
+        "domain": "box.com",
+        "status": "Public · BOX",
+        "desc": "Enterprise content management.",
+        "id": "box"
+       },
+       {
+        "name": "DocuSign",
+        "type": "company",
+        "domain": "docusign.com",
+        "status": "Public · DOCU",
+        "desc": "E-signature and agreement management.",
+        "id": "docusign"
+       }
+      ],
+      "id": "collaboration-productivity"
+     }
+    ],
+    "id": "enterprise-applications"
+   },
+   {
+    "name": "Vertical Software",
+    "type": "category",
+    "color": "#db2777",
+    "desc": "Software built for one industry. Smaller markets but deep moats — and a favorite of PE buyers.",
+    "children": [
+     {
+      "name": "Fintech & Payments Infrastructure",
+      "type": "category",
+      "desc": "Moving money and the rails behind it.",
+      "children": [
+       {
+        "name": "Stripe",
+        "type": "company",
+        "domain": "stripe.com",
+        "status": "Private",
+        "desc": "Payments infrastructure for internet businesses; reported deal for OpenRouter.",
+        "id": "stripe"
+       },
+       {
+        "name": "Adyen",
+        "type": "company",
+        "domain": "adyen.com",
+        "status": "Public · AMS: ADYEN",
+        "desc": "Global payments platform for large merchants.",
+        "id": "adyen"
+       },
+       {
+        "name": "Plaid",
+        "type": "company",
+        "domain": "plaid.com",
+        "status": "Private",
+        "desc": "Connects apps to bank accounts.",
+        "id": "plaid"
+       },
+       {
+        "name": "Ramp",
+        "type": "company",
+        "domain": "ramp.com",
+        "status": "Private",
+        "desc": "Corporate cards and AI spend management.",
+        "id": "ramp"
+       },
+       {
+        "name": "Brex",
+        "type": "company",
+        "domain": "brex.com",
+        "status": "Private",
+        "desc": "Corporate cards and spend management.",
+        "id": "brex"
+       },
+       {
+        "name": "Toast",
+        "type": "company",
+        "domain": "toasttab.com",
+        "status": "Public · TOST",
+        "desc": "Restaurant POS and payments.",
+        "id": "toast"
+       },
+       {
+        "name": "Shopify",
+        "type": "company",
+        "domain": "shopify.com",
+        "status": "Public · SHOP",
+        "desc": "Commerce platform for merchants of all sizes.",
+        "id": "shopify"
+       }
+      ],
+      "id": "fintech-payments-infrastructure"
+     },
+     {
+      "name": "Energy & Industrial Software",
+      "type": "category",
+      "desc": "Software that runs plants, grids, fleets and engineering — where tech meets energy and industrials coverage.",
+      "children": [
+       {
+        "name": "AVEVA",
+        "type": "company",
+        "domain": "aveva.com",
+        "status": "Part of Schneider Electric",
+        "desc": "Industrial software for design and operations of plants.",
+        "id": "aveva"
+       },
+       {
+        "name": "AspenTech",
+        "type": "company",
+        "domain": "aspentech.com",
+        "status": "Part of Emerson (EMR)",
+        "desc": "Process optimization software for energy and chemicals.",
+        "id": "aspentech"
+       },
+       {
+        "name": "Samsara",
+        "type": "company",
+        "domain": "samsara.com",
+        "status": "Public · IOT",
+        "desc": "Connected operations — IoT sensors and software for fleets and equipment.",
+        "id": "samsara"
+       },
+       {
+        "name": "Autodesk",
+        "type": "company",
+        "domain": "autodesk.com",
+        "status": "Public · ADSK",
+        "desc": "Design software (AutoCAD, Revit) for architecture and manufacturing.",
+        "id": "autodesk"
+       },
+       {
+        "name": "Bentley Systems",
+        "type": "company",
+        "domain": "bentley.com",
+        "status": "Public · BSY",
+        "desc": "Infrastructure engineering software (roads, grids, utilities).",
+        "id": "bentley-systems"
+       },
+       {
+        "name": "PTC",
+        "type": "company",
+        "domain": "ptc.com",
+        "status": "Public · PTC",
+        "desc": "CAD and product lifecycle management for manufacturers.",
+        "id": "ptc"
+       },
+       {
+        "name": "Procore",
+        "type": "company",
+        "domain": "procore.com",
+        "status": "Public · PCOR",
+        "desc": "Construction management software.",
+        "id": "procore"
+       }
+      ],
+      "id": "energy-industrial-software"
+     },
+     {
+      "name": "Healthcare & Life Sciences",
+      "type": "category",
+      "desc": "Clinical and pharma software.",
+      "children": [
+       {
+        "name": "Epic Systems",
+        "type": "company",
+        "domain": "epic.com",
+        "status": "Private",
+        "desc": "Dominant electronic health record (EHR) system.",
+        "id": "epic-systems"
+       },
+       {
+        "name": "Veeva Systems",
+        "type": "company",
+        "domain": "veeva.com",
+        "status": "Public · VEEV",
+        "desc": "Cloud software for pharma and life sciences.",
+        "id": "veeva-systems"
+       },
+       {
+        "name": "Abridge",
+        "type": "company",
+        "domain": "abridge.com",
+        "status": "Private",
+        "desc": "AI scribe that writes clinical notes from doctor-patient conversations.",
+        "id": "abridge"
+       },
+       {
+        "name": "Doximity",
+        "type": "company",
+        "domain": "doximity.com",
+        "status": "Public · DOCS",
+        "desc": "Professional network and tools for physicians.",
+        "id": "doximity"
+       }
+      ],
+      "id": "healthcare-life-sciences"
+     },
+     {
+      "name": "Legal & Professional Services",
+      "type": "category",
+      "desc": "Software and AI for law, accounting and finance professionals.",
+      "children": [
+       {
+        "name": "Harvey",
+        "type": "company",
+        "domain": "harvey.ai",
+        "status": "Private",
+        "desc": "Generative AI platform for law firms.",
+        "id": "harvey"
+       },
+       {
+        "name": "Clio",
+        "type": "company",
+        "domain": "clio.com",
+        "status": "Private",
+        "desc": "Practice management for law firms.",
+        "id": "clio"
+       },
+       {
+        "name": "Hebbia",
+        "type": "company",
+        "domain": "hebbia.com",
+        "status": "Private",
+        "desc": "AI document analysis for finance and legal (used by banks and PE).",
+        "id": "hebbia"
+       },
+       {
+        "name": "Rogo",
+        "type": "company",
+        "domain": "rogo.ai",
+        "status": "Private",
+        "desc": "AI analyst for investment banks and investors.",
+        "id": "rogo"
+       }
+      ],
+      "id": "legal-professional-services"
+     }
+    ],
+    "id": "vertical-software"
+   },
+   {
+    "name": "AI Applications & Agents",
+    "type": "category",
+    "color": "#4f46e5",
+    "desc": "The top of the stack — products people and businesses use directly. Where AI usage (and the revenue that funds everything below) shows up.",
+    "children": [
+     {
+      "name": "Assistants & Search",
+      "type": "category",
+      "desc": "General-purpose chat assistants and AI search.",
+      "children": [
+       {
+        "name": "ChatGPT",
+        "type": "company",
+        "domain": "chatgpt.com",
+        "status": "Part of OpenAI",
+        "desc": "The most-used AI assistant.",
+        "id": "chatgpt"
+       },
+       {
+        "name": "Claude",
+        "type": "company",
+        "domain": "claude.ai",
+        "status": "Part of Anthropic",
+        "desc": "Anthropic's assistant, strong in coding and work tasks.",
+        "id": "claude"
+       },
+       {
+        "name": "Gemini",
+        "type": "company",
+        "domain": "gemini.google.com",
+        "status": "Part of Alphabet (GOOGL)",
+        "desc": "Google's assistant, built into Android and Workspace.",
+        "id": "gemini"
+       },
+       {
+        "name": "Perplexity",
+        "type": "company",
+        "domain": "perplexity.ai",
+        "status": "Private",
+        "desc": "AI answer engine and Comet browser.",
+        "id": "perplexity"
+       },
+       {
+        "name": "Character.AI",
+        "type": "company",
+        "domain": "character.ai",
+        "status": "Private",
+        "desc": "Chat with custom AI characters.",
+        "id": "character-ai"
+       }
+      ],
+      "id": "assistants-search"
+     },
+     {
+      "name": "Customer Support Agents",
+      "type": "category",
+      "desc": "AI agents that resolve customer tickets end-to-end — one of the first AI categories with clear ROI.",
+      "children": [
+       {
+        "name": "Sierra",
+        "type": "company",
+        "domain": "sierra.ai",
+        "status": "Private",
+        "desc": "Conversational AI agents for customer experience, co-founded by Bret Taylor.",
+        "id": "sierra"
+       },
+       {
+        "name": "Decagon",
+        "type": "company",
+        "domain": "decagon.ai",
+        "status": "Private",
+        "desc": "AI customer support agents for enterprises.",
+        "id": "decagon"
+       },
+       {
+        "name": "Parloa",
+        "type": "company",
+        "domain": "parloa.com",
+        "status": "Private",
+        "desc": "AI voice agents for contact centers.",
+        "id": "parloa"
+       },
+       {
+        "name": "Ada",
+        "type": "company",
+        "domain": "ada.cx",
+        "status": "Private",
+        "desc": "AI customer service automation.",
+        "id": "ada"
+       }
+      ],
+      "id": "customer-support-agents"
+     },
+     {
+      "name": "Enterprise Search & Knowledge",
+      "type": "category",
+      "desc": "AI that searches and reasons across a company's internal documents.",
+      "children": [
+       {
+        "name": "Glean",
+        "type": "company",
+        "domain": "glean.com",
+        "status": "Private",
+        "desc": "Enterprise AI search and assistant across company apps.",
+        "id": "glean"
+       },
+       {
+        "name": "Writer",
+        "type": "company",
+        "domain": "writer.com",
+        "status": "Private",
+        "desc": "Enterprise generative AI platform with its own models.",
+        "id": "writer"
+       }
+      ],
+      "id": "enterprise-search-knowledge"
+     },
+     {
+      "name": "Creative & Content",
+      "type": "category",
+      "desc": "AI for video, avatars, presentations and design.",
+      "children": [
+       {
+        "name": "HeyGen",
+        "type": "company",
+        "domain": "heygen.com",
+        "status": "Private",
+        "desc": "AI avatar videos and translation.",
+        "id": "heygen"
+       },
+       {
+        "name": "Synthesia",
+        "type": "company",
+        "domain": "synthesia.io",
+        "status": "Private",
+        "desc": "AI video for corporate training and communications.",
+        "id": "synthesia"
+       },
+       {
+        "name": "Gamma",
+        "type": "company",
+        "domain": "gamma.app",
+        "status": "Private",
+        "desc": "AI presentations and documents.",
+        "id": "gamma"
+       }
+      ],
+      "id": "creative-content"
+     }
+    ],
+    "id": "ai-applications-agents"
+   }
+  ],
+  "id": "software-ai-infrastructure"
+ }
+}
