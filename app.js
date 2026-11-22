@@ -297,8 +297,64 @@
   svg.on("click", () => { /* click on empty canvas keeps selection */ });
 
   // ───────── panel ─────────
+  // ───────── notes ─────────
+  const NOTES = "__notes__";
+  let openNoteId = null;
+  const fmtDate = (iso) => { try { return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }); } catch { return ""; } };
+  function openNotes(noteId = null) {
+    selectedId = NOTES; openNoteId = noteId;
+    refresh(); renderPanel();
+  }
+  function renderNotes() {
+    const panel = $("#panel");
+    panel.hidden = false; panel.classList.add("wide");
+    doc.notes = doc.notes || [];
+    let html = `<button class="close" aria-label="Close">×</button>`;
+    const note = openNoteId && doc.notes.find((x) => x.id === openNoteId);
+    if (!note) {
+      const list = [...doc.notes].sort((a, b) => (b.updated || "").localeCompare(a.updated || ""));
+      html += `<div class="p-head"><div><h2>My notes</h2><span class="muted" style="font-size:13px">${list.length} note${list.length === 1 ? "" : "s"}</span></div></div>
+        <p class="public-warn">These save to your public GitHub repo, so anyone with the link can read them.</p>
+        <button class="primary" data-n="new">＋ New note</button>
+        <ul class="notes-list">${list.map((x) => `<li data-open="${esc(x.id)}"><div class="nl-title">${esc(x.title || "Untitled")}</div>
+          <div class="nl-meta">${esc(fmtDate(x.updated))}</div><div class="nl-prev">${esc((x.body || "").slice(0, 140))}</div></li>`).join("")}</ul>
+        ${list.length ? "" : `<p class="muted">Write down your views on the market, themes you're tracking, questions to ask in interviews, anything.</p>`}`;
+    } else {
+      html += `<div class="crumbs"><a data-n="back">← All notes</a></div>
+        <div class="form note-form">
+          <input class="note-title" data-nf="title" placeholder="Title" value="${esc(note.title || "")}">
+          <textarea class="note-body" data-nf="body" placeholder="Write anything — views, theses, things to look into…">${esc(note.body || "")}</textarea>
+          <div class="note-foot"><span class="muted">Created ${esc(fmtDate(note.created))} · edited ${esc(fmtDate(note.updated))}</span>
+          <button class="danger" data-n="delete">Delete note</button></div>
+        </div>`;
+    }
+    panel.innerHTML = html;
+    panel.querySelector(".close").onclick = () => { selectedId = null; openNoteId = null; panel.hidden = true; panel.classList.remove("wide"); refresh(); };
+    panel.querySelectorAll("[data-open]").forEach((li) => (li.onclick = () => openNotes(li.dataset.open)));
+    panel.querySelectorAll("[data-n]").forEach((b) => (b.onclick = () => {
+      const a = b.dataset.n;
+      if (a === "new") {
+        const now = new Date().toISOString();
+        const n = { id: "note-" + Date.now().toString(36), title: "", body: "", created: now, updated: now };
+        doc.notes.push(n); markDirty("New note"); openNotes(n.id);
+        setTimeout(() => panel.querySelector(".note-title")?.focus(), 30);
+      } else if (a === "back") openNotes(null);
+      else if (a === "delete") {
+        if (!confirm(`Delete "${note.title || "Untitled"}"?`)) return;
+        doc.notes = doc.notes.filter((x) => x !== note); markDirty(`Delete note ${note.title || ""}`.trim()); openNotes(null);
+      }
+    }));
+    panel.querySelectorAll("[data-nf]").forEach((el) => el.addEventListener("input", () => {
+      note[el.dataset.nf] = el.value; note.updated = new Date().toISOString();
+      const label = `Note: ${note.title || "Untitled"}`;
+      if (!changes.some((c) => c.startsWith("Note") || c === "New note")) markDirty(label); else saveDraft();
+    }));
+  }
+
   function renderPanel() {
     const panel = $("#panel");
+    if (selectedId === NOTES) return renderNotes();
+    panel.classList.remove("wide");
     const n = byId.get(selectedId);
     if (!n) { panel.hidden = true; return; }
     panel.hidden = false;
@@ -646,6 +702,7 @@
     renderPanel(); refresh();
   };
   $("#btn-settings").onclick = openSettings;
+  $("#btn-notes").onclick = () => (selectedId === NOTES ? (($("#panel").hidden = true), (selectedId = null), refresh()) : openNotes(null));
   $("#btn-save").onclick = saveToGitHub;
 
   function openSettings() {

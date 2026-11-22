@@ -19,6 +19,10 @@ There are two branches:
 
 The colored dot on each company shows its status: 🟢 public · 🟣 private · 🔴 acquired or owned by PE · 🟠 pending deal or IPO · 🟪 open source · ⚪ part of a larger company.
 
+## Notes
+
+Click **Notes** in the top bar to write general views, theses and anything else you want to keep. Notes save to GitHub with **Save to GitHub**, just like map edits. They're stored in this public repo, so anyone with the link can read them.
+
 ## Editing (no code needed)
 
 1. Click **Edit** in the top bar.
