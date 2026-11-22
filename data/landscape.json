@@ -521,7 +521,7 @@
           "type": "company",
           "domain": "ai.meta.com",
           "status": "Part of Meta (META)",
-          "desc": "Meta's AI division — open-weight Llama models and Meta Superintelligence Labs.",
+          "desc": "Meta's AI division. Meta Superintelligence Labs (led by Alexandr Wang) builds the Muse model family — Muse Spark launched in 2026 and now powers Meta AI — succeeding the open-weight Llama models.",
           "id": "meta-ai",
           "cap": 1433,
           "capNote": "Parent: Meta"
@@ -1261,6 +1261,34 @@
          }
         ],
         "id": "assistants-search"
+       },
+       {
+        "id": "personal-ai-agents",
+        "name": "Personal AI Agents",
+        "type": "category",
+        "desc": "Agents that connect to all of a person's accounts — email, calendar, bank, shopping — pull that data into one place, and then act on it: booking travel, paying bills, filling forms. The next step beyond chat assistants, and a big privacy question because they hold your whole digital life.",
+        "children": [
+         {
+          "id": "instinct",
+          "name": "Instinct",
+          "type": "company",
+          "domain": "instinct.com",
+          "status": "Private",
+          "desc": "Personal AI agent that takes errands off your plate by connecting to your apps, via text or phone. Founded in 2025 by Noah Shinn (ex-Sierra); went from a $50M to $2.5B valuation in weeks in 2026. Its broad data-use terms drew privacy criticism.",
+          "cap": 2.5,
+          "capNote": "Valuation · Aug 2026"
+         },
+         {
+          "id": "meta-muse",
+          "name": "Meta Muse",
+          "type": "company",
+          "domain": "muse.ai",
+          "status": "Part of Meta (META)",
+          "desc": "Meta's personal AI agent (launched Sept 2026), built on its Muse models from Meta Superintelligence Labs. Runs in a private secure VM, connects to apps (and to bank data via Plaid), and can book travel, shop and send emails. Available on web, iOS, Android and WhatsApp.",
+          "cap": 1433,
+          "capNote": "Parent: Meta"
+         }
+        ]
        },
        {
         "name": "AI Coding Tools",
