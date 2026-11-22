@@ -146,6 +146,60 @@
         "id": "gpus-ai-accelerators"
        },
        {
+        "id": "chip-software-compilers",
+        "name": "Chip Software & Compilers",
+        "type": "category",
+        "desc": "The software layer between AI code (PyTorch) and the chips. It translates models into instructions a GPU can run, and decides which chips developers can actually use. Nvidia's CUDA dominates and is its biggest moat; everyone else is trying to make code portable across chips so buyers aren't locked in.",
+        "children": [
+         {
+          "id": "cuda",
+          "name": "CUDA",
+          "type": "company",
+          "domain": "developer.nvidia.com/cuda-toolkit",
+          "status": "Part of Nvidia (NVDA)",
+          "desc": "Nvidia's parallel computing platform and programming model, plus libraries like cuDNN (deep learning) and TensorRT (inference). Launched in 2006, it's what PyTorch and nearly all AI software run on, and it's the main reason customers stay on Nvidia GPUs even when rivals are cheaper.",
+          "cap": 3031,
+          "capNote": "Parent: Nvidia"
+         },
+         {
+          "id": "rocm",
+          "name": "ROCm",
+          "type": "company",
+          "domain": "amd.com",
+          "status": "Part of AMD (AMD)",
+          "desc": "AMD's open-source answer to CUDA for its Instinct GPUs. Narrowing the software gap with CUDA is the key to AMD winning more AI workloads.",
+          "cap": 702.39,
+          "capNote": "Parent: AMD"
+         },
+         {
+          "name": "Modular",
+          "type": "company",
+          "domain": "modular.com",
+          "status": "Private",
+          "desc": "Mojo language and MAX engine to run AI across any hardware — a bet against CUDA lock-in.",
+          "id": "modular",
+          "cap": 1.6,
+          "capNote": "Valuation · 2025"
+         },
+         {
+          "id": "triton",
+          "name": "Triton",
+          "type": "company",
+          "domain": "triton-lang.org",
+          "status": "Open source (OpenAI)",
+          "desc": "Open-source language from OpenAI for writing fast GPU code (kernels) in Python without writing CUDA directly; widely used inside PyTorch. Supports Nvidia and AMD."
+         },
+         {
+          "id": "jax-xla",
+          "name": "JAX / XLA",
+          "type": "company",
+          "domain": "github.com/jax-ml/jax",
+          "status": "Open source (Google)",
+          "desc": "Google's numerical computing library (JAX) and compiler (XLA) that run models on TPUs as well as GPUs; how Google trains Gemini and how most TPU customers program them."
+         }
+        ]
+       },
+       {
         "name": "Memory, Foundry & Chip Supply Chain",
         "type": "category",
         "desc": "Who actually manufactures the chips. AI chips need cutting-edge fabs (TSMC), lithography machines (ASML) and stacked high-bandwidth memory (HBM) — all serious bottlenecks.",
@@ -803,16 +857,6 @@
           "status": "Acquired by CoreWeave (2025)",
           "desc": "Experiment tracking and model management used by most AI labs.",
           "id": "weights-biases"
-         },
-         {
-          "name": "Modular",
-          "type": "company",
-          "domain": "modular.com",
-          "status": "Private",
-          "desc": "Mojo language and MAX engine to run AI across any hardware — a bet against CUDA lock-in.",
-          "id": "modular",
-          "cap": 1.6,
-          "capNote": "Valuation · 2025"
          },
          {
           "name": "Anyscale",
