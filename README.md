@@ -6,17 +6,11 @@ An interactive map of the software and AI infrastructure landscape. Click a vert
 
 ## What's inside
 
-There are nine verticals, ordered bottom to top through the stack:
+There are two branches:
 
-1. AI Compute & Hardware: chips, memory, networking, data centers, power, GPU clouds
-2. Cloud & Infrastructure Software
-3. Data Infrastructure: databases, warehouses, streaming, ETL, catalogs, BI
-4. AI Models & AI Infrastructure: model labs, training data, inference, vector DBs, agent infra, evals
-5. Developer Tools & DevOps
-6. Cybersecurity
-7. Enterprise Applications
-8. Vertical Software
-9. AI Applications & Agents
+**AI**: AI Compute & Hardware (chips, memory, networking, data centers, power, GPU clouds) → AI Models (frontier labs, generative media, model hubs) → AI Infrastructure (training data, MLOps, inference, vector DBs, frameworks, agent infra, evals, AI security) → AI Applications & Agents (assistants, AI coding tools, support agents, enterprise search)
+
+**Software**: Cloud & Infrastructure · Data Infrastructure · Developer Tools & DevOps · Cybersecurity · Enterprise Applications · Vertical Software
 
 The colored dot on each company shows its status: 🟢 public · 🟣 private · 🔴 acquired or owned by PE · 🟠 pending deal or IPO · 🟪 open source · ⚪ part of a larger company.
 

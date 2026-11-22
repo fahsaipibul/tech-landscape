@@ -9,7 +9,7 @@
   const LS_SETTINGS = "tl-github-v1";
   const LS_EXPANDED = "tl-expanded-v1";
   const ROW_H = 40;
-  const COL_X = [0, 250, 560, 900, 1200]; // x position per depth
+  const COL_X = [0, 290, 480, 810, 1160, 1450]; // x position per depth
 
   let doc = null;            // { meta, tree }
   let byId = new Map();      // id -> node
@@ -225,15 +225,15 @@
 
   function fitStart() {
     const box = svg.node().getBoundingClientRect();
-    const k = box.width < 760 ? 0.7 : 1;
+    const k = box.width < 760 ? 0.62 : 1;
     svg.call(zoom.transform, d3.zoomIdentity.translate(30, box.height / 2).scale(k));
   }
 
   function updateStats() {
     const total = countCompanies(doc.tree);
-    const verts = (doc.tree.children || []).length;
-    let subs = 0; (doc.tree.children || []).forEach((v) => (v.children || []).forEach((c) => { if (c.type !== "company") subs++; }));
-    $("#stats").textContent = `${verts} verticals · ${subs} subverticals · ${total} companies`;
+    let cats = 0; byId.forEach((n) => { if (n.type === "category") cats++; });
+    const groups = (doc.tree.children || []).map((g) => `${g.name}: ${countCompanies(g)}`).join(" · ");
+    $("#stats").textContent = `${total} companies in ${cats} categories — ${groups}`;
   }
 
   // ───────── interaction ─────────
@@ -344,12 +344,12 @@
   }
   function categoryForm(n) {
     const isRoot = n.type === "root";
-    const isVertical = parentOf.get(n.id) === doc.tree;
+    const isVertical = !isRoot;
     return `<div class="form">
       <label>Name <input data-f="name" value="${esc(n.name)}"></label>
       <label>Description <textarea data-f="desc">${esc(n.desc || "")}</textarea></label>
       <label>My notes <textarea data-f="notes">${esc(n.notes || "")}</textarea></label>
-      ${isVertical ? `<label>Color <input type="color" data-f="color" value="${esc(n.color || "#1c1b19")}"></label>` : ""}
+      ${isVertical ? `<label>Color <span class="hint">Everything inside uses this color unless it has its own</span><input type="color" data-f="color" value="${esc(n.color || "#1c1b19")}"></label>` : ""}
       <div class="btn-row">
         <button class="primary" data-act="add-company">+ Add company</button>
         <button data-act="add-category">+ Add ${isRoot ? "vertical" : "subcategory"}</button>
@@ -465,7 +465,8 @@
   }
 
   // ───────── toolbar ─────────
-  $("#btn-collapse").onclick = () => { expanded.clear(); saveExpanded(); selectedId = null; $("#panel").hidden = true; render(); fitStart(); };
+  function openTopLevel() { (doc.tree.children || []).forEach((g) => g.type !== "company" && expanded.add(g.id)); }
+  $("#btn-collapse").onclick = () => { expanded.clear(); openTopLevel(); saveExpanded(); selectedId = null; $("#panel").hidden = true; render(); fitStart(); };
   $("#btn-edit").onclick = () => {
     editMode = !editMode;
     $("#btn-edit").classList.toggle("on", editMode);
@@ -555,7 +556,10 @@
     $("#subtitle").textContent = doc.meta?.subtitle || "";
     $("#note").textContent = [doc.meta?.updated ? `Updated ${doc.meta.updated}` : "", doc.meta?.note || ""].filter(Boolean).join(" · ");
     document.title = `${doc.meta?.title || "Tech Landscape"} — ${doc.meta?.subtitle || ""}`;
-    try { JSON.parse(localStorage.getItem(LS_EXPANDED) || "[]").forEach((id) => byId.has(id) && expanded.add(id)); } catch {}
+    let stored = null;
+    try { stored = JSON.parse(localStorage.getItem(LS_EXPANDED) || "null"); } catch {}
+    if (Array.isArray(stored) && stored.length) stored.forEach((id) => byId.has(id) && expanded.add(id));
+    else openTopLevel();
     try { const d = JSON.parse(localStorage.getItem(LS_DRAFT) || "null"); if (d && d.doc) showDraftBanner(d); } catch {}
     fitStart();
     render();
